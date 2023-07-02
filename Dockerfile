@@ -33,6 +33,7 @@ COPY --chown=node:node tsconfig.json tsconfig.json
 RUN yarn install --immutable
 
 COPY --chown=node:node src/ src/
+RUN yarn svelte-kit sync
 RUN yarn run build
 
 # Runner Stage
