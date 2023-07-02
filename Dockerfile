@@ -44,6 +44,7 @@ WORKDIR /home/node/app
 ENV NODE_ENV="production"
 
 COPY --chown=node:node --from=builder /home/node/app/dist dist
+COPY --chown=node:node --from=builder /home/node/app/build build
 # COPY --chown=node:node --from=builder /home/node/app/node_modules node_modules
 
 RUN yarn workspaces focus --all --production

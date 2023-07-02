@@ -34,6 +34,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title> Crea equipos aleatorios | Pokémon UNITE </title>
+</svelte:head>
+
 <ul class="infobanner">
 	<li> Puedes cambiar el nombre de cada personaje escribiendo en el cuadro debajo de su avatar. </li>
 	<li> Haz click en el personaje para cambiar su avatar. </li>
