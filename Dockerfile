@@ -53,4 +53,4 @@ USER node
 # EXPOSE 3000
 
 ENV CI=
-CMD [ "yarn", "node", "dist" ]
+CMD [ "yarn", "node", "build" ]
