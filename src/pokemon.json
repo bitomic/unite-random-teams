@@ -1,0 +1,164 @@
+{
+	"Absol": {
+		"role": "Speedster"
+	},
+	"Dodrio": {
+		"role": "Speedster"
+	},
+	"Gengar": {
+		"role": "Speedster"
+	},
+	"Leafeon": {
+		"role": "Speedster"
+	},
+	"Talonflame": {
+		"role": "Speedster"
+	},
+	"Zeraora": {
+		"role": "Speedster"
+	},
+	"Zoroark": {
+		"role": "Speedster"
+	},
+	"Blissey": {
+		"role": "Supporter"
+	},
+	"Clefable": {
+		"role": "Supporter"
+	},
+	"Comfey": {
+		"role": "Supporter"
+	},
+	"Eldegoss": {
+		"role": "Supporter"
+	},
+	"Hoopa": {
+		"role": "Supporter"
+	},
+	"Mr. Mime": {
+		"role": "Supporter"
+	},
+	"Sableye": {
+		"role": "Supporter"
+	},
+	"Wigglytuff": {
+		"role": "Supporter"
+	},
+	"Blastoise": {
+		"role": "Defender"
+	},
+	"Crustle": {
+		"role": "Defender"
+	},
+	"Goodra": {
+		"role": "Defender"
+	},
+	"Greedent": {
+		"role": "Defender"
+	},
+	"Lapras": {
+		"role": "Defender"
+	},
+	"Mamoswine": {
+		"role": "Defender"
+	},
+	"Slowbro": {
+		"role": "Defender"
+	},
+	"Snorlax": {
+		"role": "Defender"
+	},
+	"Trevenant": {
+		"role": "Defender"
+	},
+	"Umbreon": {
+		"role": "Defender"
+	},
+	"Aegislash": {
+		"role": "All-Rounder"
+	},
+	"Azumarill": {
+		"role": "All-Rounder"
+	},
+	"Buzzwole": {
+		"role": "All-Rounder"
+	},
+	"Charizard": {
+		"role": "All-Rounder"
+	},
+	"Dragonite": {
+		"role": "All-Rounder"
+	},
+	"Garchomp": {
+		"role": "All-Rounder"
+	},
+	"Lucario": {
+		"role": "All-Rounder"
+	},
+	"Machamp": {
+		"role": "All-Rounder"
+	},
+	"Scizor": {
+		"role": "All-Rounder"
+	},
+	"Tsareena": {
+		"role": "All-Rounder"
+	},
+	"Tyranitar": {
+		"role": "All-Rounder"
+	},
+	"Urshifu": {
+		"role": "All-Rounder"
+	},
+	"Zacian": {
+		"role": "All-Rounder"
+	},
+	"Chandelure": {
+		"role": "Attacker"
+	},
+	"Cinderace": {
+		"role": "Attacker"
+	},
+	"Cramorant": {
+		"role": "Attacker"
+	},
+	"Decidueye": {
+		"role": "Attacker"
+	},
+	"Delphox": {
+		"role": "Attacker"
+	},
+	"Dragapult": {
+		"role": "Attacker"
+	},
+	"Duraludon": {
+		"role": "Attacker"
+	},
+	"Espeon": {
+		"role": "Attacker"
+	},
+	"Gardevoir": {
+		"role": "Attacker"
+	},
+	"Glaceon": {
+		"role": "Attacker"
+	},
+	"Greninja": {
+		"role": "Attacker"
+	},
+	"Mew": {
+		"role": "Attacker"
+	},
+	"Ninetales": {
+		"role": "Attacker"
+	},
+	"Pikachu": {
+		"role": "Attacker"
+	},
+	"Sylveon": {
+		"role": "Attacker"
+	},
+	"Venusaur": {
+		"role": "Attacker"
+	}
+}
