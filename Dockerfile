@@ -19,7 +19,6 @@ COPY --chown=node:node .yarnrc.yml .
 COPY --chown=node:node static/ static/
 COPY --chown=node:node svelte.config.js .
 COPY --chown=node:node vite.config.ts .
-COPY --chown=node:node .svelte-kit/ .svelte-kit/
 
 ENTRYPOINT [ "dumb-init", "--" ]
 
