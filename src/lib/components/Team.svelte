@@ -23,7 +23,7 @@
 					<img src="/pokemon/t_Square_{ player.pokemon }.png" alt={ player.pokemon } width="50">
 				</div>
 			</div>
-			<input type="text" class="player__name" value={ player.name }>
+			<input type="text" class="player__name" bind:value={ player.name }>
 		</div>
 	{ /each }
 </div>
