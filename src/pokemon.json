@@ -160,5 +160,8 @@
 	},
 	"Venusaur": {
 		"role": "Attacker"
+	},
+	"Inteleon": {
+		"role": "Attacker"
 	}
 }
