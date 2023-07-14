@@ -57,4 +57,10 @@
 	</div>
 </div>
 
+<div class="imagespreload">
+	{ #each Object.keys( pokemon ) as name }
+		<img src={ `/pokemon/t_Square_${ name }.png` } alt={ name } />
+	{ /each }
+</div>
+
 <style src="./+page.css"></style>

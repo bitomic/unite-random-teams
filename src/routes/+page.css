@@ -58,3 +58,11 @@
 		flex-direction: column;
 	}
 }
+
+.imagespreload img {
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
