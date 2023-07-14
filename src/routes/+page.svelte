@@ -26,7 +26,7 @@
 		player.changePokemon()
 	}
 
-	const randomize = () => {
+	const randomizeTeams = () => {
 		$players.shufflePlayers()
 	}
 
@@ -52,7 +52,7 @@
 
 <div class="columns">
 	<div class="column buttons">
-		<button class="btn" on:click={ randomize }> Cambiar equipos al azar </button>
+		<button class="btn" on:click={ randomizeTeams }> Cambiar equipos al azar </button>
 		<button class="btn" on:click={ randomizePokemon }> Cambiar todos los Pokémon </button>
 	</div>
 </div>
