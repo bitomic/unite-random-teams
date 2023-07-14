@@ -1,6 +1,10 @@
 <script lang="ts">
     import { players } from '$lib/stores/matchmaking'
+	import pokemon from '../pokemon.json'
     import Team from '$lib/components/Team.svelte'
+    import { page } from '$app/stores';
+
+	const baseUrl = `${ $page.url.protocol }//${ $page.url.host }`
 
 	$players.clear()
 
@@ -33,6 +37,9 @@
 
 <svelte:head>
 	<title> Crea equipos aleatorios | Pokémon UNITE </title>
+	{ #each Object.keys( pokemon ) as name }
+		<link rel="prefetch" as="image" href={ `${ baseUrl }/pokemon/t_Square_${ name }.png` } />
+	{ /each }
 </svelte:head>
 
 <div class="room">
