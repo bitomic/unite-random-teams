@@ -11,6 +11,8 @@
 	type PokemonRole = typeof pokemon[ keyof typeof pokemon ][ 'role' ]
 
 	const getRole = ( name: string ): PokemonRole => {
+		if ( name === 'Mr. Mime' ) return 'Supporter'
+
 		return get( pokemon, `${ name }.role` ) ?? 'Attacker'
 	}
 </script>
