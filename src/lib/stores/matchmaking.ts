@@ -5,6 +5,7 @@ import { writable } from 'svelte/store'
 import shuffle from 'lodash-es/shuffle'
 import type { BaseStrategy } from '$lib/strategies/BaseStrategy'
 import { UniqueTeamStrategy } from '$lib/strategies/UniqueTeam'
+import { GuaranteeRolesStrategy } from '$lib/strategies/GuaranteeRoles'
 
 export class Player {
 	public gender: 'male' | 'female' = 'male'
@@ -55,7 +56,10 @@ export class Matchroom {
 	public readonly team1: Player[] = []
 	public readonly team2: Player[] = []
 
-	public readonly pickStrategies: BaseStrategy[] = [ new UniqueTeamStrategy() ]
+	public readonly pickStrategies: BaseStrategy[] = [
+		new UniqueTeamStrategy(),
+		new GuaranteeRolesStrategy()
+	]
 
 	public static getRandomPokemon( options?: string[] ): string {
 		options ??= Object.keys( pokemon )
@@ -111,23 +115,35 @@ export class Matchroom {
 		return this[ `team${ teamId }` ].at( idx % 5 ) ?? new Player( this, '¿?', 1, 0 )
 	}
 
-	protected shouldExclude( name: string, pokemon: string[] ): boolean {
-		return this.pickStrategies.some( strategy => strategy.exclude( name, pokemon ) )
+	protected shouldExclude( name: string, currentTeam: string[], previousTeam?: string[] ): boolean {
+		return this.pickStrategies.some( strategy => strategy.exclude( name, currentTeam, previousTeam ?? [] ) )
 	}
 
 	public shufflePokemon() {
 		let options = Object.keys( pokemon )
-		const chosen: string[] = []
+		
+		const chosen1: string[] = []
+		const chosen2: string[] = []
 
-		for ( let i = 0; i < 10; i++ ) {
-			options = options.filter( name => !this.shouldExclude( name, chosen ) )
+		for ( let i = 0; i < 5; i++ ) {
+			options = options.filter( name => !this.shouldExclude( name, chosen1 ) )
 			const name = Matchroom.getRandomPokemon( options )
-			chosen.push( name )
+			chosen1.push( name )
+		}
+		
+		options = Object.keys( pokemon )
+		for ( let i = 0; i < 5; i++ ) {
+			options = options.filter( name => !this.shouldExclude( name, chosen2, chosen1 ) )
+			const name = Matchroom.getRandomPokemon( options )
+			chosen2.push( name )
 		}
 
-		for ( let i = 0; i < 10; i++ ) {
-			const player = this.getPlayer( i )
-			player.changePokemon( chosen[ i ] )
+		for ( let i = 0; i < 5; i++ ) {
+			const player1 = this.team1.at( i )
+			const player2 = this.team2.at( i )
+
+			player1?.changePokemon( chosen1[ i ] )
+			player2?.changePokemon( chosen2[ i ] )
 		}
 	}
 }
