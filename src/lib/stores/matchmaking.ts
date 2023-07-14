@@ -2,15 +2,24 @@
 import sample from 'lodash-es/sample'
 import pokemon from '../../pokemon.json'
 import { writable } from 'svelte/store'
+import shuffle from 'lodash-es/shuffle'
 
 export class Player {
 	public gender: 'male' | 'female' = 'male'
 	public pokemon = 'Pikachu'
+	public matchroom: Matchroom
 	public name = 'Unknown'
 	public skin: 1 | 2 | 3 | 4 = 1
+	public team: 1 | 2
+	public position: 0 | 1 | 2 | 3 | 4
 
-	public constructor( name: string ) {
+	public finalPokemon = 'Pikachu'
+
+	public constructor( matchroom: Matchroom, name: string, team: 1 | 2, position: 0 | 1 | 2 | 3 | 4 ) {
+		this.matchroom = matchroom
 		this.name = name
+		this.team = team
+		this.position = position
 	}
 
 	public changeSkin() {
@@ -22,9 +31,38 @@ export class Player {
 		}
 	}
 
-	public changePokemon( allowedList?: string[] ) {
-		allowedList ??= Object.keys( pokemon )
-		this.pokemon = sample( allowedList ) ?? 'Pikachu'
+	protected isPokemonTaken( name: string ) {
+		const players: Player[] = []
+		if ( this.team === 2 ) {
+			players.push( ...this.matchroom.team1 )
+		}
+		players.push( ...this.matchroom[ `team${ this.team }` ].slice( 0, this.position ) )
+		return players.map( i => i.finalPokemon ).includes( name )
+	}
+
+	protected getUniquePokemon() {
+		let pokemon = Matchroom.getRandomPokemon()
+		while ( this.isPokemonTaken( pokemon ) ) {
+			pokemon = Matchroom.getRandomPokemon()
+		}
+		return pokemon
+	}
+
+	public changePokemon() {
+		this.finalPokemon = this.getUniquePokemon()
+		let counter = 1
+		const iterations = Math.floor( 3 + 5 * Math.random() )
+
+		const interval = setInterval( () => {
+			this.pokemon = Matchroom.getRandomPokemon()
+
+			if ( ++counter >= iterations ) {
+				this.pokemon = this.finalPokemon
+				clearInterval( interval )
+			}
+
+			players.set( this.matchroom )
+		}, 500 )
 	}
 }
 
@@ -32,13 +70,20 @@ export class Matchroom {
 	public readonly team1: Player[] = []
 	public readonly team2: Player[] = []
 
+	public static getRandomPokemon(): string {
+		return sample( Object.keys( pokemon ) ) ?? 'Pikachu'
+	}
+
 	public addPlayer( name: string | Player ) {
-		const array = this.team1.length <= this.team2.length ? this.team1 : this.team2
+		const teamNumber = this.team1.length <= this.team2.length ? 1 : 2
+		const array = this[ `team${ teamNumber }` ]
 
 		if ( typeof name === 'string' ) {
-			const player = new Player( name )
+			const player = new Player( this, name, teamNumber, array.length as 0 | 1 | 2 | 3 | 4 )
 			array.push( player )
 		} else {
+			name.team = teamNumber
+			name.position = array.length as 0 | 1 | 2 | 3 | 4
 			array.push( name )
 		}
 	}
@@ -61,22 +106,21 @@ export class Matchroom {
 		return list.join( '\n' )
 	}
 
-	public set players( names: string ) {
-		const list = names.split( /\n/g ).slice( 0, 10 )
-
-		for ( let i = 0; i < list.length; i++ ) {
-			const name = list[ i ]
-			if ( !name.length ) continue
-
-			const array = i % 2 === 0 ? this.team1 : this.team2
-			const index = Math.floor( i / 2 )
-			const player = array.at( index )
-			if ( player ) {
-				player.name = name
-			} else {
-				array.push( new Player( name ) )
-			}
+	public shufflePlayers() {
+		const items = shuffle( [ ...this.team1, ...this.team2 ] )
+		this.clear()
+		for ( const item of items ) {
+			this.addPlayer( item )
 		}
+		players.set( this )
+	}
+
+	public shufflePokemon() {
+		const items = [ ...this.team1, ...this.team2 ]
+		for ( const item of items ) {
+			item.changePokemon()
+		}
+		players.set( this )
 	}
 }
 

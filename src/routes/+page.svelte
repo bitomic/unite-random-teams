@@ -1,8 +1,7 @@
 <script lang="ts">
     import { players } from '$lib/stores/matchmaking'
-	import shuffle from 'lodash-es/shuffle'
-    import Team from '$lib/components/Team.svelte';
-    import TopBanner from '$lib/components/TopBanner.svelte';
+    import Team from '$lib/components/Team.svelte'
+    import TopBanner from '$lib/components/TopBanner.svelte'
 
 	$players.clear()
 
@@ -22,24 +21,14 @@
 		const player = $players[ `team${ team }` ].at( position )
 		if ( !player ) return
 		player.changePokemon()
-		players.set( $players )
 	}
 
 	const randomize = () => {
-		const items = shuffle( [ ...$players.team1, ...$players.team2 ] )
-		$players.clear()
-		for ( const item of items ) {
-			$players.addPlayer( item )
-		}
-		players.set( $players )
+		$players.shufflePlayers()
 	}
 
 	const randomizePokemon = () => {
-		const items = [ ...$players.team1, ...$players.team2 ]
-		for ( const item of items ) {
-			item.changePokemon()
-		}
-		players.set( $players )
+		$players.shufflePokemon()
 	}
 </script>
 
