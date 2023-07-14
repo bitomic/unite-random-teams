@@ -71,7 +71,6 @@
 	<div class="column buttons">
 		<button class="btn" on:click={ randomize }> Cambiar equipos al azar </button>
 		<button class="btn" on:click={ randomizePokemon }> Cambiar todos los Pokémon </button>
-		<button class="btn" disabled={ true }> Cambiar todos los Pokémon </button>
 	</div>
 </div>
 
