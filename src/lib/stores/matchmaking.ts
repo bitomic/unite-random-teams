@@ -57,8 +57,7 @@ export class Matchroom {
 	public readonly team2: Player[] = []
 
 	public readonly pickStrategies: BaseStrategy[] = [
-		new UniqueTeamStrategy(),
-		new GuaranteeRolesStrategy()
+		new UniqueTeamStrategy()
 	]
 
 	public static getRandomPokemon( sourceOptions?: string[] ): string {
