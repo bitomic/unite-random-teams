@@ -3,6 +3,8 @@ import sample from 'lodash-es/sample'
 import pokemon from '../../pokemon.json'
 import { writable } from 'svelte/store'
 import shuffle from 'lodash-es/shuffle'
+import type { BaseStrategy } from '$lib/strategies/BaseStrategy'
+import { UniqueTeamStrategy } from '$lib/strategies/UniqueTeam'
 
 export class Player {
 	public gender: 'male' | 'female' = 'male'
@@ -31,25 +33,8 @@ export class Player {
 		}
 	}
 
-	protected isPokemonTaken( name: string ) {
-		const players: Player[] = []
-		if ( this.team === 2 ) {
-			players.push( ...this.matchroom.team1 )
-		}
-		players.push( ...this.matchroom[ `team${ this.team }` ].slice( 0, this.position ) )
-		return players.map( i => i.finalPokemon ).includes( name )
-	}
-
-	protected getUniquePokemon() {
-		let pokemon = Matchroom.getRandomPokemon()
-		while ( this.isPokemonTaken( pokemon ) ) {
-			pokemon = Matchroom.getRandomPokemon()
-		}
-		return pokemon
-	}
-
-	public changePokemon() {
-		this.finalPokemon = this.getUniquePokemon()
+	public changePokemon( finalPokemon?: string ) {
+		this.finalPokemon = finalPokemon ?? Matchroom.getRandomPokemon()
 		let counter = 1
 		const iterations = Math.floor( 3 + 5 * Math.random() )
 
@@ -70,8 +55,11 @@ export class Matchroom {
 	public readonly team1: Player[] = []
 	public readonly team2: Player[] = []
 
-	public static getRandomPokemon(): string {
-		return sample( Object.keys( pokemon ) ) ?? 'Pikachu'
+	public readonly pickStrategies: BaseStrategy[] = [ new UniqueTeamStrategy() ]
+
+	public static getRandomPokemon( options?: string[] ): string {
+		options ??= Object.keys( pokemon )
+		return sample( options ) ?? 'Pikachu'
 	}
 
 	public addPlayer( name: string | Player ) {
@@ -115,12 +103,29 @@ export class Matchroom {
 		players.set( this )
 	}
 
+	public getPlayer( idx: number ): Player {
+		const teamId = idx < 5 ? 1 : 2
+		return this[ `team${ teamId }` ].at( idx % 5 ) ?? new Player( this, '¿?', 1, 0 )
+	}
+
+	protected shouldExclude( name: string, pokemon: string[] ): boolean {
+		return this.pickStrategies.some( strategy => strategy.exclude( name, pokemon ) )
+	}
+
 	public shufflePokemon() {
-		const items = [ ...this.team1, ...this.team2 ]
-		for ( const item of items ) {
-			item.changePokemon()
+		let options = Object.keys( pokemon )
+		const chosen: string[] = []
+
+		for ( let i = 0; i < 10; i++ ) {
+			options = options.filter( name => !this.shouldExclude( name, chosen ) )
+			const name = Matchroom.getRandomPokemon( options )
+			chosen.push( name )
 		}
-		players.set( this )
+
+		for ( let i = 0; i < 10; i++ ) {
+			const player = this.getPlayer( i )
+			player.changePokemon( chosen[ i ] )
+		}
 	}
 }
 
