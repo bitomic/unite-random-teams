@@ -56,9 +56,23 @@ export class Matchroom {
 	public readonly team1: Player[] = []
 	public readonly team2: Player[] = []
 
-	public readonly pickStrategies: BaseStrategy[] = [
+	public pickStrategies: BaseStrategy[] = [
 		new UniqueTeamStrategy()
 	]
+
+	public hasStrategy( identifier: symbol ): boolean {
+		return !!this.pickStrategies.find( i => i.identifier === identifier )
+	}
+
+	public addStrategy( strategy: BaseStrategy ): void {
+		if ( this.hasStrategy( strategy.identifier ) ) return
+		this.pickStrategies.push( strategy )
+	}
+
+	public removeStrategy( identifier: symbol ): void {
+		if ( !this.hasStrategy( identifier ) ) return
+		this.pickStrategies = this.pickStrategies.filter( i => i.identifier !== identifier )
+	}
 
 	public static getRandomPokemon( sourceOptions?: string[] ): string {
 		const options = sourceOptions ?? Object.keys( pokemon )

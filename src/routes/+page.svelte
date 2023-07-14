@@ -3,6 +3,9 @@
 	import pokemon from '../pokemon.json'
     import Team from '$lib/components/Team.svelte'
     import { page } from '$app/stores';
+    import type { BaseStrategy } from '$lib/strategies/BaseStrategy';
+    import { GuaranteeRolesStrategy } from '$lib/strategies/GuaranteeRoles';
+    import { UniquePokemonStrategy } from '$lib/strategies/UniquePokemon';
 
 	const baseUrl = `${ $page.url.protocol }//${ $page.url.host }`
 
@@ -33,6 +36,16 @@
 	const randomizePokemon = () => {
 		$players.shufflePokemon()
 	}
+
+	const toggleStrategy = ( strategy: BaseStrategy ) => {
+		return ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
+			if ( e.currentTarget.checked ) {
+				$players.addStrategy( strategy )
+			} else {
+				$players.removeStrategy( strategy.identifier )
+			}
+		}
+	}
 </script>
 
 <svelte:head>
@@ -41,6 +54,12 @@
 		<link rel="prefetch" as="image" href={ `${ baseUrl }/pokemon/t_Square_${ name }.png` } />
 	{ /each }
 </svelte:head>
+
+<div class="imagespreload">
+	{ #each Object.keys( pokemon ) as name }
+		<img src={ `/pokemon/t_Square_${ name }.png` } alt={ name } />
+	{ /each }
+</div>
 
 <div class="room">
 	<Team team={ $players.team1 } teamNumber={ 1 } changeAvatar={ changeAvatar } changePokemon={ changePokemon } />
@@ -57,10 +76,17 @@
 	</div>
 </div>
 
-<div class="imagespreload">
-	{ #each Object.keys( pokemon ) as name }
-		<img src={ `/pokemon/t_Square_${ name }.png` } alt={ name } />
-	{ /each }
+<div class="columns">
+	<div class="column checkboxes">
+		<div class="checkbox">
+			<input type="checkbox" name="guaranteeRoles" on:change={ toggleStrategy( new GuaranteeRolesStrategy() ) }>
+			<label for="guaranteeRoles"> Guarantee all roles in both teams </label>
+		</div>
+		<div class="checkbox">
+			<input type="checkbox" name="uniquePokemon" on:change={ toggleStrategy( new UniquePokemonStrategy ) }>
+			<label for="uniquePokemon"> Don't repeat Pokémon between both teams </label>
+		</div>
+	</div>
 </div>
 
 <style src="./+page.css"></style>

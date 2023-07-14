@@ -2,6 +2,9 @@ import { BaseStrategy } from './BaseStrategy'
 import pokemon from '../../pokemon.json'
 
 export class GuaranteeRolesStrategy extends BaseStrategy {
+	public static readonly identifier = Symbol( 'guarantee-roles' )
+	public readonly identifier = GuaranteeRolesStrategy.identifier
+
 	public exclude( name: string, previousPokemon: string[] ): boolean {
 		const usedRoles = previousPokemon.map( i => this.getRole( i ) )
 		const role = this.getRole( name )
