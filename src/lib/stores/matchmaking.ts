@@ -59,7 +59,10 @@ export class Matchroom {
 
 	public static getRandomPokemon( options?: string[] ): string {
 		options ??= Object.keys( pokemon )
-		return sample( options ) ?? 'Pikachu'
+		const chosen = sample( options )
+		if ( chosen ) return chosen
+		if ( options ) return this.getRandomPokemon()
+		return 'Pikachu'
 	}
 
 	public addPlayer( name: string | Player ) {
