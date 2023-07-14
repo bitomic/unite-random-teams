@@ -6,10 +6,16 @@
 	export let changeAvatar: Function
 	export let changePokemon: Function
 	export let team: Player[]
-	export let teamNumber: number
+	export let teamNumber: 1 | 2
+
+	type PokemonRole = typeof pokemon[ keyof typeof pokemon ][ 'role' ]
+
+	const getRole = ( name: string ): PokemonRole => {
+		return get( pokemon, `${ name }.role` ) ?? 'Attacker'
+	}
 </script>
 
-<div class="room__players room__players--top">
+<div class="room__players room__players--{ teamNumber }">
 	{ #each team as player, idx }
 		<div class="player">
 			<div class="player__avatar">
@@ -19,7 +25,7 @@
 					<img src="/trainers/{ player.gender }{ player.skin }.png" alt="{ player.gender } trainer" width="100">
 				</div>
 				<!-- svelte-ignore a11y-click-events-have-key-events -->
-				<div on:click={ changePokemon.bind( undefined, idx, teamNumber ) } class="player__pokemon player__pokemon--{ get( pokemon, `${ player.pokemon }.role` ) ?? 'Attacker' }">
+				<div on:click={ changePokemon.bind( undefined, idx, teamNumber ) } class="player__pokemon player__pokemon--{ getRole( player.pokemon ) }">
 					<img src="/pokemon/t_Square_{ player.pokemon }.png" alt={ player.pokemon } width="50">
 				</div>
 			</div>
@@ -29,7 +35,6 @@
 </div>
 
 <style>
-
 .room__players {
 	align-items: center;
 	display: flex;
@@ -89,6 +94,29 @@
 	right: 0;
 	top: 0;
 	width: 50px;
+}
+.player__pokemon {
+	--shadow: #6d4f9d;
+	background-color: var( --color );
+	box-shadow: 2px 2px 4px var( --shadow );
+}
+.room__players--2 .player__pokemon {
+	--shadow: #f17f00;
+}
+.player__pokemon--All-Rounder {
+	--color: #ce5fd3;
+}
+.player__pokemon--Attacker {
+	--color: #f16c38;
+}
+.player__pokemon--Defender {
+	--color: #aced5b;
+}
+.player__pokemon--Speedster {
+	--color: #29a5e3;
+}
+.player__pokemon--Supporter {
+	--color: #fecc51;
 }
 
 @media screen and ( max-width: 1560px ) {

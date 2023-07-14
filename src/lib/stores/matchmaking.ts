@@ -61,11 +61,11 @@ export class Matchroom {
 		new GuaranteeRolesStrategy()
 	]
 
-	public static getRandomPokemon( options?: string[] ): string {
-		options ??= Object.keys( pokemon )
+	public static getRandomPokemon( sourceOptions?: string[] ): string {
+		const options = sourceOptions ?? Object.keys( pokemon )
 		const chosen = sample( options )
 		if ( chosen ) return chosen
-		if ( options ) return this.getRandomPokemon()
+		if ( sourceOptions ) return this.getRandomPokemon()
 		return 'Pikachu'
 	}
 
@@ -121,7 +121,7 @@ export class Matchroom {
 
 	public shufflePokemon() {
 		let options = Object.keys( pokemon )
-		
+
 		const chosen1: string[] = []
 		const chosen2: string[] = []
 
@@ -130,7 +130,7 @@ export class Matchroom {
 			const name = Matchroom.getRandomPokemon( options )
 			chosen1.push( name )
 		}
-		
+
 		options = Object.keys( pokemon )
 		for ( let i = 0; i < 5; i++ ) {
 			options = options.filter( name => !this.shouldExclude( name, chosen2, chosen1 ) )
