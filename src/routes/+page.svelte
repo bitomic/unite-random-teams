@@ -80,11 +80,11 @@
 	<div class="column checkboxes">
 		<div class="checkbox">
 			<input type="checkbox" name="guaranteeRoles" on:change={ toggleStrategy( new GuaranteeRolesStrategy() ) }>
-			<label for="guaranteeRoles"> Guarantee all roles in both teams </label>
+			<label for="guaranteeRoles"> Asegurar todos los roles en ambos equipos </label>
 		</div>
 		<div class="checkbox">
 			<input type="checkbox" name="uniquePokemon" on:change={ toggleStrategy( new UniquePokemonStrategy ) }>
-			<label for="uniquePokemon"> Don't repeat Pokémon between both teams </label>
+			<label for="uniquePokemon"> No repetir Pokémon entre ambos equipos </label>
 		</div>
 	</div>
 </div>

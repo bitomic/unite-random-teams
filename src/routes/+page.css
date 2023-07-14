@@ -69,6 +69,11 @@
 
 .checkboxes {
 	color: #fff;
+	display: flex;
+	flex-wrap: wrap;
 	font-size: 1.25em;
 	margin-top: 1em;
+}
+.checkbox {
+	flex-basis: 50%;
 }
