@@ -1,0 +1,63 @@
+.room {
+	background-color: rgba(159, 168, 206, 0.5);
+	border: 2px solid #fff;
+	border-left-width: 5px;
+	border-radius: 10px;
+	border-right-width: 5px;
+	margin: 1em auto;
+	padding: 1em 0;
+	width: 80%;
+}
+.room__separator {
+	background-image: linear-gradient(to right, #6d4f9d, #6d4f9d 50%, #f17f00 50%, #f17f00);
+	border-bottom: 18px solid #000;
+	height: 10px;
+	margin: 2em 0;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+.room__separator img {
+	margin-top: -3px;
+}
+.columns {
+	column-gap: 2em;
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 auto;
+	width: 80%;
+}
+.column {
+	flex-basis: 0;
+	flex-grow: 1;;
+}
+.soon {
+	color: #fff;
+}
+.btn {
+	background-color: #f17f00;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0.5em 0;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	width: 100%;
+}
+.btn:hover {
+	background-color: #a85a00;
+}
+.btn:disabled {
+	background-color: #a57c4d;
+	color: #303030;
+	cursor: not-allowed;
+}
+
+@media screen and ( max-width: 630px ) {
+	.columns {
+		flex-direction: column;
+	}
+}
