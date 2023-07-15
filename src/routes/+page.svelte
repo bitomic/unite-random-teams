@@ -6,6 +6,7 @@
     import type { BaseStrategy } from '$lib/strategies/BaseStrategy';
     import { GuaranteeRolesStrategy } from '$lib/strategies/GuaranteeRoles';
     import { UniquePokemonStrategy } from '$lib/strategies/UniquePokemon';
+    import { onMount } from 'svelte';
 
 	const baseUrl = `${ $page.url.protocol }//${ $page.url.host }`
 
@@ -59,6 +60,18 @@
 			}
 		}
 	}
+
+	onMount( () => {
+		document.querySelectorAll( '.checkbox' ).forEach( checkbox => {
+			checkbox.addEventListener( 'click', () => {
+				const cb = checkbox.querySelector( 'input' )
+				if ( cb ) {
+					cb.checked = !cb.checked
+					cb.dispatchEvent( new Event( 'change' ) )
+				}
+			} )
+		} )
+	} )
 </script>
 
 <svelte:head>
