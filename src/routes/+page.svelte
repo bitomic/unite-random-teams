@@ -37,6 +37,19 @@
 		$players.shufflePokemon()
 	}
 
+	const copyTeams = ( e: Event & { currentTarget: EventTarget & HTMLButtonElement } ) => {
+		const oldText = e.currentTarget.textContent
+		navigator.clipboard.writeText( $players.list )
+
+		e.currentTarget.textContent = '¡Copiado!'
+		setTimeout( () => {
+			const btn = document.querySelector( '.btn--secondary' )
+			if ( btn ) {
+				btn.textContent = oldText
+			}
+		}, 1500 )
+	}
+
 	const toggleStrategy = ( strategy: BaseStrategy ) => {
 		return ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
 			if ( e.currentTarget.checked ) {
@@ -73,6 +86,7 @@
 	<div class="column buttons">
 		<button class="btn" on:click={ randomizeTeams }> Cambiar equipos al azar </button>
 		<button class="btn" on:click={ randomizePokemon }> Cambiar todos los Pokémon </button>
+		<button class="btn btn--secondary" on:click={ copyTeams }> Copiar equipos al portapapeles </button>
 	</div>
 </div>
 

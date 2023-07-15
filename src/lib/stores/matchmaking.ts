@@ -114,6 +114,15 @@ export class Matchroom {
 		return list.join( '\n' )
 	}
 
+	public get list(): string {
+		const list: string[] = []
+
+		this.team1.forEach( player => list.push( `${ player.name } - ${ player.pokemon }` ) )
+		this.team2.forEach( player => list.push( `${ player.name } - ${ player.pokemon }` ) )
+
+		return list.join( '\n' )
+	}
+
 	public shufflePlayers() {
 		const items = shuffle( [ ...this.team1, ...this.team2 ] )
 		this.clear()

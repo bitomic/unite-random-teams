@@ -44,8 +44,14 @@
 	text-transform: uppercase;
 	width: 100%;
 }
+.btn--secondary {
+	background-color: #6d4f9d;
+}
 .btn:hover {
 	background-color: #a85a00;
+}
+.btn--secondary:hover {
+	background-color: #4c376d;
 }
 .btn:disabled {
 	background-color: #a57c4d;
