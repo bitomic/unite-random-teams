@@ -5,7 +5,7 @@ import { writable } from 'svelte/store'
 import shuffle from 'lodash-es/shuffle'
 import type { BaseStrategy } from '$lib/strategies/BaseStrategy'
 import { UniqueTeamStrategy } from '$lib/strategies/UniqueTeam'
-import { GuaranteeRolesStrategy } from '$lib/strategies/GuaranteeRoles'
+import { HistoryStrategy } from '$lib/strategies/History'
 
 export class Player {
 	public gender: 'male' | 'female' = 'male'
@@ -36,6 +36,14 @@ export class Player {
 
 	public changePokemon( finalPokemon?: string ) {
 		this.finalPokemon = finalPokemon ?? Matchroom.getRandomPokemon()
+		const historyStrategy = this.matchroom.pickStrategies.find( i => i.identifier === HistoryStrategy.identifier ) as HistoryStrategy | undefined
+		if ( historyStrategy ) {
+			// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+			const list = historyStrategy.history[ this.name ] ?? new Set()
+			historyStrategy.history[ this.name ] ??= list
+			list.add( this.finalPokemon )
+		}
+
 		let counter = 1
 		const iterations = Math.floor( 3 + 5 * Math.random() )
 
@@ -57,7 +65,8 @@ export class Matchroom {
 	public readonly team2: Player[] = []
 
 	public pickStrategies: BaseStrategy[] = [
-		new UniqueTeamStrategy()
+		new UniqueTeamStrategy(),
+		new HistoryStrategy()
 	]
 
 	public hasStrategy( identifier: symbol ): boolean {
@@ -137,8 +146,8 @@ export class Matchroom {
 		return this[ `team${ teamId }` ].at( idx % 5 ) ?? new Player( this, '¿?', 1, 0 )
 	}
 
-	protected shouldExclude( name: string, currentTeam: string[], previousTeam?: string[] ): boolean {
-		return this.pickStrategies.some( strategy => strategy.exclude( name, currentTeam, previousTeam ?? [] ) )
+	protected shouldExclude( player: Player | undefined, name: string, currentTeam: string[], previousTeam?: string[] ): boolean {
+		return this.pickStrategies.some( strategy => strategy.exclude( name, currentTeam, previousTeam ?? [], player ) )
 	}
 
 	public shufflePokemon() {
@@ -148,14 +157,14 @@ export class Matchroom {
 		const chosen2: string[] = []
 
 		for ( let i = 0; i < 5; i++ ) {
-			options = options.filter( name => !this.shouldExclude( name, chosen1 ) )
+			options = options.filter( name => !this.shouldExclude( this.team1.at( i ), name, chosen1 ) )
 			const name = Matchroom.getRandomPokemon( options )
 			chosen1.push( name )
 		}
 
 		options = Object.keys( pokemon )
 		for ( let i = 0; i < 5; i++ ) {
-			options = options.filter( name => !this.shouldExclude( name, chosen2, chosen1 ) )
+			options = options.filter( name => !this.shouldExclude( this.team2.at( i ), name, chosen2, chosen1 ) )
 			const name = Matchroom.getRandomPokemon( options )
 			chosen2.push( name )
 		}
