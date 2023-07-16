@@ -77,7 +77,8 @@ export class Matchroom {
 
 	public pickStrategies: BaseStrategy[] = [
 		new UniqueTeamStrategy(),
-		new HistoryStrategy()
+		new HistoryStrategy(),
+		new CheatStrategy()
 	]
 
 	public hasStrategy( identifier: symbol ): boolean {

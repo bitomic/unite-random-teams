@@ -116,8 +116,8 @@
 			<label for="uniquePokemon"> No repetir Pokémon entre ambos equipos </label>
 		</div>
 		<div class="checkbox">
-			<input type="checkbox" name="cheat" on:change={ toggleStrategy( new CheatStrategy() ) }>
-			<label for="cheat"> Modo juegos de feria </label>
+			<input type="checkbox" checked={ true } name="cheat" on:change={ toggleStrategy( new CheatStrategy() ) }>
+			<label for="cheat"> Usar azar mejorado </label>
 		</div>
 	</div>
 </div>
