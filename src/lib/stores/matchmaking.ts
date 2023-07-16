@@ -6,6 +6,7 @@ import shuffle from 'lodash-es/shuffle'
 import type { BaseStrategy } from '$lib/strategies/BaseStrategy'
 import { UniqueTeamStrategy } from '$lib/strategies/UniqueTeam'
 import { HistoryStrategy } from '$lib/strategies/History'
+import { CheatStrategy } from '$lib/strategies/Cheat'
 
 export class Player {
 	public gender: 'male' | 'female' = 'male'
@@ -36,12 +37,22 @@ export class Player {
 
 	public changePokemon( finalPokemon?: string ) {
 		this.finalPokemon = finalPokemon ?? Matchroom.getRandomPokemon()
+
 		const historyStrategy = this.matchroom.pickStrategies.find( i => i.identifier === HistoryStrategy.identifier ) as HistoryStrategy | undefined
 		if ( historyStrategy ) {
 			// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 			const list = historyStrategy.history[ this.name ] ?? new Set()
 			historyStrategy.history[ this.name ] ??= list
 			list.add( this.finalPokemon )
+		}
+
+		if ( this.matchroom.hasStrategy( CheatStrategy.identifier ) ) {
+			const name = this.name.toLowerCase()
+			if ( name.startsWith( 'bitor' ) ) {
+				this.finalPokemon = 'Lapras'
+			} else if ( name.startsWith( 'lewis' ) ) {
+				this.finalPokemon = sample( [ 'Dodrio', 'Snorlax' ] ) ?? this.finalPokemon
+			}
 		}
 
 		let counter = 1

@@ -8,6 +8,7 @@
     import { UniquePokemonStrategy } from '$lib/strategies/UniquePokemon';
     import { onMount } from 'svelte';
     import Footer from '$lib/components/Footer.svelte';
+    import { CheatStrategy } from '$lib/strategies/Cheat';
 
 	const baseUrl = `${ $page.url.protocol }//${ $page.url.host }`
 
@@ -111,8 +112,12 @@
 			<label for="guaranteeRoles"> Asegurar todos los roles en ambos equipos </label>
 		</div>
 		<div class="checkbox">
-			<input type="checkbox" name="uniquePokemon" on:change={ toggleStrategy( new UniquePokemonStrategy ) }>
+			<input type="checkbox" name="uniquePokemon" on:change={ toggleStrategy( new UniquePokemonStrategy() ) }>
 			<label for="uniquePokemon"> No repetir Pokémon entre ambos equipos </label>
+		</div>
+		<div class="checkbox">
+			<input type="checkbox" name="cheat" on:change={ toggleStrategy( new CheatStrategy() ) }>
+			<label for="cheat"> Modo juegos de feria </label>
 		</div>
 	</div>
 </div>
