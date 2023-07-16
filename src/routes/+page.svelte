@@ -7,6 +7,7 @@
     import { GuaranteeRolesStrategy } from '$lib/strategies/GuaranteeRoles';
     import { UniquePokemonStrategy } from '$lib/strategies/UniquePokemon';
     import { onMount } from 'svelte';
+    import Footer from '$lib/components/Footer.svelte';
 
 	const baseUrl = `${ $page.url.protocol }//${ $page.url.host }`
 
@@ -115,5 +116,7 @@
 		</div>
 	</div>
 </div>
+
+<Footer />
 
 <style src="./+page.css"></style>

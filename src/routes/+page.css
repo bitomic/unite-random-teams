@@ -81,6 +81,13 @@
 	margin-top: 1em;
 }
 .checkbox {
+	align-items: center;
+	column-gap: 0.5em;
 	cursor: pointer;
+	display: flex;
 	flex-basis: 50%;
+}
+.checkbox input {
+	height: 30px;
+	width: 30px;
 }
