@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import { faker } from '@faker-js/faker'
 import pokemon from '../../pokemon.json'
 import { writable } from 'svelte/store'

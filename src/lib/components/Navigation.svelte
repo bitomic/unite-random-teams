@@ -5,13 +5,13 @@
 </script>
 <nav class="navigation">
 	<a href="/" class="navigation__home">
-		<img src="logo-small.png" alt="logo" class="navigation__logo" width="80">
+		<img src="/logo-small.png" alt="logo" class="navigation__logo" width="80">
 		<h1> { $_.get( 'navigation.title' ) } </h1>
 	</a>
 	<div class="navigation__filler"></div>
 	<ul class="navigation__links">
 		<li> <a href="/"> Home </a> </li>
-		<li> <a href="/"> Home </a> </li>
+		<li> <Button href="/twitch" style="purple"> Integrate with Twitch </Button> </li>
 	</ul>
 </nav>
 
@@ -33,6 +33,7 @@ a {
 	flex-grow: 1;
 }
 .navigation__links {
+	align-items: center;
 	column-gap: 2em;
 	display: flex;
 	list-style: none;

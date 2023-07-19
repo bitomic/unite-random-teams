@@ -1,5 +1,12 @@
 {
 	"navigation": {
 		"title": "Unite Random Teams"
+	},
+	"twitch": {
+		"connect": "Connect",
+		"input-placeholder": "Enter your Twitch username",
+		"status-connected": "Connected",
+		"status-connecting": "Connecting",
+		"status-disconnected": "Disconnected"
 	}
 }
