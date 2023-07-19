@@ -1,11 +1,12 @@
 <script>
+    import { _ } from "../stores/i18n";
     import Button from "./Button.svelte";
 
 </script>
 <nav class="navigation">
 	<a href="/" class="navigation__home">
 		<img src="logo-small.png" alt="logo" class="navigation__logo" width="80">
-		<h1> Unite Random Teams </h1>
+		<h1> { $_.get( 'navigation.title' ) } </h1>
 	</a>
 	<div class="navigation__filler"></div>
 	<ul class="navigation__links">
