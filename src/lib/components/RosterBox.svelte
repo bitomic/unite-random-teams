@@ -1,11 +1,11 @@
 <script lang="ts">
 	export let pokemon: string
-	export let role: 'attacker' | 'all-rounder' | 'defender' | 'speedster' | 'supporter'
+	export let role: 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter'
 	export let team: 'orange' | 'purple'
 	export let trainer: string
 </script>
 
-<div class="roster roster--{ role } roster--{ team }">
+<div class="roster roster--{ role.toLowerCase() } roster--{ team }">
 	<div class="roster__image">
 		<img src="/roster/{ pokemon }.png" alt={ pokemon } width="200">
 	</div>
@@ -56,7 +56,7 @@
 	display: flex;
 	flex-direction: column;
 	font-family: 'Exo 2';
-	height: 234px;
+	height: 270px;
 	overflow: hidden;
 	position: relative;
 	width: 165px;
