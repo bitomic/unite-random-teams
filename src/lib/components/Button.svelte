@@ -29,7 +29,7 @@
 	box-shadow: 0 0 7px #ff6a15;
 }
 .btn--icon::after {
-	background-image: url("https://i.imgur.com/o4wIRTl.png");
+	background-image: url("/pokeball.png");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
