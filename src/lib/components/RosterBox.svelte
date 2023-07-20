@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Player } from '$lib/stores/matchroom'
+    import type { Player } from '$lib/client/stores/matchroom'
 
 	export let player: Player
 	export let team: 'orange' | 'purple'

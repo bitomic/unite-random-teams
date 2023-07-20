@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _ } from '../lib/stores/i18n'
+	import { _ } from '../lib/client/stores/i18n'
     import Navigation from '../lib/components/Navigation.svelte'
 
 	export let data: {

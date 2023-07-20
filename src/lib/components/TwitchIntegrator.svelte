@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { _ } from '$lib/stores/i18n';
+    import { _ } from '$lib/client/stores/i18n';
     import Button from './Button.svelte'
 	import TextInput from './TextInput.svelte'
 	import tmi from 'tmi.js'

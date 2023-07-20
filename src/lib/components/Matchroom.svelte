@@ -1,5 +1,5 @@
 <script>
-    import { matchroom } from "$lib/stores/matchroom";
+    import { matchroom } from "$lib/client/stores/matchroom";
     import RosterBox from "./RosterBox.svelte";
 
 </script>

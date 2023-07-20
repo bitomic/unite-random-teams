@@ -4,7 +4,7 @@ import Matchroom from '$lib/components/Matchroom.svelte'
     import PreloadImages from '$lib/components/PreloadImages.svelte';
     import TextInput from '$lib/components/TextInput.svelte';
     import TwitchIntegrator from '$lib/components/TwitchIntegrator.svelte';
-    import { _ } from '$lib/stores/i18n';
+    import { _ } from '$lib/client/stores/i18n';
 
 </script>
 

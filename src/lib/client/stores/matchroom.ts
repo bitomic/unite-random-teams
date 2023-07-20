@@ -1,6 +1,6 @@
 /* eslint-disable max-classes-per-file */
 import { faker } from '@faker-js/faker'
-import pokemon from '../../pokemon.json'
+import pokemon from '../../../pokemon.json'
 import { writable } from 'svelte/store'
 import sample from 'lodash-es/sample'
 
@@ -31,7 +31,7 @@ export class Player {
 
 		let counter = 1
 		const iterations = Math.floor( 3 + 5 * Math.random() )
-		
+
 		const interval = setInterval( () => {
 			if ( ++counter >= iterations ) {
 				this.options.pokemon = this.finalPokemon

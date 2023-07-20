@@ -1,7 +1,8 @@
 import type { RequestEvent } from '@sveltejs/kit'
 import type { inferAsyncReturnType } from '@trpc/server'
 
-export const createContext = ( event: RequestEvent ) => ( {
+// eslint-disable-next-line require-await
+export const createContext = async ( event: RequestEvent ) => ( {
 	userId: event.cookies.get( 'user_id' )
 } )
 

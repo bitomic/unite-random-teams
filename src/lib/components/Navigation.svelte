@@ -1,7 +1,7 @@
 <script>
     import { page } from "$app/stores";
     import { trpc } from "$lib/client/trpc";
-    import { _ } from "../stores/i18n";
+    import { _ } from "../client/stores/i18n";
     import Button from "./Button.svelte";
 
 	const t = trpc($page)
