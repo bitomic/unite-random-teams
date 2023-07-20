@@ -15,6 +15,10 @@
     export let data: PageData
 </script>
 
+<svelte:head>
+    <title> { $_.get( 'navigation.title' ) } </title>
+</svelte:head>
+
 <PreloadImages />
 
 <div class="columns">
