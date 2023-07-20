@@ -1,7 +1,6 @@
 <script lang="ts">
     import { _ } from '$lib/client/stores/i18n';
     import { matchroom } from '$lib/client/stores/matchroom'
-    import { toInteger } from 'lodash-es';
     import TextInput from './TextInput.svelte';
     import Button from './Button.svelte';
     import { trpc } from '$lib/client/trpc';
