@@ -3,6 +3,11 @@
 		"greeting": "Hi, $1!",
 		"title": "Unite Random Teams"
 	},
+	"strategies": {
+		"all-roles": "Guarantee all roles in both teams",
+		"global-unique-pokemon": "Don't repeat Pokémon between both teams.",
+		"header": "Custom rules"
+	},
 	"twitch": {
 		"connect": "Connect to chat",
 		"input-placeholder": "Enter your Twitch username",

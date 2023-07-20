@@ -1,5 +1,28 @@
+<script lang="ts">
+    import { matchroom } from '$lib/client/stores/matchroom';
+    import type { BaseStrategy } from '$lib/client/strategies/BaseStrategy'
+    import { onMount } from 'svelte';
+
+	export let strategy: BaseStrategy
+	let checkbox: HTMLInputElement
+
+	const change = ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
+		const cb = e.currentTarget
+		if ( cb.checked ) {
+			$matchroom.pickStrategies.addStrategy( strategy )
+		} else {
+			$matchroom.pickStrategies.removeStrategy( strategy )
+		}
+	}
+
+	onMount( () => {
+		if ( !checkbox ) return
+		checkbox.checked = $matchroom.pickStrategies.hasStrategy( strategy.identifier )
+	} )
+</script>
+
 <div class="checkbox">
-	<input type="checkbox">
+	<input type="checkbox" on:change={ change } bind:this={ checkbox }>
 	<label for=""> <slot /> </label>
 </div>
 

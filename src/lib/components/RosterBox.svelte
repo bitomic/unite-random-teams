@@ -1,11 +1,11 @@
 <script lang="ts">
-    import type { Player } from '$lib/client/stores/matchroom'
+    import type { Player } from '$lib/client/structures'
 
 	export let player: Player
 	export let team: 'orange' | 'purple'
 
 	const click = () => {
-		player.changePokemon()
+		player.changePokemon( undefined )
 	}
 </script>
 
