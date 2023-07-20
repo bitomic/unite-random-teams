@@ -15,7 +15,7 @@ export class TwitchClient {
 	public static readonly validator = s.object<TwitchOptions>( {
 		access_token: s.string,
 		created_at: s.number,
-		expires_in: s.number.int,
+		expires_in: s.number.transform( value => value * 1000 ),
 		refresh_token: s.string,
 		scope: s.string.array,
 		token_type: s.string
@@ -39,6 +39,11 @@ export class TwitchClient {
 		}
 
 		const options = this.validator.parse( JSON.parse( stored ) )
+
+		if ( options.created_at + options.expires_in >= Date.now() ) {
+			throw new Error( 'Session expired' )
+		}
+
 		return new TwitchClient( options )
 	}
 
