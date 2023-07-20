@@ -30,6 +30,7 @@ export class TwitchClient {
 			created_at: Date.now(),
 		} ) )
 		await redis.set( this.getKey( userId ), JSON.stringify( token ) )
+		await redis.expire( this.getKey( userId ), token.expires_in / 1000 )
 	}
 
 	public static async fetch( userId: string ): Promise<TwitchClient> {
