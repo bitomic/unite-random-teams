@@ -40,7 +40,7 @@ export class TwitchClient {
 
 		const options = this.validator.parse( JSON.parse( stored ) )
 
-		if ( options.created_at + options.expires_in >= Date.now() ) {
+		if ( options.created_at + options.expires_in <= Date.now() ) {
 			throw new Error( 'Session expired' )
 		}
 

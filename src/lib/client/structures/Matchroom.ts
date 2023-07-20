@@ -13,6 +13,7 @@ export class Matchroom {
 		new UniqueTeamStrategy(),
 		new GlobalUniquePokemonStrategy()
 	)
+	public readonly waitlist = new Set<string>()
 	public store: Writable<Matchroom> | null = null
 	public team1: Player[] = []
 	public team2: Player[] = []

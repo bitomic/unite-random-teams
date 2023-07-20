@@ -10,6 +10,7 @@
 	},
 	"twitch": {
 		"connect": "Connect to chat",
+		"default-command": "queue",
 		"input-placeholder": "Enter your Twitch username",
 		"status-connected": "Connected",
 		"status-connecting": "Connecting",
