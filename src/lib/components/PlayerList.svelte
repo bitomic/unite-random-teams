@@ -99,7 +99,9 @@
 	height: 30px;
 	margin-right: 0.5em;
 	mask-image: url("/pokeball.png");
+	-webkit-mask-image: url("/pokeball.png");
 	mask-size: contain;
+	-webkit-mask-size: contain;
 	width: 30px;
 }
 .playerlist__item:nth-child( -n + 5 )::before {
