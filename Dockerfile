@@ -59,4 +59,4 @@ USER node
 # EXPOSE 3000
 
 ENV CI=
-CMD [ "doppler", "run", "--" "yarn", "node", "build" ]
+CMD [ "yarn", "start" ]
