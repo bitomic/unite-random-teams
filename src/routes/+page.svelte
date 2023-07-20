@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Checkbox from '$lib/components/Checkbox.svelte';
     import Matchroom from '$lib/components/Matchroom.svelte'
     import PreloadImages from '$lib/components/PreloadImages.svelte';
@@ -10,7 +10,9 @@
     import { GlobalUniquePokemonStrategy } from '$lib/client/strategies/GlobalUniquePokemon';
     import { AllRolesStrategy } from '$lib/client/strategies/AllRolesStrategy';
     import PlayerList from '$lib/components/PlayerList.svelte';
+    import type { PageData } from './$types';
 
+    export let data: PageData
 </script>
 
 <PreloadImages />
@@ -24,7 +26,7 @@
             <TwitchIntegrator />
         </div>
         <div class="module">
-            <PlayerList />
+            <PlayerList user={ data.user } />
         </div>
         <div class="module module--buttons">
             <Button fullWidth={ true } click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>

@@ -1,13 +1,13 @@
-<script>
+<script lang="ts">
     import { page } from "$app/stores";
     import { trpc } from "$lib/client/trpc";
     import { _ } from "../client/stores/i18n";
     import Button from "./Button.svelte";
 
 	const t = trpc($page)
-	const isLoggedIn = t.twitch.loggedIn.query()
-	const user = t.twitch.me.query()
+	export let user: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
 </script>
+
 <nav class="navigation">
 	<a href="/" class="navigation__home">
 		<img src="/logo-small.png" alt="logo" class="navigation__logo" width="80">
@@ -17,21 +17,15 @@
 	<ul class="navigation__links">
 		<li> <a href="/"> Home </a> </li>
 		<!-- svelte-ignore empty-block -->
-		{ #await user }
-		{ :then user }
+		{ #if user }
 			<li class="navigation__user">
-				<img src={ user.data[0].profile_image_url } alt="avatar" width="24">
-				<a href="https://twitch.tv/{ user.data[0].login }"> { user.data[0].display_name } </a>
+				<img src={ user.profile_image_url } alt="avatar" width="24">
+				<a href="https://twitch.tv/{ user.login }"> { user.display_name } </a>
 			</li>
-		{ :catch _e }
-		{ /await}
-		{ #await isLoggedIn }
-			<li> <Button style="purple"> Loading... </Button> </li>
-		{ :then _isLoggedIn }
-			<li> <Button href="/twitch/disconnect" style="purple"> Disconnect </Button> </li>
-		{ :catch _e }
+			<li> <Button href="/twitch/disconnect" style="purple"> { $_.get( 'navigation.disconnect' ) } </Button> </li>
+		{ :else }
 			<li> <Button href="/twitch" style="purple"> { $_.get( 'twitch.integrate' ) } </Button> </li>
-		{ /await }
+		{ /if }
 	</ul>
 </nav>
 

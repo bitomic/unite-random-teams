@@ -8,6 +8,7 @@
     import { page } from '$app/stores';
 	
 	const t = trpc($page)
+	export let user: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
 
 	const announce = async () => {
 		const message = [
@@ -82,7 +83,10 @@
 		{ /each }
 	</div>
 
-	<Button click={ announce } style="purple"> Announce </Button>
+	{ #if user }
+		<div class="playerlist__announcement"> { $_.get( 'playerlist.announcement-details' ) } </div>
+		<Button click={ announce } style="purple"> { $_.get( 'playerlist.announce' ) } </Button>
+	{ /if }
 </div>
 
 <style>
@@ -128,5 +132,8 @@
 .playerlist__item:nth-child( 9 )::before,
 .playerlist__item:nth-child( 10 )::before {
 	background-color: #ff7d29;
+}
+.playerlist__announcement {
+	margin: 0.5em 0;
 }
 </style>

@@ -4,14 +4,16 @@
 		"shuffle-pokemon": "Shuffle Pokémon"
 	},
 	"navigation": {
-		"greeting": "Hi, $1!",
+		"disconnect": "Disconnect",
 		"title": "Unite Random Teams"
 	},
 	"playerlist": {
+		"announce": "Announce",
+		"announcement-details": "Send an announcement on your channel's chat with the players and Pokémon in each team.",
 		"placeholder": "Enter a name"
 	},
 	"strategies": {
-		"all-roles": "Guarantee all roles in both teams",
+		"all-roles": "Guarantee all roles in both teams.",
 		"global-unique-pokemon": "Don't repeat Pokémon between both teams.",
 		"header": "Custom rules"
 	},
