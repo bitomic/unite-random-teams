@@ -64,6 +64,6 @@
 	width: 40px;
 }
 .btn--full {
-	width: 100%;
+	width: 80%;
 }
 </style>

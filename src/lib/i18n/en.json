@@ -1,7 +1,14 @@
 {
+	"buttons": {
+		"shuffle-players": "Shuffle players",
+		"shuffle-pokemon": "Shuffle Pokémon"
+	},
 	"navigation": {
 		"greeting": "Hi, $1!",
 		"title": "Unite Random Teams"
+	},
+	"playerlist": {
+		"placeholder": "Enter a name"
 	},
 	"strategies": {
 		"all-roles": "Guarantee all roles in both teams",
@@ -9,9 +16,12 @@
 		"header": "Custom rules"
 	},
 	"twitch": {
+		"command": "command",
 		"connect": "Connect to chat",
 		"default-command": "queue",
+		"details": "If you connect to your chat, your viewers will be able to join using your command, e.g. !queue",
 		"input-placeholder": "Enter your Twitch username",
+		"integrate": "Integrate with Twitch",
 		"status-connected": "Connected",
 		"status-connecting": "Connecting",
 		"status-disconnected": "Disconnected"

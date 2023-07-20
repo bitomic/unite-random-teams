@@ -30,7 +30,7 @@
 		{ :then _isLoggedIn }
 			<li> <Button href="/twitch/disconnect" style="purple"> Disconnect </Button> </li>
 		{ :catch _e }
-			<li> <Button href="/twitch" style="purple"> Integrate with Twitch </Button> </li>
+			<li> <Button href="/twitch" style="purple"> { $_.get( 'twitch.integrate' ) } </Button> </li>
 		{ /await }
 	</ul>
 </nav>

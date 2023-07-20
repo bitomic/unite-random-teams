@@ -55,6 +55,7 @@
 		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ command } />
 	</div>
 	<Button style="purple" click={ handle }> { $_.get( 'twitch.connect' ) } </Button>
+	<div class="twitch__details"> { $_.get( 'twitch.details' ) } </div>
 </div>
 
 <style>
@@ -85,5 +86,8 @@
 	border-radius: 5px;
 	padding: 0.35em;
 	width: 20px;
+}
+.twitch__details {
+	font-size: 0.9em;
 }
 </style>

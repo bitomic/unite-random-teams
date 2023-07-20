@@ -32,4 +32,19 @@
 	column-gap: 1.5em;
 	display: flex;
 }
+@media (max-width: 1397px) {
+	.matchroom {
+		margin: 0;
+	}
+	.matchroom__team {
+		column-gap: 0;
+	}
+}
+@media (max-width: 840px) {
+	.matchroom__team {
+		column-gap: 2em;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
 </style>

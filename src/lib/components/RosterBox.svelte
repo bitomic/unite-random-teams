@@ -117,4 +117,10 @@
 	color: #000;
 	font-size: 0.9em;
 }
+
+@media (max-width: 1397px) {
+	.roster {
+		scale: 0.85;
+	}
+}
 </style>
