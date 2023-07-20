@@ -6,7 +6,7 @@
 <div class="matchroom">
 	<div class="matchroom__team">
 		{ #each $matchroom.team1 as player }
-			<RosterBox pokemon={ player.pokemon } role={ player.role } team="purple" trainer={ player.name } />
+			<RosterBox player={ player } team="purple" />
 		{ /each }
 	</div>
 	<div class="matchroom__vs">
@@ -14,7 +14,7 @@
 	</div>
 	<div class="matchroom__team">
 		{ #each $matchroom.team2 as player }
-			<RosterBox pokemon={ player.pokemon } role={ player.role } team="orange" trainer={ player.name } />
+			<RosterBox player={ player } team="orange" />
 		{ /each }
 	</div>
 </div>

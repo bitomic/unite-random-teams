@@ -1,17 +1,22 @@
 <script lang="ts">
-	export let pokemon: string
-	export let role: 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter'
+    import type { Player } from '$lib/stores/matchroom'
+
+	export let player: Player
 	export let team: 'orange' | 'purple'
-	export let trainer: string
+
+	const click = () => {
+		player.changePokemon()
+	}
 </script>
 
-<div class="roster roster--{ role.toLowerCase() } roster--{ team }">
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
+<div class="roster roster--{ player.role.toLowerCase() } roster--{ team }" on:click={ click }>
 	<div class="roster__image">
-		<img src="/roster/{ pokemon }.png" alt={ pokemon } width="200">
+		<img src="/roster/{ player.pokemon }.png" alt={ player.pokemon } width="200">
 	</div>
 	<div class="roster__data">
-		<div class="roster__pokemon"> { pokemon } </div>
-		<div class="roster__trainer"> { trainer } </div>
+		<div class="roster__pokemon"> { player.pokemon } </div>
+		<div class="roster__trainer"> { player.name } </div>
 	</div>
 </div>
 
