@@ -13,7 +13,7 @@ export class Matchroom {
 		new UniqueTeamStrategy(),
 		new GlobalUniquePokemonStrategy()
 	)
-	public readonly waitlist = new Set<string>()
+	protected playerlist: string[] = []
 	public store: Writable<Matchroom> | null = null
 	public team1: Player[] = []
 	public team2: Player[] = []
@@ -72,5 +72,41 @@ export class Matchroom {
 			} ) )
 			player.changePokemon( sample( options ) )
 		}
+	}
+
+	public get players(): string[] { return this.playerlist }
+
+	public queue( name: string ) {
+		if ( this.playerlist.includes( name ) ) return
+		this.playerlist.push( name )
+
+		const defaultPlayer = [ ...this.team1, ...this.team2 ].find( p => this.startingNames.has( p.name ) )
+		if ( defaultPlayer ) {
+			defaultPlayer.name = name
+		}
+
+		this.store?.set( this )
+	}
+
+	public swap( from: number, to: number ) {
+		if ( from >= this.playerlist.length || to >= this.playerlist.length ) return
+
+		const pivot = this.playerlist.at( from )
+		if ( !pivot ) return
+
+		this.playerlist[ from ] = this.playerlist[ to ]
+		this.playerlist[ to ] = pivot
+
+		const fromPlayer = this.findPlayerByName( this.playerlist[ from ] )
+		const toPlayer = this.findPlayerByName( this.playerlist[ to ] )
+		if ( fromPlayer ) fromPlayer.name = this.playerlist[ to ]
+		if ( toPlayer ) toPlayer.name = this.playerlist[ from ]
+
+		this.store?.set( this )
+	}
+
+	public findPlayerByName( name?: string ): Player | undefined {
+		return this.team1.find( p => p.name === name )
+			?? this.team2.find( p => p.name === name )
 	}
 }

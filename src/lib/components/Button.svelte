@@ -1,17 +1,19 @@
 <script lang="ts">
 	export let click: ( () => void ) | null = null
+	export let fullWidth = false
 	export let href: string | null = null
 	export let icon = true
 	export let style: 'default' | 'purple' = 'default'
 
 	const tag = href ? 'a' : 'div'
 	const iconClass = icon ? 'btn--icon' : ''
+	const widthClass = fullWidth ? 'btn--full' : ''
 </script>
 
 <svelte:element
 	this={ tag }
 	href={ href }
-	class="btn btn--{ style } { iconClass }"
+	class="btn btn--{ style } { iconClass } { widthClass }"
 	role="button"
 	tabindex="0"
 	on:click={ click }>
@@ -60,5 +62,8 @@
 	rotate: -45deg;
 	right: -10px;
 	width: 40px;
+}
+.btn--full {
+	width: 100%;
 }
 </style>

@@ -34,7 +34,7 @@
 			if ( !message.toLowerCase().startsWith( `!${ command }` ) ) return
 			const name = user[ 'display-name' ]
 			if ( name ) {
-				$matchroom.waitlist.add( name )
+				$matchroom.queue( name )
 			}
 		} )
 	}

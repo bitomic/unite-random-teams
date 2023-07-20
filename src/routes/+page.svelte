@@ -9,6 +9,7 @@
     import { matchroom } from '$lib/client/stores/matchroom';
     import { GlobalUniquePokemonStrategy } from '$lib/client/strategies/GlobalUniquePokemon';
     import { AllRolesStrategy } from '$lib/client/strategies/AllRolesStrategy';
+    import PlayerList from '$lib/components/PlayerList.svelte';
 
 </script>
 
@@ -21,6 +22,9 @@
     <div class="column column--right">
         <div class="module">
             <TwitchIntegrator />
+        </div>
+        <div class="module">
+            <PlayerList />
         </div>
         <div class="module">
             <Button click={ () => $matchroom.shufflePlayers() }> Shuffle players </Button>
