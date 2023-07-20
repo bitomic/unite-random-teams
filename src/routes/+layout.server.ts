@@ -1,5 +1,5 @@
 import { trpc } from '$lib/client/trpc'
-import { TwitchClient, t } from '$lib/server'
+import { t, TwitchClient } from '$lib/server'
 import type { LayoutServerLoad } from './$types'
 
 const availableLanguages = new Set( Object.keys( import.meta.glob( '../lib/i18n/*.json' ) ).map( i => i.match( /(\w+)\.json/ )?.at( 1 ) ) )

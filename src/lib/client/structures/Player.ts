@@ -22,7 +22,7 @@ export class Player {
 	public set name( value: string ) { this.options.name = value }
 	public get pokemon(): string { return this.options.pokemon }
 	public get role(): 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter' {
-		return pokemon[ this.finalPokemon as keyof typeof pokemon ].role as 'Attacker' | undefined ?? 'Attacker'
+		return pokemon[ this.pokemon as keyof typeof pokemon ].role as 'Attacker' | undefined ?? 'Attacker'
 	}
 
 	public changePokemon( name?: string ) {

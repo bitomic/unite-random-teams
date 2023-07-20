@@ -19,7 +19,7 @@ const announce = p
 				id: string
 			} ]
 		}
-		const userId = user.data[0].id
+		const userId = user.data[ 0 ].id
 		await client.post( `chat/announcements?broadcaster_id=${ userId }&moderator_id=${ userId }`, {
 			color: opts.input.color,
 			message: opts.input.message
