@@ -1,8 +1,8 @@
 import { error, redirect } from '@sveltejs/kit'
-import type { PageServerLoad } from './$types'
+import type { RequestHandler } from './$types'
 import { env, TwitchClient } from '$lib/server'
 
-export const load: PageServerLoad = async event => {
+export const GET: RequestHandler = async event => {
 	const url = new URL( event.request.url )
 	const userId = event.cookies.get( 'user_id' )
 
@@ -30,8 +30,9 @@ export const load: PageServerLoad = async event => {
 		} )
 		const token = await req.json() as unknown
 		await TwitchClient.register( userId, token )
-		throw redirect( 302, '/' )
-	} catch {
+	} catch ( e ) {
 		throw error( 400 )
 	}
+
+	throw redirect( 302, '/' )
 }

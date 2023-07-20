@@ -14,6 +14,11 @@
 	const handle = () => {
 		status = 'connecting'
 
+		if ( client  ) {
+			client.disconnect()
+			client = null
+		}
+
 		client = new tmi.Client( {
 			channels: [ 'mairuno_' ]
 		} )

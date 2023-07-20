@@ -32,6 +32,7 @@
 	border: 3px solid #000;
 	border-radius: 18px;
 	color: inherit;
+	cursor: pointer;
 	display: inline-block;
 	font-size: 1.25em;
 	min-width: 80px;

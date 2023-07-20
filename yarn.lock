@@ -777,6 +777,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@trpc/client@npm:^10.34.0":
+  version: 10.34.0
+  resolution: "@trpc/client@npm:10.34.0"
+  peerDependencies:
+    "@trpc/server": 10.34.0
+  checksum: 7589d575d92865091da72bf0eb7efbfc474422aecc2d4ac146be334bbe83a2a67eb185654dccb91b90e23207bfada2b9f4e4ebcc25a24c2a7e033c177f13e10c
+  languageName: node
+  linkType: hard
+
+"@trpc/server@npm:^10.34.0":
+  version: 10.34.0
+  resolution: "@trpc/server@npm:10.34.0"
+  checksum: 6d319c98f8a152539cd46769884ddea01bf00daaf1780067b1a1e34b45a107ab702b72e0086fa8924be44d9211b51c8f4e53ab6e85583fa53fa5893df5847c62
+  languageName: node
+  linkType: hard
+
 "@types/chai-subset@npm:^1.3.3":
   version: 1.3.3
   resolution: "@types/chai-subset@npm:1.3.3"
@@ -4604,6 +4620,8 @@ __metadata:
     "@sapphire/shapeshift": ^3.9.2
     "@sveltejs/adapter-node": ^1.3.1
     "@sveltejs/kit": ^1.22.3
+    "@trpc/client": ^10.34.0
+    "@trpc/server": ^10.34.0
     "@types/d3": ^7.4.0
     "@types/lodash-es": ^4.17.8
     "@types/tmi.js": ^1.8.3
@@ -4621,6 +4639,7 @@ __metadata:
     svelte-check: ^3.4.6
     svelte-preprocess: ^5.0.4
     tmi.js: ^1.8.5
+    trpc-sveltekit: ^3.5.17
     ts-dotenv: ^0.9.1
     tslib: ^2.6.0
     typescript: ^5.1.6
@@ -4736,6 +4755,19 @@ __metadata:
   version: 0.0.3
   resolution: "tr46@npm:0.0.3"
   checksum: 726321c5eaf41b5002e17ffbd1fb7245999a073e8979085dacd47c4b4e8068ff5777142fc6726d6ca1fd2ff16921b48788b87225cbc57c72636f6efa8efbffe3
+  languageName: node
+  linkType: hard
+
+"trpc-sveltekit@npm:^3.5.17":
+  version: 3.5.17
+  resolution: "trpc-sveltekit@npm:3.5.17"
+  peerDependencies:
+    "@sveltejs/adapter-node": ">=1.2"
+    "@trpc/client": ">=10"
+    "@trpc/server": ">=10"
+    "@types/ws": ">=8"
+    ws: ">=8"
+  checksum: 7276fe024dab86975974c96e91b935d8f0b1b9a1c287ee83196d8aaa3b2578497e5a87c7e3d06761131ca86f5fa09a22cf9837e390ba4d287f134fb3c73970c0
   languageName: node
   linkType: hard
 

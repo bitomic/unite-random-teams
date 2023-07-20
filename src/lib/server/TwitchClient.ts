@@ -1,5 +1,6 @@
 import { s } from '@sapphire/shapeshift'
 import { redis } from './redis'
+import { env } from './environment'
 
 export interface TwitchOptions {
 	access_token: string
@@ -29,5 +30,34 @@ export class TwitchClient {
 			created_at: Date.now(),
 		} ) )
 		await redis.set( this.getKey( userId ), JSON.stringify( token ) )
+	}
+
+	public static async fetch( userId: string ): Promise<TwitchClient> {
+		const stored = await redis.get( this.getKey( userId ) )
+		if ( !stored ) {
+			throw new Error( 'Session not found' )
+		}
+
+		const options = this.validator.parse( JSON.parse( stored ) )
+		return new TwitchClient( options )
+	}
+
+	public readonly options: TwitchOptions
+
+	public constructor( options: TwitchOptions ) {
+		this.options = options
+	}
+
+	public async get( route: string, params: Record<string, string> = {} ): Promise<unknown> {
+		const url = new URL( `helix/${ route }`, 'https://api.twitch.tv' )
+		Object.entries( params ).forEach( ( [ key, value ] ) => url.searchParams.append( key, value ) )
+
+		const req = await fetch( url, {
+			headers: {
+				Authorization: `Bearer ${ this.options.access_token }`,
+				'Client-Id': env.TWITCH_CLIENT_ID
+			}
+		} )
+		return req.json()
 	}
 }

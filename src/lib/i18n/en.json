@@ -1,9 +1,10 @@
 {
 	"navigation": {
+		"greeting": "Hi, $1!",
 		"title": "Unite Random Teams"
 	},
 	"twitch": {
-		"connect": "Connect",
+		"connect": "Connect to chat",
 		"input-placeholder": "Enter your Twitch username",
 		"status-connected": "Connected",
 		"status-connecting": "Connecting",
