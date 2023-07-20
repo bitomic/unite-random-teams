@@ -74,7 +74,7 @@ jobs:
     uses: bitomic/utilities/.github/workflows/docker-deploy.yml@43040b5429c539c4a000f2baa752d45eb5dfae7c
     secrets:
       DOCKER_NETWORK: "${{ secrets.DOCKER_NETWORK }}"
-      DOPPLER_TOKEN: ""
+      DOPPLER_TOKEN: "${{ secrets.DOPPLER_TOKEN }}"
       GHCR_TOKEN: "${{ secrets.GHCR_TOKEN }}"
       GHCR_USER: "${{ secrets.GHCR_USER }}"
       SSH_HOST: "${{ secrets.SSH_HOST }}"

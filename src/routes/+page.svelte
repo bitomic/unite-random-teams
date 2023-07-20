@@ -1,127 +1,109 @@
 <script lang="ts">
-    import { players } from '$lib/stores/matchmaking'
-	import pokemon from '../pokemon.json'
-    import Team from '$lib/components/Team.svelte'
-    import { page } from '$app/stores';
-    import type { BaseStrategy } from '$lib/strategies/BaseStrategy';
-    import { GuaranteeRolesStrategy } from '$lib/strategies/GuaranteeRoles';
-    import { UniquePokemonStrategy } from '$lib/strategies/UniquePokemon';
-    import { onMount } from 'svelte';
-    import Footer from '$lib/components/Footer.svelte';
-    import { CheatStrategy } from '$lib/strategies/Cheat';
+    import Checkbox from '$lib/components/Checkbox.svelte';
+    import Matchroom from '$lib/components/Matchroom.svelte'
+    import PreloadImages from '$lib/components/PreloadImages.svelte';
+    import TextInput from '$lib/components/TextInput.svelte';
+    import TwitchIntegrator from '$lib/components/TwitchIntegrator.svelte';
+    import { _ } from '$lib/client/stores/i18n';
+    import Button from '$lib/components/Button.svelte';
+    import { matchroom } from '$lib/client/stores/matchroom';
+    import { GlobalUniquePokemonStrategy } from '$lib/client/strategies/GlobalUniquePokemon';
+    import { AllRolesStrategy } from '$lib/client/strategies/AllRolesStrategy';
+    import PlayerList from '$lib/components/PlayerList.svelte';
+    import type { PageData } from './$types';
 
-	const baseUrl = `${ $page.url.protocol }//${ $page.url.host }`
-
-	$players.clear()
-
-	for ( let idx = 1; idx <= 5; idx++ ) {
-		$players.addPlayer( `Entrenador ${ idx }` )
-		$players.addPlayer( `Entrenador ${ idx }` )
-	}
-
-	const changeAvatar = ( position: number, team: 1 | 2 ) => {
-		const player = $players[ `team${ team }` ].at( position )
-		if ( !player ) return
-		player.changeSkin()
-		players.set( $players )
-	}
-
-	const changePokemon = ( position: number, team: 1 | 2 ) => {
-		const player = $players[ `team${ team }` ].at( position )
-		if ( !player ) return
-		player.changePokemon()
-	}
-
-	const randomizeTeams = () => {
-		$players.shufflePlayers()
-	}
-
-	const randomizePokemon = () => {
-		$players.shufflePokemon()
-	}
-
-	const copyTeams = ( e: Event & { currentTarget: EventTarget & HTMLButtonElement } ) => {
-		const oldText = e.currentTarget.textContent
-		navigator.clipboard.writeText( $players.list )
-
-		e.currentTarget.textContent = '¡Copiado!'
-		setTimeout( () => {
-			const btn = document.querySelector( '.btn--secondary' )
-			if ( btn ) {
-				btn.textContent = oldText
-			}
-		}, 1500 )
-	}
-
-	const toggleStrategy = ( strategy: BaseStrategy ) => {
-		return ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
-			if ( e.currentTarget.checked ) {
-				$players.addStrategy( strategy )
-			} else {
-				$players.removeStrategy( strategy.identifier )
-			}
-		}
-	}
-
-	onMount( () => {
-		document.querySelectorAll( '.checkbox' ).forEach( checkbox => {
-			checkbox.addEventListener( 'click', () => {
-				const cb = checkbox.querySelector( 'input' )
-				if ( cb ) {
-					cb.checked = !cb.checked
-					cb.dispatchEvent( new Event( 'change' ) )
-				}
-			} )
-		} )
-	} )
+    export let data: PageData
 </script>
 
-<svelte:head>
-	<title> Crea equipos aleatorios | Pokémon UNITE </title>
-	{ #each Object.keys( pokemon ) as name }
-		<link rel="prefetch" as="image" href={ `${ baseUrl }/pokemon/t_Square_${ name }.png` } />
-	{ /each }
-</svelte:head>
-
-<div class="imagespreload">
-	{ #each Object.keys( pokemon ) as name }
-		<img src={ `/pokemon/t_Square_${ name }.png` } alt={ name } />
-	{ /each }
-</div>
-
-<div class="room">
-	<Team team={ $players.team1 } teamNumber={ 1 } changeAvatar={ changeAvatar } changePokemon={ changePokemon } />
-	<div class="room__separator">
-		<img src="/vs.png" alt="vs" width="50">
-	</div>
-	<Team team={ $players.team2 } teamNumber={ 2 } changeAvatar={ changeAvatar } changePokemon={ changePokemon } />
-</div>
+<PreloadImages />
 
 <div class="columns">
-	<div class="column buttons">
-		<button class="btn" on:click={ randomizeTeams }> Cambiar equipos al azar </button>
-		<button class="btn" on:click={ randomizePokemon }> Cambiar todos los Pokémon </button>
-		<button class="btn btn--secondary" on:click={ copyTeams }> Copiar equipos al portapapeles </button>
-	</div>
+    <div class="column column--left">
+        <Matchroom />
+    </div>
+    <div class="column column--right">
+        <div class="module">
+            <TwitchIntegrator />
+        </div>
+        <div class="module">
+            <PlayerList user={ data.user } />
+        </div>
+        <div class="module module--buttons">
+            <Button fullWidth={ true } click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
+            <Button fullWidth={ true } click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
+        </div>
+        <div class="module">
+            <h3> { $_.get( 'strategies.header' ) } </h3>
+            <div class="checkboxes">
+                <Checkbox strategy={ new GlobalUniquePokemonStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>
+                <Checkbox strategy={ new AllRolesStrategy() }> { $_.get( 'strategies.all-roles' ) } </Checkbox>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="columns">
-	<div class="column checkboxes">
-		<div class="checkbox">
-			<input type="checkbox" name="guaranteeRoles" on:change={ toggleStrategy( new GuaranteeRolesStrategy() ) }>
-			<label for="guaranteeRoles"> Asegurar todos los roles en ambos equipos </label>
-		</div>
-		<div class="checkbox">
-			<input type="checkbox" name="uniquePokemon" on:change={ toggleStrategy( new UniquePokemonStrategy() ) }>
-			<label for="uniquePokemon"> No repetir Pokémon entre ambos equipos </label>
-		</div>
-		<div class="checkbox">
-			<input type="checkbox" checked={ true } name="cheat" on:change={ toggleStrategy( new CheatStrategy() ) }>
-			<label for="cheat"> Usar azar mejorado </label>
-		</div>
-	</div>
-</div>
+<style>
+.columns {
+    display: flex;
+    margin: 1em 4em;
+}
+.column--left {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+.column--right {
+    --spacing: 3em;
+    border-left: 2px solid #222;
+    margin-left: var(--spacing);
+    padding-left: var(--spacing);
+}
+.module {
+    width: 300px;
+}
+.module:not(:first-child) {
+    border-top: 1px solid #222;
+    margin-top: 2em;
+    padding-top: 2em;
+}
+.module--buttons {
+    text-align: center;
+}
 
-<Footer />
-
-<style src="./+page.css"></style>
+@media ( max-width: 1300px ) {
+    .columns {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .column--right {
+        align-items: flex-start;
+        border-left: 0;
+        border-top: 2px solid #222;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-left: 0;
+        margin-top: 1em;
+        padding-left: 0;
+        padding-top: 2px;
+    }
+    .column--right .module {
+        background-color: rgba( 42, 42, 42, 0.2 );
+        border-radius: 5px;
+        border-top: 0;
+        flex-basis: 40%;
+        margin-top: 1em;
+        padding: 1em;
+    }
+}
+@media ( max-width: 1015px ) {
+    .column--right .module {
+        flex-basis: 100%;
+    }
+}
+@media ( max-width: 680px ) {
+    .columns {
+        margin: 0;
+    }
+}
+</style>
