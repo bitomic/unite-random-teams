@@ -66,4 +66,18 @@ export class TwitchClient {
 		} )
 		return req.json()
 	}
+
+	public async post( route: string, body: Record<string, unknown> ): Promise<void> {
+		const url = new URL( `helix/${ route }`, 'https://api.twitch.tv' )
+
+		const req = await fetch( url, {
+			body: JSON.stringify( body ),
+			headers: {
+				Authorization: `Bearer ${ this.options.access_token }`,
+				'Client-Id': env.TWITCH_CLIENT_ID,
+				'Content-Type': 'application/json'
+			},
+			method: 'POST'
+		} )
+	}
 }

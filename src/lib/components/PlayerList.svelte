@@ -3,6 +3,19 @@
     import { matchroom } from '$lib/client/stores/matchroom'
     import { toInteger } from 'lodash-es';
     import TextInput from './TextInput.svelte';
+    import Button from './Button.svelte';
+    import { trpc } from '$lib/client/trpc';
+    import { page } from '$app/stores';
+	
+	const t = trpc($page)
+
+	const announce = async () => {
+		const message = [
+			$matchroom.team1.map( p => `🟣 ${ p.name } - ${ p.pokemon }` ).join( '\n' ),
+			$matchroom.team2.map( p => `🟠 ${ p.name } - ${ p.pokemon }` ).join( '\n' )
+		].join( '\n' )
+		await t.twitch.announce.mutate( { message } )
+	}
 
 	const keypress = ( e: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement } ) => {
 		if ( e.code !== 'Enter' ) return
@@ -68,6 +81,8 @@
 			</div>
 		{ /each }
 	</div>
+
+	<Button click={ announce } style="purple"> Announce </Button>
 </div>
 
 <style>
