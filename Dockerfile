@@ -1,6 +1,7 @@
 # Base Stage
 FROM node:18-alpine3.15 AS base
 
+ARG DOPPLER_TOKEN
 WORKDIR /home/node/app
 
 ENV NODE_ENV="development"
