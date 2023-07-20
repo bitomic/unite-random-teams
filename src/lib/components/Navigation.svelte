@@ -23,6 +23,7 @@
 				<img src={ user.data[0].profile_image_url } alt="avatar" width="24">
 				<a href="https://twitch.tv/{ user.data[0].login }"> { user.data[0].display_name } </a>
 			</li>
+		{ :catch _e }
 		{ /await}
 		{ #await isLoggedIn }
 			<li> <Button style="purple"> Loading... </Button> </li>
