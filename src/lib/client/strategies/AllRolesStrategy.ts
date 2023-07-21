@@ -7,8 +7,8 @@ export class AllRolesStrategy extends BaseStrategy {
 	public readonly identifier = AllRolesStrategy.identifier
 
 	public exclude( options: ExclusionOptions ): boolean {
-		const teamPokemon = options.team.map( i => get( pokemon, `${ i.finalPokemon as keyof typeof pokemon }.role` ) ) as string[]
-		const role = get( pokemon, `${ options.pokemon as keyof typeof pokemon }.role` ) as string
+		const teamPokemon = options.team.map( i => i.finalRole ) as string[]
+		const role = options.player.getPokemonRole( options.pokemon )
 		return teamPokemon.includes( role )
 	}
 }

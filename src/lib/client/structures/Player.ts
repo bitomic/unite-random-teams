@@ -22,13 +22,22 @@ export class Player {
 	public set name( value: string ) { this.options.name = value }
 	public get pokemon(): string { return this.options.pokemon }
 	public get role(): 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter' {
-		return pokemon[ this.pokemon as keyof typeof pokemon ].role as 'Attacker' | undefined ?? 'Attacker'
+		return this.getPokemonRole( this.pokemon )
 	}
 	public get finalPokemon(): string { return this.#finalPokemon }
 	public set finalPokemon( name: string ) {
 		this.#finalPokemon = name
 		if ( this.matchroom.startingNames.has( this.name ) ) return
 		this.matchroom.history.add( this.name, name )
+	}
+	public get finalRole(): 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter' {
+		return this.getPokemonRole( this.finalPokemon )
+	}
+
+	public getPokemonRole( name: string ): 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter' {
+		if ( name === 'Mr. Mime' ) return 'Supporter'
+
+		return pokemon[ name as keyof typeof pokemon ].role as 'Attacker' | undefined ?? 'Attacker'
 	}
 
 	public changePokemon( name?: string ) {

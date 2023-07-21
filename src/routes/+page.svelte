@@ -2,7 +2,7 @@
     import Checkbox from '$lib/components/Checkbox.svelte';
     import Matchroom from '$lib/components/Matchroom.svelte'
     import PreloadImages from '$lib/components/PreloadImages.svelte';
-    import TextInput from '$lib/components/TextInput.svelte';
+    import History from '$lib/components/History.svelte';
     import TwitchIntegrator from '$lib/components/TwitchIntegrator.svelte';
     import { _ } from '$lib/client/stores/i18n';
     import Button from '$lib/components/Button.svelte';
@@ -32,16 +32,7 @@
             <Matchroom />
         </div>
         <div class="module">
-            <ModuleHeader> { $_.get( 'history.title' ) } </ModuleHeader>
-            { #each Object.entries( $matchroom.history.history ) as [ player, pokemon ] }
-                <div class="history">
-                    <div class="history__player"> { player } </div>
-                    <div class="history__pokemon">
-                        
-                    </div>
-                { player }: { pokemon?.join( ' | ' ) }
-                </div>
-            { /each }
+            <History />
         </div>
     </div>
     <div class="column column--right">

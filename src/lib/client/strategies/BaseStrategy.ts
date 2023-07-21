@@ -2,7 +2,7 @@ import type { Player } from '../structures'
 
 export interface ExclusionOptions {
 	otherTeam?: Player[]
-	player: string
+	player: Player
 	pokemon: string
 	team: Player[]
 }

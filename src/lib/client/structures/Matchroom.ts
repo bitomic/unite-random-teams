@@ -54,7 +54,7 @@ export class Matchroom {
 			if ( !player ) continue
 
 			options = options.filter( pokemon => !this.pickStrategies.exclude( {
-				player: player.name,
+				player,
 				pokemon,
 				team: this.team1.slice( 0, i )
 			} ) )
@@ -68,7 +68,7 @@ export class Matchroom {
 
 			options = options.filter( pokemon => !this.pickStrategies.exclude( {
 				otherTeam: this.team1,
-				player: player.name,
+				player,
 				pokemon,
 				team: this.team2.slice( 0, i )
 			} ) )
