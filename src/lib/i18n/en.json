@@ -19,6 +19,12 @@
 		"placeholder": "Enter a name",
 		"title": "Players"
 	},
+	"prediction": {
+		"question": "Which team will win?",
+		"team-orange": "Orange Team",
+		"team-purple": "Purple Team",
+		"start": "Start prediction"
+	},
 	"strategies": {
 		"all-roles": "Guarantee all roles in both teams.",
 		"global-unique-pokemon": "Don't repeat Pokémon between both teams.",

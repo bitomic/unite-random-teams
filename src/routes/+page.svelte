@@ -12,6 +12,7 @@
     import PlayerList from '$lib/components/PlayerList.svelte';
     import type { PageData } from './$types';
     import ModuleHeader from '$lib/components/ModuleHeader.svelte';
+    import PredictionManager from '$lib/components/PredictionManager.svelte';
 
     export let data: PageData
 </script>
@@ -30,6 +31,10 @@
         </div>
         <div class="module">
             <Matchroom />
+
+            { #if data.user }
+            <PredictionManager />
+            { /if }
         </div>
         <div class="module">
             <History />

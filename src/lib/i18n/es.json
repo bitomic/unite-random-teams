@@ -19,6 +19,12 @@
 		"placeholder": "Escribe un nombre",
 		"title": "Jugadores"
 	},
+	"prediction": {
+		"question": "¿Qué equipo ganará?",
+		"team-orange": "Equipo Naranja",
+		"team-purple": "Equipo Morado",
+		"start": "Comenzar predicción"
+	},
 	"strategies": {
 		"all-roles": "Asegurar todos los roles en ambos equipos",
 		"global-unique-pokemon": "No repetir Pokémon entre ambos equipos.",

@@ -1,12 +1,12 @@
 <script lang="ts">
-	export let click: ( () => void ) | null = null
+	export let click: ( ( e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement } ) => void ) | null = null
 	export let disabled = false
 	export let fullWidth = false
 	export let href: string | null = null
 	export let icon = true
 	export let style: 'default' | 'purple' | 'red' = 'default'
 
-	const tag = href ? 'a' : 'div'
+	const tag = href ? 'a' : 'button'
 	const disabledClass = disabled ? 'btn--disabled' : ''
 	const iconClass = icon ? 'btn--icon' : ''
 	const widthClass = fullWidth ? 'btn--full' : ''
@@ -31,11 +31,13 @@
 	--color: #7f56f9;
 	--hover: #723eee;
 }
-.btn--default.btn--disabled {
+.btn--default.btn--disabled,
+.btn--default:disabled {
 	--color: #967f79;
 	--hover: #816e68;
 }
-.btn--purple.btn--disabled {
+.btn--purple.btn--disabled,
+.btn--purple:disabled {
 	--color: #807996;
 	--hover: #6e6881;
 }
@@ -76,7 +78,8 @@
 .btn--full {
 	width: 80%;
 }
-.btn--disabled {
+.btn--disabled,
+.btn:disabled {
 	cursor: not-allowed;
 }
 </style>

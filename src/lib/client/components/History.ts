@@ -8,7 +8,7 @@ export class History {
 	public add( player: string, pokemon: string ) {
 		const list = this.getPlayerHistory( player )
 		list.push( pokemon )
-		
+
 		if ( !this.history.has( player ) ) {
 			this.history.set( player, list.slice( -5 ) )
 		}

@@ -12,7 +12,7 @@ export const GET = ( req: RequestEvent ) => {
 	url.searchParams.append( 'client_id', env.TWITCH_CLIENT_ID )
 	url.searchParams.append( 'redirect_uri', env.TWITCH_REDIRECT_URI )
 	url.searchParams.append( 'response_type', 'code' )
-	url.searchParams.append( 'scope', 'moderator:manage:announcements' )
+	url.searchParams.append( 'scope', 'moderator:manage:announcements channel:manage:predictions' )
 	url.searchParams.append( 'state', userId )
 
 	throw redirect( 302, url.href )

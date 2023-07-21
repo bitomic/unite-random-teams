@@ -67,7 +67,7 @@ export class TwitchClient {
 		return req.json()
 	}
 
-	public async post( route: string, body: Record<string, unknown> ): Promise<void> {
+	public async post( route: string, body: Record<string, unknown> ) {
 		const url = new URL( `helix/${ route }`, 'https://api.twitch.tv' )
 
 		const req = await fetch( url, {
@@ -79,5 +79,7 @@ export class TwitchClient {
 			},
 			method: 'POST'
 		} )
+
+		return req
 	}
 }
