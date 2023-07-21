@@ -9,7 +9,11 @@
 	},
 	"navigation": {
 		"disconnect": "Desconectar",
+		"home": "Inicio",
 		"title": "Equipos aleatorios de Unite"
+	},
+	"notice": {
+		"description": "Puedes iniciar sesión usando tu cuenta de Twitch. Esto te permitirá enviar un mensaje en tu chat con los miembros y Pokémon de cada equipo, crear una predicción sobre quién ganará y terminarla. Consulta nuestra <a href=\"/privacy/es\">política de privacidad</a> para saber cómo será usada tu información. Puedes ocultar este mensaje haciendo clic sobre él."
 	},
 	"playerlist": {
 		"announce": "Anunciar",
@@ -24,6 +28,10 @@
 		"team-orange": "Equipo Naranja",
 		"team-purple": "Equipo Morado",
 		"start": "Comenzar predicción"
+	},
+	"privacy": {
+		"label": "Política de privacidad",
+		"lang": "es"
 	},
 	"strategies": {
 		"all-roles": "Asegurar todos los roles en ambos equipos",

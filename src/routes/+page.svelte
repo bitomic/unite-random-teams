@@ -15,6 +15,10 @@
     import PredictionManager from '$lib/components/PredictionManager.svelte';
 
     export let data: PageData
+
+    const closeNotice = ( e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
+        e.currentTarget.style.display = 'none'
+    }
 </script>
 
 <svelte:head>
@@ -22,6 +26,14 @@
 </svelte:head>
 
 <PreloadImages />
+
+{ #if !data.user }
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="notice" on:click={ closeNotice }>
+        { @html $_.get( 'notice.description' ) }
+    </div>
+{ /if }
 
 <div class="columns">
     <div class="column column--left">
@@ -63,6 +75,21 @@
 </div>
 
 <style>
+.notice {
+    background-color: rgba(34, 34, 34, 0.25);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin: 1.5em;
+    padding: 1.5em;
+}
+.notice:hover {
+    background-color: rgba(34, 34, 34, 0.5);
+}
+:global(.notice a) {
+    color: #f17f00;
+    font-weight: bold;
+}
 .columns {
     display: flex;
     margin: 1em 4em;

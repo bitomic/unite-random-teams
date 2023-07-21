@@ -15,7 +15,8 @@
 	</a>
 	<div class="navigation__filler"></div>
 	<ul class="navigation__links">
-		<li> <a href="/"> Home </a> </li>
+		<li> <a href="/"> { $_.get( 'navigation.home' ) } </a> </li>
+		<li> <a href="/privacy/{ $_.get( 'privacy.lang' ) }"> { $_.get( 'privacy.label' ) } </a> </li>
 		<!-- svelte-ignore empty-block -->
 		{ #if user }
 			<li class="navigation__user">

@@ -9,7 +9,11 @@
 	},
 	"navigation": {
 		"disconnect": "Disconnect",
+		"home": "Home",
 		"title": "Unite Random Teams"
+	},
+	"notice": {
+		"description": "You can login using your Twitch account. This will allow to send a message on your chat with both teams' members and Pokémon, create a prediction about who will win a match and finish it. Check our <a href=\"/privacy/en\">privacy policy</a> to know how will your data be used. You can hide this message by clicking on it."
 	},
 	"playerlist": {
 		"announce": "Announce",
@@ -24,6 +28,10 @@
 		"team-orange": "Orange Team",
 		"team-purple": "Purple Team",
 		"start": "Start prediction"
+	},
+	"privacy": {
+		"label": "Privacy Policy",
+		"lang": "en"
 	},
 	"strategies": {
 		"all-roles": "Guarantee all roles in both teams.",
