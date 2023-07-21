@@ -26,6 +26,12 @@
 		$matchroom.queue( value )
 	}
 
+	const removePlayer = ( e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
+		const { player } = e.currentTarget.dataset
+		if ( !player ) return
+		$matchroom.remove( player )
+	}
+
 	const drop = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
 		e.preventDefault()
 		if ( !e.dataTransfer ) return
@@ -77,7 +83,11 @@
 				on:dragstart={ dragstart }
 				on:dragend={ dragend }
 				on:drop={ drop }>
-				<div class="playerlist__user"> { username } </div>
+				<div class="playerlist__user">
+					<div class="playerlist__name"> { username } </div>
+					<!-- svelte-ignore a11y-click-events-have-key-events -->
+					<div class="playerlist__remove" data-player={ username } on:click={ removePlayer }> &times; </div>
+				</div>
 			</div>
 		{ /each }
 	</div>
@@ -131,6 +141,28 @@
 .playerlist__item:nth-child( 9 )::before,
 .playerlist__item:nth-child( 10 )::before {
 	background-color: #ff7d29;
+}
+.playerlist__user {
+	align-items: center;
+	display: inline-flex;
+	flex-grow: 1;
+	position: relative;
+}
+.playerlist__name {
+	flex-grow: 1;
+}
+.playerlist__remove {
+	align-items: center;
+	background-color: rgba(177, 0, 0, 0.5);
+	border-radius: 5px;
+	cursor: pointer;
+	display: flex;
+	height: 14px;
+	justify-content: center;
+	padding: 0.2em;
+	position: absolute;
+	right: 0;
+	width: 14px;
 }
 .playerlist__announcement {
 	margin: 0.5em 0;

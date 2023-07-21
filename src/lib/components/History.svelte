@@ -7,8 +7,8 @@
 
 <ModuleHeader> { $_.get( 'history.title' ) } </ModuleHeader>
 <div class="history">
-	{ #if Object.keys( $matchroom.history.history ).length }
-		{ #each Object.entries( $matchroom.history.history ) as [ player, pokemon ] }
+	{ #if $matchroom.history.history.size }
+		{ #each $matchroom.history.history.entries() as [ player, pokemon ] }
 			<div class="history__block">
 				<div class="history__player"> { player } </div>
 				<div class="history__pokemon">

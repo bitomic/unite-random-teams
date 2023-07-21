@@ -1,18 +1,21 @@
 export class History {
-	public history: Record<string, string[] | undefined> = {}
+	public history = new Map<string, string[]>()
 
 	public clear() {
-		this.history = {}
+		this.history.clear()
 	}
 
 	public add( player: string, pokemon: string ) {
 		const list = this.getPlayerHistory( player )
 		list.push( pokemon )
-		this.history[ player ] = list.slice( -5 )
+		
+		if ( !this.history.has( player ) ) {
+			this.history.set( player, list.slice( -5 ) )
+		}
 	}
 
 	public getPlayerHistory( player: string ): string[] {
-		return this.history[ player ] ?? []
+		return this.history.get( player ) ?? []
 	}
 
 	public hasPlayerUsedRecently( player: string, pokemon: string ): boolean {

@@ -78,6 +78,20 @@ export class Matchroom {
 
 	public get players(): string[] { return this.playerlist }
 
+	public remove( name: string ) {
+		this.playerlist = this.playerlist.filter( i => i !== name )
+		this.history.history.delete( name )
+		const player = this.findPlayerByName( name )
+		if ( !player ) return
+
+		const unusedName = this.playerlist.at( 10 )
+			?? [ ...this.startingNames ].find( i => !this.findPlayerByName( i ) )
+			?? faker.science.chemicalElement().name
+		player.name = unusedName
+
+		this.store?.set( this )
+	}
+
 	public queue( name: string ) {
 		if ( this.playerlist.includes( name ) ) return
 		this.playerlist.push( name )
