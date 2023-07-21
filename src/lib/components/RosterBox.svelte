@@ -102,7 +102,7 @@
 	bottom: 0;
 	display: flex;
 	flex-direction: column;
-	height: 70px;
+	height: 75px;
 	justify-content: flex-end;
 	padding-bottom: 8px;
 	padding-left: 10px;
@@ -115,7 +115,7 @@
 }
 .roster__trainer {
 	color: #000;
-	font-size: 0.9em;
+	font-size: 1.1em;
 }
 
 @media (max-width: 1397px) {
