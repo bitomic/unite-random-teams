@@ -7,16 +7,20 @@
 
 <ModuleHeader> { $_.get( 'history.title' ) } </ModuleHeader>
 <div class="history">
-	{ #each Object.entries( $matchroom.history.history ) as [ player, pokemon ] }
-		<div class="history__block">
-			<div class="history__player"> { player } </div>
-			<div class="history__pokemon">
-				{ #each pokemon ?? [] as name }
-					<img src="/pokemon/t_Square_{ name }.png" alt={ name } class="history__item" width="50">
-				{ /each }
+	{ #if Object.keys( $matchroom.history.history ).length }
+		{ #each Object.entries( $matchroom.history.history ) as [ player, pokemon ] }
+			<div class="history__block">
+				<div class="history__player"> { player } </div>
+				<div class="history__pokemon">
+					{ #each pokemon ?? [] as name }
+						<img src="/pokemon/t_Square_{ name }.png" alt={ name } class="history__item" width="50">
+					{ /each }
+				</div>
 			</div>
-		</div>
-	{ /each }
+		{ /each }
+	{ :else }
+		<p> { $_.get( 'history.empty' ) } </p>
+	{ /if }
 </div>
 
 <style>

@@ -4,6 +4,7 @@
 		"shuffle-pokemon": "Shuffle Pokémon"
 	},
 	"history": {
+		"empty": "There's no history information to display yet.",
 		"title": "History"
 	},
 	"navigation": {

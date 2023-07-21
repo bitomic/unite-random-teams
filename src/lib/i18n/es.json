@@ -4,6 +4,7 @@
 		"shuffle-pokemon": "Aleatorizar Pokémon"
 	},
 	"history": {
+		"empty": "No hay historial para mostrar.",
 		"title": "Historial"
 	},
 	"navigation": {
