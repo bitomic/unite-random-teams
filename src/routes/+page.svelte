@@ -11,6 +11,7 @@
     import { AllRolesStrategy } from '$lib/client/strategies/AllRolesStrategy';
     import PlayerList from '$lib/components/PlayerList.svelte';
     import type { PageData } from './$types';
+    import ModuleHeader from '$lib/components/ModuleHeader.svelte';
 
     export let data: PageData
 </script>
@@ -23,21 +24,40 @@
 
 <div class="columns">
     <div class="column column--left">
-        <Matchroom />
+        <div class="module module--buttons">
+            <Button click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
+            <Button click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
+        </div>
+        <div class="module">
+            <Matchroom />
+        </div>
+        <div class="module">
+            <ModuleHeader> { $_.get( 'history.title' ) } </ModuleHeader>
+            { #each Object.entries( $matchroom.history.history ) as [ player, pokemon ] }
+                <div class="history">
+                    <div class="history__player"> { player } </div>
+                    <div class="history__pokemon">
+                        
+                    </div>
+                { player }: { pokemon?.join( ' | ' ) }
+                </div>
+            { /each }
+        </div>
     </div>
     <div class="column column--right">
         <div class="module">
             <TwitchIntegrator />
         </div>
         <div class="module">
+            <ModuleHeader> { $_.get( 'playerlist.title' ) } </ModuleHeader>
+            <div class="module__details">
+                <p> { $_.get( 'playerlist.details-input' ) } </p>
+                <p> { $_.get( 'playerlist.details-swap' ) } </p>
+            </div>
             <PlayerList user={ data.user } />
         </div>
-        <div class="module module--buttons">
-            <Button fullWidth={ true } click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
-            <Button fullWidth={ true } click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
-        </div>
         <div class="module">
-            <h3> { $_.get( 'strategies.header' ) } </h3>
+            <ModuleHeader> { $_.get( 'strategies.header' ) } </ModuleHeader>
             <div class="checkboxes">
                 <Checkbox strategy={ new GlobalUniquePokemonStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>
                 <Checkbox strategy={ new AllRolesStrategy() }> { $_.get( 'strategies.all-roles' ) } </Checkbox>
@@ -52,18 +72,20 @@
     margin: 1em 4em;
 }
 .column--left {
+    align-items: center;
     display: flex;
+    flex-direction: column;
     flex-grow: 1;
-    justify-content: center;
 }
 .column--right {
     --spacing: 3em;
     border-left: 2px solid #222;
     margin-left: var(--spacing);
     padding-left: var(--spacing);
+    width: 340px;
 }
 .module {
-    width: 300px;
+    width: 100%;
 }
 .module:not(:first-child) {
     border-top: 1px solid #222;
@@ -72,6 +94,10 @@
 }
 .module--buttons {
     text-align: center;
+}
+.module__details {
+    font-size: 0.95em;
+    margin-bottom: 1.25em;
 }
 
 @media ( max-width: 1300px ) {

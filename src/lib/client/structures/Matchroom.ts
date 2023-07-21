@@ -7,8 +7,10 @@ import type { Writable } from 'svelte/store'
 import { Strategist } from './Strategist'
 import { UniqueTeamStrategy } from '../strategies/UniqueTeam'
 import { GlobalUniquePokemonStrategy } from '../strategies/GlobalUniquePokemon'
+import { History } from '../components'
 
 export class Matchroom {
+	public readonly history = new History()
 	public readonly pickStrategies = new Strategist(
 		new UniqueTeamStrategy(),
 		new GlobalUniquePokemonStrategy()
@@ -19,7 +21,7 @@ export class Matchroom {
 	public team2: Player[] = []
 
 	protected readonly options = Object.keys( pokemon )
-	protected readonly startingNames = new Set<string>()
+	public readonly startingNames = new Set<string>()
 
 	public constructor() {
 		for ( let i = 1; i <= 10; i++ ) {

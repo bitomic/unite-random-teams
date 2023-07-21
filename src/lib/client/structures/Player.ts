@@ -8,12 +8,12 @@ export interface PlayerOptions {
 }
 
 export class Player {
-	public finalPokemon: string
+	#finalPokemon: string
 	public readonly matchroom: Matchroom
 	public readonly options: PlayerOptions
 
 	public constructor( options: PlayerOptions, matchroom: Matchroom ) {
-		this.finalPokemon = options.pokemon
+		this.#finalPokemon = options.pokemon
 		this.matchroom = matchroom
 		this.options = options
 	}
@@ -23,6 +23,12 @@ export class Player {
 	public get pokemon(): string { return this.options.pokemon }
 	public get role(): 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter' {
 		return pokemon[ this.pokemon as keyof typeof pokemon ].role as 'Attacker' | undefined ?? 'Attacker'
+	}
+	public get finalPokemon(): string { return this.#finalPokemon }
+	public set finalPokemon( name: string ) {
+		this.#finalPokemon = name
+		if ( this.matchroom.startingNames.has( this.name ) ) return
+		this.matchroom.history.add( this.name, name )
 	}
 
 	public changePokemon( name?: string ) {

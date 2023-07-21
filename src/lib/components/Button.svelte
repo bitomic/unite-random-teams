@@ -1,11 +1,13 @@
 <script lang="ts">
 	export let click: ( () => void ) | null = null
+	export let disabled = false
 	export let fullWidth = false
 	export let href: string | null = null
 	export let icon = true
-	export let style: 'default' | 'purple' = 'default'
+	export let style: 'default' | 'purple' | 'red' = 'default'
 
 	const tag = href ? 'a' : 'div'
+	const disabledClass = disabled ? 'btn--disabled' : ''
 	const iconClass = icon ? 'btn--icon' : ''
 	const widthClass = fullWidth ? 'btn--full' : ''
 </script>
@@ -13,7 +15,7 @@
 <svelte:element
 	this={ tag }
 	href={ href }
-	class="btn btn--{ style } { iconClass } { widthClass }"
+	class="btn btn--{ style } { iconClass } { widthClass } { disabledClass }"
 	role="button"
 	tabindex="0"
 	on:click={ click }>
@@ -28,6 +30,14 @@
 .btn--purple {
 	--color: #7f56f9;
 	--hover: #723eee;
+}
+.btn--default.btn--disabled {
+	--color: #967f79;
+	--hover: #816e68;
+}
+.btn--purple.btn--disabled {
+	--color: #807996;
+	--hover: #6e6881;
 }
 .btn {
 	background-color: var(--color);
@@ -65,5 +75,8 @@
 }
 .btn--full {
 	width: 80%;
+}
+.btn--disabled {
+	cursor: not-allowed;
 }
 </style>

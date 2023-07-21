@@ -3,6 +3,9 @@
 		"shuffle-players": "Aleatorizar jugadores",
 		"shuffle-pokemon": "Aleatorizar Pokémon"
 	},
+	"history": {
+		"title": "Historial"
+	},
 	"navigation": {
 		"disconnect": "Desconectar",
 		"title": "Equipos aleatorios de Unite"
@@ -10,7 +13,10 @@
 	"playerlist": {
 		"announce": "Anunciar",
 		"announcement-details": "Envía un anuncio en el chat de tu canal con los jugadores y Pokémon de cada equipo.",
-		"placeholder": "Escribe un nombre"
+		"details-input": "Puedes añadir jugadores a la lista pidiéndoles usar tu comando o escribiendo sus nombres manualmente y presionando Enter.",
+		"details-swap": "You can drag and drop players to swap their positions.",
+		"placeholder": "Escribe un nombre",
+		"title": "Jugadores"
 	},
 	"strategies": {
 		"all-roles": "Asegurar todos los roles en ambos equipos",
@@ -18,10 +24,12 @@
 		"header": "Reglas personalizadas"
 	},
 	"twitch": {
+		"chat-title": "Integración con el chat de Twitch",
 		"command": "comando",
 		"connect": "Conectar al chat",
 		"default-command": "jugar",
 		"details": "Si conectas tu chat, tus seguidores podrán unirse usando tu comando, ej. !jugar",
+		"disconnect": "Desconectar",
 		"input-placeholder": "Escribe tu usuario de Twitch",
 		"integrate": "Integrar con Twitch",
 		"status-connected": "Conectado",

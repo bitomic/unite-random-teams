@@ -2,6 +2,7 @@
     import { _ } from '$lib/client/stores/i18n';
     import { matchroom } from '$lib/client/stores/matchroom';
     import Button from './Button.svelte'
+    import ModuleHeader from './ModuleHeader.svelte';
 	import TextInput from './TextInput.svelte'
 	import tmi from 'tmi.js'
 
@@ -13,14 +14,19 @@
 
 	const viewers = new Set<string>()
 
-	const handle = () => {
-		status = 'connecting'
+	const disconnect = () => {
+		status = 'disconnected'
 
-		if ( client  ) {
+		if ( client ) {
 			client.disconnect()
 			client = null
 		}
+	}
 
+	const connect = () => {
+		disconnect()
+
+		status = 'connecting'
 		client = new tmi.Client( {
 			channels: [ value ]
 		} )
@@ -41,10 +47,11 @@
 
 	const keypress = ( event: KeyboardEvent ) => {
 		if ( event.code !== 'Enter' ) return
-		handle()
+		connect()
 	}
 </script>
 
+<ModuleHeader> { $_.get( 'twitch.chat-title' ) } </ModuleHeader>
 <div class="twitch">
 	<div class="twitch__status twitch__status--{ status }">
 		{ $_.get( `twitch.status-${ status }` ) }
@@ -54,7 +61,13 @@
 		<div class="twitch__commandprefix"> ! </div>
 		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ command } />
 	</div>
-	<Button style="purple" click={ handle }> { $_.get( 'twitch.connect' ) } </Button>
+	{ #if status === 'disconnected' }
+		<Button style="purple" click={ connect }> { $_.get( 'twitch.connect' ) } </Button>
+	{ :else if status === 'connecting' }
+		<Button style="purple" disabled> { $_.get( 'twitch.connect' ) } </Button>
+	{ :else if status === 'connected' }
+		<Button style="purple" click={ disconnect }> { $_.get( 'twitch.disconnect' ) } </Button>
+	{ /if }
 	<div class="twitch__details"> { $_.get( 'twitch.details' ) } </div>
 </div>
 
