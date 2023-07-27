@@ -19,7 +19,7 @@
 		"announce": "Anunciar",
 		"announcement-details": "Envía un anuncio en el chat de tu canal con los jugadores y Pokémon de cada equipo.",
 		"details-input": "Puedes añadir jugadores a la lista pidiéndoles usar tu comando o escribiendo sus nombres manualmente y presionando Enter.",
-		"details-swap": "You can drag and drop players to swap their positions.",
+		"details-swap": "Puedes arrastrar y soltar los nombres de los jugadores para intercambiar sus posiciones.",
 		"placeholder": "Escribe un nombre",
 		"rotate-orange": "Rotar equipo naranja",
 		"rotate-purple": "Rotar equipo morado",
