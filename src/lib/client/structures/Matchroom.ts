@@ -78,16 +78,33 @@ export class Matchroom {
 
 	public get players(): string[] { return this.playerlist }
 
+	public findPlayerTeam( name: string ): 1 | 2 | null {
+		const team1 = this.team1.find( i => i.name === name )
+		if ( team1 ) return 1
+
+		const team2 = this.team2.find( i => i.name === name )
+		if ( team2 ) return 2
+
+		return null
+	}
+
 	public remove( name: string ) {
 		this.playerlist = this.playerlist.filter( i => i !== name )
 		this.history.history.delete( name )
 		const player = this.findPlayerByName( name )
-		if ( !player ) return
+		
+		if ( player ) {
+			const unusedName = this.playerlist.at( 9 )
+				?? [ ...this.startingNames ].find( i => !this.findPlayerByName( i ) )
+				?? faker.science.chemicalElement().name
+			player.name = unusedName
+		}
 
-		const unusedName = this.playerlist.at( 10 )
-			?? [ ...this.startingNames ].find( i => !this.findPlayerByName( i ) )
-			?? faker.science.chemicalElement().name
-		player.name = unusedName
+		this.playerlist = [
+			...this.team1.map( i => i.name ),
+			...this.team2.map( i => i.name ),
+			...this.playerlist.filter( i => !this.team1.find( j => j.name === i ) && !this.team2.find( j => j.name === i ) )
+		]
 
 		this.store?.set( this )
 	}
@@ -124,5 +141,21 @@ export class Matchroom {
 	public findPlayerByName( name?: string ): Player | undefined {
 		return this.team1.find( p => p.name === name )
 			?? this.team2.find( p => p.name === name )
+	}
+
+	public teamPlayers( list: Player[] ): Player[] {
+		return list.filter( i => !this.startingNames.has( i.name ) )
+	}
+
+	public get team1Players(): Player[] {
+		return this.teamPlayers( this.team1 )
+	}
+
+	public get team2Players(): Player[] {
+		return this.teamPlayers( this.team2 )
+	}
+
+	public get waitlist(): string[] {
+		return this.players.filter( i => !this.startingNames.has( i ) && !this.team1.find( j => j.name === i ) && !this.team2.find( j => j.name === i ) )
 	}
 }

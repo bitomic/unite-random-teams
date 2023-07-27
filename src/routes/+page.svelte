@@ -30,6 +30,14 @@
 <div class="columns">
     <div class="column column--left">
         <div class="module">
+            <ModuleHeader> { $_.get( 'playerlist.title' ) } </ModuleHeader>
+            <div class="module__details">
+                <p> { $_.get( 'playerlist.details-input' ) } </p>
+                <p> { $_.get( 'playerlist.details-swap' ) } </p>
+            </div>
+            <PlayerList user={ data.user } />
+        </div>
+        <div class="module">
             <div class="module--buttons">
                 <Button click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
                 <Button click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
@@ -53,14 +61,6 @@
     <div class="column column--right">
         <div class="module">
             <TwitchIntegrator />
-        </div>
-        <div class="module">
-            <ModuleHeader> { $_.get( 'playerlist.title' ) } </ModuleHeader>
-            <div class="module__details">
-                <p> { $_.get( 'playerlist.details-input' ) } </p>
-                <p> { $_.get( 'playerlist.details-swap' ) } </p>
-            </div>
-            <PlayerList user={ data.user } />
         </div>
         <div class="module">
             <ModuleHeader> { $_.get( 'strategies.header' ) } </ModuleHeader>

@@ -27,7 +27,8 @@
 		"question": "¿Qué equipo ganará?",
 		"team-orange": "Equipo Naranja",
 		"team-purple": "Equipo Morado",
-		"start": "Comenzar predicción"
+		"start": "Comenzar predicción",
+		"waitlist": "Lista de espera"
 	},
 	"privacy": {
 		"label": "Política de privacidad",

@@ -27,7 +27,8 @@
 		"question": "Which team will win?",
 		"team-orange": "Orange Team",
 		"team-purple": "Purple Team",
-		"start": "Start prediction"
+		"start": "Start prediction",
+		"waitlist": "Waitlist"
 	},
 	"privacy": {
 		"label": "Privacy Policy",
