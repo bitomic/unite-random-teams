@@ -37,12 +37,18 @@
 
 <div class="columns">
     <div class="column column--left">
-        <div class="module module--buttons">
-            <Button click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
-            <Button click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
-        </div>
         <div class="module">
+            <div class="module--buttons">
+                <Button click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
+                <Button click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
+            </div>
+
             <Matchroom />
+
+            <div class="module--buttons">
+                <Button click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
+                <Button click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
+            </div>
 
             { #if data.user }
             <PredictionManager />
