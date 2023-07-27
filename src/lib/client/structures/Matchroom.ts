@@ -88,6 +88,19 @@ export class Matchroom {
 		return null
 	}
 
+	public updatePlayerlist() {
+		const teamPlayers = new Set<string>()
+		const list: string[] = []
+		for ( const player of [ ...this.team1, ...this.team2 ] ) {
+			teamPlayers.add( player.name )
+			list.push( player.name )
+		}
+
+		const filtered = this.playerlist.filter( i => !teamPlayers.has( i ) )
+		list.push( ...filtered )
+		this.playerlist = [ ...new Set( list ) ]
+	}
+
 	public remove( name: string ) {
 		this.playerlist = this.playerlist.filter( i => i !== name )
 		this.history.history.delete( name )
@@ -99,12 +112,7 @@ export class Matchroom {
 				?? faker.science.chemicalElement().name
 			player.name = unusedName
 		}
-
-		this.playerlist = [
-			...this.team1.map( i => i.name ),
-			...this.team2.map( i => i.name ),
-			...this.playerlist.filter( i => !this.team1.find( j => j.name === i ) && !this.team2.find( j => j.name === i ) )
-		]
+		this.updatePlayerlist()
 
 		this.store?.set( this )
 	}
@@ -156,6 +164,28 @@ export class Matchroom {
 	}
 
 	public get waitlist(): string[] {
-		return this.players.filter( i => !this.startingNames.has( i ) && !this.team1.find( j => j.name === i ) && !this.team2.find( j => j.name === i ) )
+		return this.playerlist.filter( i => !this.startingNames.has( i ) && !this.team1.find( j => j.name === i ) && !this.team2.find( j => j.name === i ) )
+	}
+
+	public rotate( team: 1 | 2 ): void {
+		const newPlayers = this.waitlist.slice( 0, 5 )
+		
+		const teamPlayers = shuffle( this[ `team${ team }` ].map( i => i.name ) )
+
+		if ( newPlayers.length < 5 ) {
+			newPlayers.push( ...teamPlayers.slice( 0, 5 - newPlayers.length ) )
+		}
+
+		for ( let idx = 0; idx < 5; idx++ ) {
+			const player = this[ `team${ team }` ].at( idx )
+			const name = newPlayers.at( idx )
+			console.log( [ idx, player?.name, name ] )
+			if ( !player || !name ) continue
+			player.name = name
+		}
+
+		this.updatePlayerlist()
+
+		this.store?.set( this )
 	}
 }

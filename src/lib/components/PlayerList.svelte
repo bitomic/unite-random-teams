@@ -23,6 +23,7 @@
 		if ( e.code !== 'Enter' ) return
 
 		const value = e.currentTarget.value.trim()
+		if ( value.length === 0 ) return
 		e.currentTarget.value = ''
 
 		$matchroom.queue( value )
@@ -34,23 +35,28 @@
 
 	<div class="playerlist__usernames">
 		<div class="playerlist__column playerlist__purple">
-			<ModuleHeader> { $_.get( 'prediction.team-purple' ) } </ModuleHeader>
+			<ModuleHeader> { $_.get( 'playerlist.team-purple' ) } </ModuleHeader>
 			{ #each $matchroom.team1Players as player, idx }
 				<PlayerListItem { idx } username={ player.name } color="purple" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__orange">
-			<ModuleHeader> { $_.get( 'prediction.team-orange' ) } </ModuleHeader>
+			<ModuleHeader> { $_.get( 'playerlist.team-orange' ) } </ModuleHeader>
 			{ #each $matchroom.team2Players as player, idx }
 				<PlayerListItem idx={ idx + 5 } username={ player.name } color="orange" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__waiting">
-			<ModuleHeader> { $_.get( 'prediction.waitlist' ) } </ModuleHeader>
+			<ModuleHeader> { $_.get( 'playerlist.waitlist' ) } </ModuleHeader>
 			{ #each $matchroom.waitlist as player, idx }
 				<PlayerListItem idx={ idx + 10 } username={ player } />
 			{ /each }
 		</div>
+	</div>
+
+	<div class="playerlist__rotate">
+		<Button click={ () => $matchroom.rotate( 1 ) } style="purple"> { $_.get( 'playerlist.rotate-purple' ) } </Button>
+		<Button click={ () => $matchroom.rotate( 2 ) }> { $_.get( 'playerlist.rotate-orange' ) } </Button>
 	</div>
 
 	{ #if user }
@@ -77,6 +83,6 @@
 	overflow-y: auto;
 }
 .playerlist__announcement {
-	margin: 0.5em 0;
+	margin: 1em 0;
 }
 </style>

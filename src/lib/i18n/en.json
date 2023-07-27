@@ -21,14 +21,18 @@
 		"details-input": "You can add players by asking them to use your command or manually typing the names and presssing Enter.",
 		"details-swap": "You can drag and drop players to swap their positions.",
 		"placeholder": "Enter a name",
-		"title": "Players"
+		"rotate-orange": "Rotate Orange Team",
+		"rotate-purple": "Rotate Purple Team",
+		"team-orange": "Orange Team",
+		"team-purple": "Purple Team",
+		"title": "Players",
+		"waitlist": "Waitlist"
 	},
 	"prediction": {
 		"question": "Which team will win?",
 		"team-orange": "Orange Team",
 		"team-purple": "Purple Team",
-		"start": "Start prediction",
-		"waitlist": "Waitlist"
+		"start": "Start prediction"
 	},
 	"privacy": {
 		"label": "Privacy Policy",

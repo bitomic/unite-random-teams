@@ -21,14 +21,18 @@
 		"details-input": "Puedes añadir jugadores a la lista pidiéndoles usar tu comando o escribiendo sus nombres manualmente y presionando Enter.",
 		"details-swap": "You can drag and drop players to swap their positions.",
 		"placeholder": "Escribe un nombre",
-		"title": "Jugadores"
+		"rotate-orange": "Rotar equipo naranja",
+		"rotate-purple": "Rotar equipo morado",
+		"team-orange": "Equipo Naranja",
+		"team-purple": "Equipo Morado",
+		"title": "Jugadores",
+		"waitlist": "Lista de espera"
 	},
 	"prediction": {
 		"question": "¿Qué equipo ganará?",
 		"team-orange": "Equipo Naranja",
 		"team-purple": "Equipo Morado",
-		"start": "Comenzar predicción",
-		"waitlist": "Lista de espera"
+		"start": "Comenzar predicción"
 	},
 	"privacy": {
 		"label": "Política de privacidad",
