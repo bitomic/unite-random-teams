@@ -105,7 +105,7 @@ export class Matchroom {
 		this.playerlist = this.playerlist.filter( i => i !== name )
 		this.history.history.delete( name )
 		const player = this.findPlayerByName( name )
-		
+
 		if ( player ) {
 			const unusedName = this.playerlist.at( 9 )
 				?? [ ...this.startingNames ].find( i => !this.findPlayerByName( i ) )
@@ -169,7 +169,7 @@ export class Matchroom {
 
 	public rotate( team: 1 | 2 ): void {
 		const newPlayers = this.waitlist.slice( 0, 5 )
-		
+
 		const teamPlayers = shuffle( this[ `team${ team }` ].map( i => i.name ) )
 
 		if ( newPlayers.length < 5 ) {
@@ -179,7 +179,6 @@ export class Matchroom {
 		for ( let idx = 0; idx < 5; idx++ ) {
 			const player = this[ `team${ team }` ].at( idx )
 			const name = newPlayers.at( idx )
-			console.log( [ idx, player?.name, name ] )
 			if ( !player || !name ) continue
 			player.name = name
 		}
