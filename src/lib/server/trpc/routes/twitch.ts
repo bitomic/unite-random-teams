@@ -4,6 +4,7 @@ import { TRPCError } from '@trpc/server'
 import { session } from '../middleware'
 import { t } from '../t'
 import { s } from '@sapphire/shapeshift'
+import { TRPCClientError } from '@trpc/client'
 
 const p = t.procedure.use( session )
 
@@ -84,14 +85,21 @@ const loggedIn = p.query( async opts => {
 
 const me = p.query( async opts => {
 	const client = await TwitchClient.fetch( opts.ctx.userId )
-	const user = await client.get( 'users' ) as {
-		data: [ {
-			display_name: string
-			login: string
-			profile_image_url: string
-		} ]
+	try {
+		const user = await client.get( 'users' ) as {
+			data: [ {
+				display_name: string
+				login: string
+				profile_image_url: string
+			} ]
+		}
+		return user
+	} catch {
+		await TwitchClient.remove( opts.ctx.userId )
+		throw new TRPCError( {
+			code: 'UNAUTHORIZED'
+		} )
 	}
-	return user
 } )
 
 export const twitch = t.router( {

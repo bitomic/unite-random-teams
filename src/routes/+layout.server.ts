@@ -9,13 +9,26 @@ export const load: LayoutServerLoad = async event => {
 	const language = acceptLanguage?.find( i => availableLanguages.has( i ) ) ?? 'en'
 
 	const userId = event.cookies.get( 'user_id' )
-	const user = userId
-		? await trpc( event ).twitch.me.query().catch( () => null )
-		: null
+	try {
+		const user = userId
+			? await trpc( event ).twitch.me.query().catch( () => null )
+			: null
 
-	return {
-		// eslint-disable-next-line
-		i18n: ( await import( `../lib/i18n/${ language }.json` ) ).default as Record<string, string>,
-		user: user?.data[ 0 ] ?? null
+		return {
+			// eslint-disable-next-line
+			i18n: ( await import( `../lib/i18n/${ language }.json` ) ).default as Record<string, string>,
+			user: user?.data[ 0 ] ?? null
+		}
+	} catch {
+		if ( userId ) {
+			event.cookies.delete( 'user_id' )
+			await TwitchClient.remove( userId )
+		}
+
+		return {
+			// eslint-disable-next-line
+			i18n: ( await import( `../lib/i18n/${ language }.json` ) ).default as Record<string, string>,
+			user: null
+		}
 	}
 }

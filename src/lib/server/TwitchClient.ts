@@ -48,6 +48,11 @@ export class TwitchClient {
 		return new TwitchClient( options )
 	}
 
+	public static async remove( userId: string ): Promise<void> {
+		const key = this.getKey( userId )
+		await redis.del( key )
+	}
+
 	public readonly options: TwitchOptions
 
 	public constructor( options: TwitchOptions ) {
