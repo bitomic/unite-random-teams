@@ -183,6 +183,9 @@ export class Matchroom {
 			player.name = name
 		}
 
+		const teamPlayersSet = new Set( teamPlayers )
+		this.playerlist = this.playerlist.filter( i => !teamPlayersSet.has( i ) )
+		this.playerlist.push( ...teamPlayersSet )
 		this.updatePlayerlist()
 
 		this.store?.set( this )
