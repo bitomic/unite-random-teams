@@ -16,7 +16,8 @@
 		"description": "You can login using your Twitch account. This will allow to send a message on your chat with both teams' members and Pokémon, create a prediction about who will win a match and finish it. Check our <a href=\"/privacy/en\">privacy policy</a> to know how will your data be used. You can hide this message by clicking on it."
 	},
 	"playerlist": {
-		"announce": "Announce",
+		"announce": "Announce players and Pokémon",
+		"announce-players": "Announce players",
 		"announcement-details": "Send an announcement on your channel's chat with the players and Pokémon in each team.",
 		"details-input": "You can add players by asking them to use your command or manually typing the names and presssing Enter.",
 		"details-swap": "You can drag and drop players to swap their positions.",

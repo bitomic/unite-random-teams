@@ -19,6 +19,16 @@
 		await t.twitch.announce.mutate( { message } )
 	}
 
+	const announcePlayers = async () => {
+		const message = [
+			'🟣',
+			$matchroom.team1.map( p => `${ p.name }` ).join( ' | ' ),
+			'- 🟠',
+			$matchroom.team2.map( p => `${ p.name }` ).join( ' | ' )
+		].join( '\n' )
+		await t.twitch.announce.mutate( { message } )
+	}
+
 	const keypress = ( e: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement } ) => {
 		if ( e.code !== 'Enter' ) return
 
@@ -61,6 +71,7 @@
 
 	{ #if user }
 		<div class="playerlist__announcement"> { $_.get( 'playerlist.announcement-details' ) } </div>
+		<Button click={ announcePlayers } style="purple"> { $_.get( 'playerlist.announce-players' ) } </Button>
 		<Button click={ announce } style="purple"> { $_.get( 'playerlist.announce' ) } </Button>
 	{ /if }
 </div>
