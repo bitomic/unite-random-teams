@@ -8,6 +8,7 @@ import { Strategist } from './Strategist'
 import { UniqueTeamStrategy } from '../strategies/UniqueTeam'
 import { GlobalUniquePokemonStrategy } from '../strategies/GlobalUniquePokemon'
 import { History } from '../components'
+import { browser } from '$app/environment'
 
 export class Matchroom {
 	public readonly history = new History()
@@ -33,6 +34,27 @@ export class Matchroom {
 			team.push( player )
 			this.startingNames.add( player.name )
 		}
+		this.loadStorage()
+	}
+
+	protected loadStorage() {
+		if ( !browser ) return
+		const players = localStorage.getItem( 'players' )
+		if ( !players ) return
+		try {
+			const json = JSON.parse( players ) as string[]
+			for ( const player of json ) {
+				this.queue( player )
+			}
+		} catch {
+			return
+		}
+	}
+
+	protected updateStorage() {
+		if ( !browser ) return
+		const players = this.playerlist.filter( i => !this.startingNames.has( i ) )
+		localStorage.setItem( 'players', JSON.stringify( players ) )
 	}
 
 	public getRandomPokemon(): string {
@@ -115,6 +137,7 @@ export class Matchroom {
 		this.updatePlayerlist()
 
 		this.store?.set( this )
+		this.updateStorage()
 	}
 
 	public queue( name: string ) {
@@ -127,6 +150,7 @@ export class Matchroom {
 		}
 
 		this.store?.set( this )
+		this.updateStorage()
 	}
 
 	public swap( from: number, to: number ) {
@@ -144,6 +168,7 @@ export class Matchroom {
 		if ( toPlayer ) toPlayer.name = this.playerlist[ from ]
 
 		this.store?.set( this )
+		this.updateStorage()
 	}
 
 	public findPlayerByName( name?: string ): Player | undefined {
@@ -189,5 +214,6 @@ export class Matchroom {
 		this.updatePlayerlist()
 
 		this.store?.set( this )
+		this.updateStorage()
 	}
 }
