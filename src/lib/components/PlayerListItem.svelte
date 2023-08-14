@@ -2,15 +2,14 @@
     import { matchroom } from "$lib/client/stores/matchroom";
 
 	export let color: 'orange' | 'purple' | 'default' = 'default'
-	export let idx: number
 	export let username: string
 
 	const drop = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
 		e.preventDefault()
 		if ( !e.dataTransfer ) return
 		
-		const fromIndex = parseInt( e.dataTransfer.getData( 'text/plain' ) )
-		const toIndex = parseInt( e.currentTarget.dataset.index ?? '' )
+		const fromIndex = e.dataTransfer.getData( 'text/plain' )
+		const toIndex = e.currentTarget.dataset.name ?? ''
 		
 		$matchroom.swap( fromIndex, toIndex )
 
@@ -33,7 +32,7 @@
 
 	const dragstart = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
 		e.currentTarget.style.opacity = '0.25'
-		e.dataTransfer?.setData( 'text/plain', e.currentTarget.dataset.index ?? '' )
+		e.dataTransfer?.setData( 'text/plain', e.currentTarget.dataset.name ?? '' )
 	}
 
 	const dragend = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
@@ -51,7 +50,7 @@
 <div
 	class="playerlist__item playerlist__item--{ color }"
 	draggable="true"
-	data-index={ idx }
+	data-name={ username }
 	on:dragover={ dragover }
 	on:dragleave={ dragleave }
 	on:dragstart={ dragstart }

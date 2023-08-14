@@ -7,6 +7,7 @@
     import { page } from '$app/stores';
     import PlayerListItem from './PlayerListItem.svelte';
     import ModuleHeader from './ModuleHeader.svelte';
+	import { Matchroom as MatchroomManager } from '$lib/client/structures/Matchroom'
 	
 	const t = trpc($page)
 	export let user: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
@@ -47,19 +48,19 @@
 		<div class="playerlist__column playerlist__purple">
 			<ModuleHeader> { $_.get( 'playerlist.team-purple' ) } </ModuleHeader>
 			{ #each $matchroom.team1Players as player, idx }
-				<PlayerListItem { idx } username={ player.name } color="purple" />
+				<PlayerListItem username={ player.name } color="purple" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__orange">
 			<ModuleHeader> { $_.get( 'playerlist.team-orange' ) } </ModuleHeader>
 			{ #each $matchroom.team2Players as player, idx }
-				<PlayerListItem idx={ idx + 5 } username={ player.name } color="orange" />
+				<PlayerListItem username={ player.name } color="orange" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__waiting">
 			<ModuleHeader> { $_.get( 'playerlist.waitlist' ) } </ModuleHeader>
 			{ #each $matchroom.waitlist as player, idx }
-				<PlayerListItem idx={ idx + 10 } username={ player } />
+				<PlayerListItem username={ player } />
 			{ /each }
 		</div>
 	</div>

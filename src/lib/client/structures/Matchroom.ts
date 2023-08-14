@@ -114,6 +114,7 @@ export class Matchroom {
 		const teamPlayers = new Set<string>()
 		const list: string[] = []
 		for ( const player of [ ...this.team1, ...this.team2 ] ) {
+			if ( this.startingNames.has( player.name ) ) continue
 			teamPlayers.add( player.name )
 			list.push( player.name )
 		}
@@ -153,20 +154,21 @@ export class Matchroom {
 		this.updateStorage()
 	}
 
-	public swap( from: number, to: number ) {
-		if ( from >= this.playerlist.length || to >= this.playerlist.length ) return
-
-		const pivot = this.playerlist.at( from )
+	public swap( from: string, to: string ) {
+		const fromIndex = this.playerlist.findIndex( i => i === from )
+		const toIndex = this.playerlist.findIndex( i => i === to )
+		const pivot = this.playerlist.at( fromIndex )
 		if ( !pivot ) return
 
-		this.playerlist[ from ] = this.playerlist[ to ]
-		this.playerlist[ to ] = pivot
+		this.playerlist[ fromIndex ] = this.playerlist[ toIndex ]
+		this.playerlist[ toIndex ] = pivot
 
-		const fromPlayer = this.findPlayerByName( this.playerlist[ from ] )
-		const toPlayer = this.findPlayerByName( this.playerlist[ to ] )
-		if ( fromPlayer ) fromPlayer.name = this.playerlist[ to ]
-		if ( toPlayer ) toPlayer.name = this.playerlist[ from ]
+		const fromPlayer = this.findPlayerByName( from )
+		const toPlayer = this.findPlayerByName( to )
+		if ( fromPlayer ) fromPlayer.name = to
+		if ( toPlayer ) toPlayer.name = from
 
+		this.updatePlayerlist()
 		this.store?.set( this )
 		this.updateStorage()
 	}

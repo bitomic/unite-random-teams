@@ -22,6 +22,8 @@
 		"details-input": "You can add players by asking them to use your command or manually typing the names and presssing Enter.",
 		"details-swap": "You can drag and drop players to swap their positions.",
 		"placeholder": "Enter a name",
+		"reload-details": "Is the player list acting weird? Try to reload the list to fix it.",
+		"reload-list": "Reload list",
 		"rotate-orange": "Rotate Orange Team",
 		"rotate-purple": "Rotate Purple Team",
 		"team-orange": "Orange Team",
