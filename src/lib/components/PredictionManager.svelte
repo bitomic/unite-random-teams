@@ -3,17 +3,21 @@
     import { _ } from "$lib/client/stores/i18n";
     import { trpc } from "$lib/client/trpc";
     import Button from "./Button.svelte";
+    import TextInput from "./TextInput.svelte";
 
 	const t = trpc($page)
 	let prediction: Awaited<ReturnType<typeof t[ 'twitch' ][ 'createPrediction' ][ 'mutate' ]>> | null = null
+
+	let purpleName = $_.get( 'prediction.team-purple' )
+	let orangeName = $_.get( 'prediction.team-orange' )
 
 	const startPrediction = async ( e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement } ) => {
 		e.currentTarget.disabled = true
 		
 		prediction = await t.twitch.createPrediction.mutate( {
 			outcomes: [
-				$_.get( 'prediction.team-orange' ),
-				$_.get( 'prediction.team-purple' )
+				purpleName,
+				orangeName
 			],
 			time: 120,
 			title: $_.get( 'prediction.question' )
@@ -32,11 +36,12 @@
 			if ( !prediction ) return
 			e.currentTarget.disabled = true
 
+			let teamName = team === 'orange' ? orangeName : purpleName
 			try {
 				await t.twitch.endPrediction.mutate( {
 					broadcasterId: prediction.data[0].broadcaster_id,
 					id: prediction.data[0].id,
-					winner: prediction.data[0].outcomes.find( i => i.title === $_.get( `prediction.team-${ team }` ) )!.id
+					winner: prediction.data[0].outcomes.find( i => i.title === team )!.id
 				} )
 			} finally {
 				prediction = null
@@ -48,9 +53,12 @@
 
 <div class="prediction">
 	{ #if prediction }
-		<Button style="default" click={ stopPrediction( 'orange' ) }> { $_.get( 'prediction.team-orange' ) } </Button>
-		<Button style="purple" click={ stopPrediction( 'purple' ) }> { $_.get( 'prediction.team-purple' ) } </Button>
+		<Button style="default" click={ stopPrediction( 'orange' ) }> { orangeName } </Button>
+		<Button style="purple" click={ stopPrediction( 'purple' ) }> { purpleName } </Button>
 	{ :else }
+		<TextInput bind:value={ purpleName } />
+		<TextInput bind:value={ orangeName } />
+		<br /> <br />
 		<Button style="purple" click={ startPrediction }> { $_.get( 'prediction.start' ) } </Button>
 	{ /if }
 </div>
