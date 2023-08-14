@@ -3,6 +3,9 @@
 		"shuffle-players": "Aleatorizar jugadores",
 		"shuffle-pokemon": "Aleatorizar Pokémon"
 	},
+	"draft": {
+		"header": "Pokémon vetados"
+	},
 	"history": {
 		"empty": "No hay historial para mostrar.",
 		"title": "Historial"

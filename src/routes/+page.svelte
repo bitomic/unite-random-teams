@@ -13,6 +13,7 @@
     import type { PageData } from './$types';
     import ModuleHeader from '$lib/components/ModuleHeader.svelte';
     import PredictionManager from '$lib/components/PredictionManager.svelte';
+    import Banlist from '$lib/components/Banlist.svelte';
 
     export let data: PageData
 
@@ -53,6 +54,10 @@
             { #if data.user }
             <PredictionManager />
             { /if }
+        </div>
+        <div class="module">
+            <ModuleHeader> { $_.get( 'draft.header' ) } </ModuleHeader>
+            <Banlist />
         </div>
         <div class="module">
             <History />

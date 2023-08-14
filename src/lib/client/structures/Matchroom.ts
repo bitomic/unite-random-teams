@@ -9,12 +9,14 @@ import { UniqueTeamStrategy } from '../strategies/UniqueTeam'
 import { GlobalUniquePokemonStrategy } from '../strategies/GlobalUniquePokemon'
 import { History } from '../components'
 import { browser } from '$app/environment'
+import { BanlistStrategy } from '../strategies/Banlist'
 
 export class Matchroom {
 	public readonly history = new History()
 	public readonly pickStrategies = new Strategist(
 		new UniqueTeamStrategy(),
-		new GlobalUniquePokemonStrategy()
+		new GlobalUniquePokemonStrategy(),
+		new BanlistStrategy()
 	)
 	protected playerlist: string[] = []
 	public store: Writable<Matchroom> | null = null

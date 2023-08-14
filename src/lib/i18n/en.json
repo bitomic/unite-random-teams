@@ -3,6 +3,9 @@
 		"shuffle-players": "Shuffle players",
 		"shuffle-pokemon": "Shuffle Pokémon"
 	},
+	"draft": {
+		"header": "Banlist"
+	},
 	"history": {
 		"empty": "There's no history information to display yet.",
 		"title": "History"

@@ -13,7 +13,7 @@
 				<div class="history__player"> { player } </div>
 				<div class="history__pokemon">
 					{ #each pokemon ?? [] as name }
-						<img src="/pokemon/t_Square_{ name }.png" alt={ name } class="history__item" width="50">
+						<img src="/pokemon/t_Square_{ name.replace( / /g, '_' ) }.png" alt={ name } class="history__item" width="50">
 					{ /each }
 				</div>
 			</div>
