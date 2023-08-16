@@ -29,6 +29,7 @@
 		"reload-list": "Reload list",
 		"rotate-orange": "Rotate Orange Team",
 		"rotate-purple": "Rotate Purple Team",
+		"streamer-mode": "Streamer mode: Always keep the first player of the first team when rotating players.",
 		"team-orange": "Orange Team",
 		"team-purple": "Purple Team",
 		"title": "Players",

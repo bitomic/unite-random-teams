@@ -20,6 +20,7 @@ export class Matchroom {
 	)
 	protected playerlist: string[] = []
 	public store: Writable<Matchroom> | null = null
+	public streamer = false
 	public team1: Player[] = []
 	public team2: Player[] = []
 
@@ -197,16 +198,18 @@ export class Matchroom {
 	}
 
 	public rotate( team: 1 | 2 ): void {
-		const newPlayers = this.waitlist.slice( 0, 5 )
+		const playerCount = this.streamer && team === 1 ? 4 : 5
+		const startIndex = 5 - playerCount
+		const newPlayers = this.waitlist.slice( 0, playerCount )
 
-		const teamPlayers = shuffle( this[ `team${ team }` ].map( i => i.name ) )
+		const teamPlayers = shuffle( this[ `team${ team }` ].slice( startIndex, playerCount ).map( i => i.name ) )
 
-		if ( newPlayers.length < 5 ) {
-			newPlayers.push( ...teamPlayers.slice( 0, 5 - newPlayers.length ) )
+		if ( newPlayers.length < playerCount ) {
+			newPlayers.push( ...teamPlayers.slice( 0, playerCount - newPlayers.length ) )
 		}
 
 		for ( let idx = 0; idx < 5; idx++ ) {
-			const player = this[ `team${ team }` ].at( idx )
+			const player = this[ `team${ team }` ].at( startIndex + idx )
 			const name = newPlayers.at( idx )
 			if ( !player || !name ) continue
 			player.name = name

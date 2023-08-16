@@ -8,6 +8,7 @@
     import PlayerListItem from './PlayerListItem.svelte';
     import ModuleHeader from './ModuleHeader.svelte';
 	import { Matchroom as MatchroomManager } from '$lib/client/structures/Matchroom'
+    import Checkbox from './Checkbox.svelte';
 	
 	const t = trpc($page)
 	export let user: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
@@ -39,6 +40,11 @@
 
 		$matchroom.queue( value )
 	}
+
+	const toggleStreamerMode = ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
+		const cb = e.currentTarget
+		$matchroom.streamer = cb.checked
+	}
 </script>
 
 <div class="playerlist">
@@ -66,6 +72,7 @@
 	</div>
 
 	<div class="playerlist__rotate">
+		<Checkbox center change={ toggleStreamerMode }> { $_.get( 'playerlist.streamer-mode' ) } </Checkbox>
 		<Button click={ () => $matchroom.rotate( 1 ) } style="purple"> { $_.get( 'playerlist.rotate-purple' ) } </Button>
 		<Button click={ () => $matchroom.rotate( 2 ) }> { $_.get( 'playerlist.rotate-orange' ) } </Button>
 	</div>
