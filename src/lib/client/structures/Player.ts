@@ -41,7 +41,7 @@ export class Player {
 	}
 
 	public changePokemon( name?: string ) {
-		this.finalPokemon = name ?? this.matchroom.getRandomPokemon()
+		this.finalPokemon = name ?? this.matchroom.getRandomPokemonWithStrategies( this )
 
 		let counter = 1
 		const iterations = Math.floor( 3 + 5 * Math.random() )

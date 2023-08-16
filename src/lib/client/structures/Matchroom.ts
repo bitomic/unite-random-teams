@@ -71,6 +71,18 @@ export class Matchroom {
 		this.store?.set( this )
 	}
 
+	public getRandomPokemonWithStrategies( player: Player ): string {
+		let options = Object.keys( pokemon )
+		const teamId = this.team1.find( p => p.name === player.name ) ? this.team1 : this.team2
+		const team = teamId.filter( i => i.name !== player.name )
+		options = options.filter( pokemon => !this.pickStrategies.exclude( {
+			player,
+			pokemon,
+			team
+		} ) )
+		return sample( options ) ?? this.getRandomPokemon()
+	}
+
 	public shufflePokemon(): void {
 		let options = Object.keys( pokemon )
 
