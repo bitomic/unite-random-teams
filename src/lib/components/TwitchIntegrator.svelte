@@ -1,18 +1,32 @@
 <script lang="ts">
+    import { page } from '$app/stores';
     import { _ } from '$lib/client/stores/i18n';
     import { matchroom } from '$lib/client/stores/matchroom';
+    import { trpc } from '$lib/client/trpc';
     import Button from './Button.svelte'
     import ModuleHeader from './ModuleHeader.svelte';
 	import TextInput from './TextInput.svelte'
 	import tmi from 'tmi.js'
 
+	let cooldown = 5000
+	let lastCooldownCommand = 0
 	let status: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
-	let command = $_.get( 'twitch.default-command' )
+	let listCommand = $_.get( 'twitch.list-command' )
+	let posCommand = $_.get( 'twitch.pos-command' )
+	let queueCommand = $_.get( 'twitch.default-command' )
 	let value = ''
 
-	let client: tmi.Client | null = null
+	const t = trpc($page)
+	export let streamerUser: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
+	
+	const listPlayersHeader = $_.get( 'twitch.list-header' )
+	const listNoPlayers = $_.get( 'twitch.list-no-players' )
+	/*
+	const posIndex = $_.get( 'twitch.pos-index' )
+	const posNone = $_.get( 'twitch.pos-none' )
+	*/
 
-	const viewers = new Set<string>()
+	let client: tmi.Client | null = null
 
 	const disconnect = () => {
 		status = 'disconnected'
@@ -28,7 +42,10 @@
 
 		status = 'connecting'
 		client = new tmi.Client( {
-			channels: [ value ]
+			channels: [ value ],
+			identity: {
+				
+			}
 		} )
 		client.connect()
 
@@ -37,11 +54,38 @@
 		} )
 
 		client.on( 'message', ( _, user, message ) => {
-			if ( !message.toLowerCase().startsWith( `!${ command }` ) ) return
-			const name = user[ 'display-name' ]
-			if ( name ) {
-				$matchroom.queue( name )
+			const command = message.toLowerCase()
+
+			if ( command.startsWith( `!${ queueCommand }` ) ) {
+				const name = user[ 'display-name' ]
+				if ( name ) {
+					$matchroom.queue( name )
+				}
+				return
 			}
+			
+			if ( !streamerUser || Date.now() < lastCooldownCommand + cooldown ) return
+
+			if ( command.startsWith( `!${ listCommand }` ) ) {
+				if ( $matchroom.waitlist.length ) {
+					const message = `${ listPlayersHeader } ${ $matchroom.waitlist.slice( 0, 10 ).join( ' | ' ) }`
+					void t.twitch.announce.mutate( { message } )
+				} else {
+					void t.twitch.announce.mutate( { message: listNoPlayers } )
+				}
+			}/* else if ( command.startsWith( `!${ posCommand }` ) ) {
+				const name = user[ 'display-name' ]
+				if ( !name ) return
+
+				const index = $matchroom.waitlist.findIndex( i => i === name )
+				const template = index === -1 ? posNone : posIndex
+				const message = template.replace( '$name', name ).replace( '$position', `${ index + 1 }` )
+				void client?.say( value, message )
+			}*/ else {
+				return
+			}
+
+			lastCooldownCommand = Date.now()
 		} )
 	}
 
@@ -59,8 +103,20 @@
 	<TextInput placeholder={ $_.get( 'twitch.input-placeholder' ) } bind:value={ value } keypress={ keypress } name="twitchChannel" />
 	<div class="twitch__command">
 		<div class="twitch__commandprefix"> ! </div>
-		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ command } />
+		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ queueCommand } />
 	</div>
+	{ #if streamerUser }
+		<div class="twitch__command">
+			<div class="twitch__commandprefix"> ! </div>
+			<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ listCommand } />
+		</div>
+	{ /if }
+	<!--
+	<div class="twitch__command">
+		<div class="twitch__commandprefix"> ! </div>
+		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ posCommand } />
+	</div>
+	-->
 	{ #if status === 'disconnected' }
 		<Button style="purple" click={ connect }> { $_.get( 'twitch.connect' ) } </Button>
 	{ :else if status === 'connecting' }

@@ -59,6 +59,12 @@
 		"disconnect": "Disconnect",
 		"input-placeholder": "Enter your Twitch username",
 		"integrate": "Integrate with Twitch",
+		"list-command": "list",
+		"list-header": "First 10 players in the waitlist:",
+		"list-no-players": "There are no players in the waitlist.",
+		"pos-command": "pos",
+		"pos-index": "$name, you are in the position $position.",
+		"pos-none": "$name, you aren't in the waitlist.",
 		"status-connected": "Connected",
 		"status-connecting": "Connecting",
 		"status-disconnected": "Disconnected"

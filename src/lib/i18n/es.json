@@ -59,6 +59,12 @@
 		"disconnect": "Desconectar",
 		"input-placeholder": "Escribe tu usuario de Twitch",
 		"integrate": "Integrar con Twitch",
+		"list-command": "lista",
+		"list-header": "Primeros 10 jugadores en la lista de espera:",
+		"list-no-players": "No hay jugadores en la lista de espera.",
+		"pos-command": "pos",
+		"pos-index": "$name, estás en la posición $position.",
+		"pos-none": "$name, no estás en la lista de espera.",
 		"status-connected": "Conectado",
 		"status-connecting": "Conectando",
 		"status-disconnected": "Desconectado"
