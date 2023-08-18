@@ -55,7 +55,7 @@
 		"command": "command",
 		"connect": "Connect to chat",
 		"default-command": "queue",
-		"details": "If you connect to your chat, your viewers will be able to join using your command, e.g. !queue",
+		"details": "If you connect to your chat, your viewers will be able to join using your command, e.g. !queue. !list command has a 5 seconds cooldown.",
 		"disconnect": "Disconnect",
 		"input-placeholder": "Enter your Twitch username",
 		"integrate": "Integrate with Twitch",
