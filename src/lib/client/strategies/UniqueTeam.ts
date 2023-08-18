@@ -6,6 +6,10 @@ export class UniqueTeamStrategy extends BaseStrategy {
 
 	public exclude( options: ExclusionOptions ): boolean {
 		const teamPokemon = options.team.map( i => i.finalPokemon )
-		return teamPokemon.includes( options.pokemon )
+		if ( options.pokemon.startsWith( 'Mewtwo' ) ) {
+			return teamPokemon.some( i => i.startsWith( 'Mewtwo' ) )
+		} else {
+			return teamPokemon.includes( options.pokemon )
+		}
 	}
 }
