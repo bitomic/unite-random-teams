@@ -65,7 +65,7 @@
     </div>
     <div class="column column--right">
         <div class="module">
-            <TwitchIntegrator />
+            <TwitchIntegrator streamerUser={ data.user } />
         </div>
         <div class="module">
             <ModuleHeader> { $_.get( 'strategies.header' ) } </ModuleHeader>
