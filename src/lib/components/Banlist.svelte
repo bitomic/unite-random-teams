@@ -1,30 +1,41 @@
 <script lang="ts">
     import { matchroom } from '$lib/client/stores/matchroom';
     import { BanlistStrategy } from '$lib/client/strategies/Banlist';
-    import { get } from 'lodash-es';
 	import pokemon from '../../pokemon.json'
+    import { onMount } from 'svelte';
 
 	let banlist = $matchroom.pickStrategies.strategies.find( i => i.identifier === BanlistStrategy.identifier ) as BanlistStrategy
 
 	const toggle = ( name: string ) => {
-		if ( banlist.bannedPokemon.has( name ) ) {
-			banlist.bannedPokemon.delete( name )
+		if ( banlist.has( name ) ) {
+			banlist.delete( name )
 		} else {
-			banlist.bannedPokemon.add( name )
+			banlist.add( name )
 		}
 		banlist = banlist
 	}
 
 	const getRole = ( name: string ) => pokemon[ name as keyof typeof pokemon ].role.toLowerCase()
+
+	onMount( () => {
+		banlist = banlist
+	} )
+
+	const roles = [ ...new Set( Object.values( pokemon ).map( i => i.role ) ) ].sort()
+	const sortedPokemon: string[] = []
+	for ( const role of roles ) {
+		const list = Object.entries( pokemon ).filter( i => i[ 1 ].role === role ).map( i => i[ 0 ] )
+		sortedPokemon.push( ...list )
+	}
 </script>
 
 <div class="banlist">
-	{ #each Object.keys( pokemon ).sort() as name }
+	{ #each sortedPokemon as name }
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
 		<div
 			on:click={ toggle.bind( undefined, name ) }
-			class="banlist__item banlist__item--{ banlist.bannedPokemon.has( name ) ? 'disabled' : 'enabled' } banlist__item--{ getRole( name ) }">
+			class="banlist__item banlist__item--{ banlist.has( name ) ? 'disabled' : 'enabled' } banlist__item--{ getRole( name ) }">
 			<img
 				src="/pokemon/t_Square_{ name.replace( / /g, '_' ) }.png"
 				alt={ name }
