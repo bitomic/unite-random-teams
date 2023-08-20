@@ -66,8 +66,18 @@ export class Matchroom {
 
 	public shufflePlayers(): void {
 		const players = shuffle( [ ...this.team1, ...this.team2 ] )
+		const streamer = this.team1.at( 0 )
+		const replacement = players.at( 0 )
+
+		if ( this.streamer && streamer && replacement ) {
+			const pivot = streamer.name
+			streamer.name = replacement.name
+			replacement.name = pivot
+		}
+
 		this.team1 = players.slice( 0, 5 )
 		this.team2 = players.slice( 5 )
+
 		this.store?.set( this )
 	}
 
