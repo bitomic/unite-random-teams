@@ -3,6 +3,7 @@
     import { _ } from '$lib/client/stores/i18n';
     import { matchroom } from '$lib/client/stores/matchroom';
     import { trpc } from '$lib/client/trpc';
+    import { onMount } from 'svelte';
     import Button from './Button.svelte'
     import ModuleHeader from './ModuleHeader.svelte';
 	import TextInput from './TextInput.svelte'
@@ -14,10 +15,10 @@
 	let listCommand = $_.get( 'twitch.list-command' )
 	let posCommand = $_.get( 'twitch.pos-command' )
 	let queueCommand = $_.get( 'twitch.default-command' )
-	let value = ''
 
 	const t = trpc($page)
 	export let streamerUser: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
+	let value = streamerUser?.login ?? ''
 	
 	const listPlayersHeader = $_.get( 'twitch.list-header' )
 	const listNoPlayers = $_.get( 'twitch.list-no-players' )
@@ -27,6 +28,12 @@
 	*/
 
 	let client: tmi.Client | null = null
+
+	onMount( () => {
+		if ( value.length ) {
+			connect()
+		}
+	} )
 
 	const disconnect = () => {
 		status = 'disconnected'
