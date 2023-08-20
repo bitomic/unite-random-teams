@@ -27,6 +27,7 @@
 		"placeholder": "Escribe un nombre",
 		"reload-details": "¿La lista de jugadores está funcionando mal? Intenta recargar la lista.",
 		"reload-list": "Recargar lista",
+		"remove-on-rotate": "Eliminar a los jugadores al rotar jugadores en lugar de enviarlos a la lista de espera.",
 		"rotate-orange": "Rotar equipo naranja",
 		"rotate-purple": "Rotar equipo morado",
 		"streamer-mode": "Modo streamer: siempre mantener al primer jugador del primer equipo al rotar jugadores.",

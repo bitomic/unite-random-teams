@@ -19,6 +19,7 @@ export class Matchroom {
 		new BanlistStrategy()
 	)
 	protected playerlist: string[] = []
+	public removeOnRotate = false
 	public store: Writable<Matchroom> | null = null
 	public streamer = false
 	public team1: Player[] = []
@@ -226,7 +227,11 @@ export class Matchroom {
 
 		const teamPlayers = shuffle( this[ `team${ team }` ].slice( startIndex, playerCount ).map( i => i.name ) )
 
-		if ( newPlayers.length < playerCount ) {
+		if ( this.removeOnRotate ) {
+			for ( const name of teamPlayers ) {
+				this.remove( name )
+			}
+		} else if ( !this.removeOnRotate && newPlayers.length < playerCount ) {
 			newPlayers.push( ...teamPlayers.slice( 0, playerCount - newPlayers.length ) )
 		}
 
@@ -237,9 +242,11 @@ export class Matchroom {
 			player.name = name
 		}
 
-		const teamPlayersSet = new Set( teamPlayers )
-		this.playerlist = this.playerlist.filter( i => !teamPlayersSet.has( i ) )
-		this.playerlist.push( ...teamPlayersSet )
+		if ( !this.removeOnRotate ) {
+			const teamPlayersSet = new Set( teamPlayers )
+			this.playerlist = this.playerlist.filter( i => !teamPlayersSet.has( i ) )
+			this.playerlist.push( ...teamPlayersSet )
+		}
 		this.updatePlayerlist()
 
 		this.store?.set( this )

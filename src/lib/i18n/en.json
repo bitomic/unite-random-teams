@@ -27,6 +27,7 @@
 		"placeholder": "Enter a name",
 		"reload-details": "Is the player list acting weird? Try to reload the list to fix it.",
 		"reload-list": "Reload list",
+		"remove-on-rotate": "Remove players when rotating a team instead of shuffling them into the waitlist.",
 		"rotate-orange": "Rotate Orange Team",
 		"rotate-purple": "Rotate Purple Team",
 		"streamer-mode": "Streamer mode: Always keep the first player of the first team when rotating players.",

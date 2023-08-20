@@ -45,6 +45,11 @@
 		const cb = e.currentTarget
 		$matchroom.streamer = cb.checked
 	}
+
+	const toggleRemoveOnRotate = ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
+		const cb = e.currentTarget
+		$matchroom.removeOnRotate = cb.checked
+	}
 </script>
 
 <div class="playerlist">
@@ -73,6 +78,7 @@
 
 	<div class="playerlist__rotate">
 		<Checkbox center change={ toggleStreamerMode }> { $_.get( 'playerlist.streamer-mode' ) } </Checkbox>
+		<Checkbox center change={ toggleRemoveOnRotate }> { $_.get( 'playerlist.remove-on-rotate' ) } </Checkbox>
 		<Button click={ () => $matchroom.rotate( 1 ) } style="purple"> { $_.get( 'playerlist.rotate-purple' ) } </Button>
 		<Button click={ () => $matchroom.rotate( 2 ) }> { $_.get( 'playerlist.rotate-orange' ) } </Button>
 	</div>
