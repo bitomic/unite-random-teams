@@ -27,7 +27,7 @@
 
 	const dragleave = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
 		e.preventDefault()
-		e.currentTarget.style.border = ''
+		e.currentTarget.style.border = '3px solid transparent'
 	}
 
 	const dragstart = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
@@ -68,6 +68,7 @@
 .playerlist__item {
 	align-items: center;
 	background-color: rgba(34, 34, 34, 0.25);
+	border: 3px solid transparent;
 	border-radius: 8px;
 	cursor: move;
 	display: flex;
