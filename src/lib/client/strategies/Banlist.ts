@@ -13,7 +13,7 @@ export class BanlistStrategy extends BaseStrategy {
 		const stored = localStorage.getItem( 'banlist' )
 		if ( !stored ) return
 		try {
-			const list = JSON.parse( stored )
+			const list = JSON.parse( stored ) as string[]
 			this.bannedPokemon = new Set( list )
 		} catch {
 			localStorage.removeItem( 'banlist' )

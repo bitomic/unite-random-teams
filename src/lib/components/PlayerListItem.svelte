@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { matchroom } from "$lib/client/stores/matchroom";
+    import { matchroom } from '$lib/client/stores/matchroom'
 
 	export let color: 'orange' | 'purple' | 'default' = 'default'
 	export let username: string
@@ -7,10 +7,10 @@
 	const drop = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
 		e.preventDefault()
 		if ( !e.dataTransfer ) return
-		
+
 		const fromIndex = e.dataTransfer.getData( 'text/plain' )
 		const toIndex = e.currentTarget.dataset.name ?? ''
-		
+
 		$matchroom.swap( fromIndex, toIndex )
 
 		document.querySelectorAll( '.playerlist__item' ).forEach( item => {

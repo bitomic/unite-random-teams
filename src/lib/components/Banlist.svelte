@@ -1,8 +1,8 @@
 <script lang="ts">
-    import { matchroom } from '$lib/client/stores/matchroom';
-    import { BanlistStrategy } from '$lib/client/strategies/Banlist';
+    import { matchroom } from '$lib/client/stores/matchroom'
+    import { BanlistStrategy } from '$lib/client/strategies/Banlist'
 	import pokemon from '../../pokemon.json'
-    import { onMount } from 'svelte';
+    import { onMount } from 'svelte'
 
 	let banlist = $matchroom.pickStrategies.strategies.find( i => i.identifier === BanlistStrategy.identifier ) as BanlistStrategy
 
@@ -24,7 +24,8 @@
 	const roles = [ ...new Set( Object.values( pokemon ).map( i => i.role ) ) ].sort()
 	const sortedPokemon: string[] = []
 	for ( const role of roles ) {
-		const list = Object.entries( pokemon ).filter( i => i[ 1 ].role === role ).map( i => i[ 0 ] )
+		const list = Object.entries( pokemon ).filter( i => i[ 1 ].role === role )
+			.map( i => i[ 0 ] )
 		sortedPokemon.push( ...list )
 	}
 </script>

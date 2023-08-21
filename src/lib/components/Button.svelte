@@ -6,9 +6,13 @@
 	export let icon = true
 	export let style: 'default' | 'purple' | 'red' = 'default'
 
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	const tag = href ? 'a' : 'button'
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	const disabledClass = disabled ? 'btn--disabled' : ''
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	const iconClass = icon ? 'btn--icon' : ''
+	// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 	const widthClass = fullWidth ? 'btn--full' : ''
 </script>
 

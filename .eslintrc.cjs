@@ -2,13 +2,21 @@ module.exports = {
 	root: true,
 	parser: '@typescript-eslint/parser',
 	extends: [ '@bitomic/eslint-config' ],
-	plugins: [ 'svelte3', '@typescript-eslint' ],
+	plugins: [ 'svelte', '@typescript-eslint' ],
 	ignorePatterns: [ '*.cjs', '*.js', '*.config.ts', 'dist/**/*' ],
-	overrides: [ { files: [ '*.svelte' ], processor: 'svelte3/svelte3' } ],
+	overrides: [ {
+		files: [ '**/*.svelte' ],
+		parser: 'svelte-eslint-parser',
+		parserOptions: {
+			parser: '@typescript-eslint/parser'
+		}
+	} ],
 	settings: {
 		'svelte3/typescript': () => require( 'typescript' )
 	},
 	parserOptions: {
+		extraFileExtensions: [ '.svelte' ],
+		project: 'tsconfig.json',
 		sourceType: 'module',
 		ecmaVersion: 2020
 	},
@@ -16,5 +24,10 @@ module.exports = {
 		browser: true,
 		es2017: true,
 		node: true
+	},
+	rules: {
+		'@typescript-eslint/no-unsafe-call': 'off',
+		'@typescript-eslint/no-unsafe-member-access': 'off',
+		'no-self-assign': 'off'
 	}
 }

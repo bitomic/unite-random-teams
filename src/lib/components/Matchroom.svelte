@@ -1,6 +1,6 @@
 <script>
-    import { matchroom } from "$lib/client/stores/matchroom";
-    import RosterBox from "./RosterBox.svelte";
+    import { matchroom } from '$lib/client/stores/matchroom'
+    import RosterBox from './RosterBox.svelte'
 
 </script>
 <div class="matchroom">

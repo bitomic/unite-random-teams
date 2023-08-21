@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { _ } from "$lib/client/stores/i18n";
-    import { trpc } from "$lib/client/trpc";
-    import Button from "./Button.svelte";
-    import TextInput from "./TextInput.svelte";
+    import { page } from '$app/stores'
+    import { _ } from '$lib/client/stores/i18n'
+    import { trpc } from '$lib/client/trpc'
+    import Button from './Button.svelte'
+    import TextInput from './TextInput.svelte'
 
-	const t = trpc($page)
+	const t = trpc( $page )
 	let prediction: Awaited<ReturnType<typeof t[ 'twitch' ][ 'createPrediction' ][ 'mutate' ]>> | null = null
 
 	let purpleName = $_.get( 'prediction.team-purple' )
@@ -13,7 +13,7 @@
 
 	const startPrediction = async ( e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement } ) => {
 		e.currentTarget.disabled = true
-		
+
 		prediction = await t.twitch.createPrediction.mutate( {
 			outcomes: [
 				purpleName,
@@ -22,7 +22,7 @@
 			time: 120,
 			title: $_.get( 'prediction.question' )
 		} )
-		
+
 		if ( 'error' in prediction ) {
 			prediction = null
 			return
@@ -31,22 +31,20 @@
 		e.currentTarget.disabled = false
 	}
 
-	const stopPrediction = ( team: 'orange' | 'purple' ) => {
-		return async ( e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement } ) => {
-			if ( !prediction ) return
-			e.currentTarget.disabled = true
+	const stopPrediction = ( team: 'orange' | 'purple' ) => async ( e: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement } ) => {
+		if ( !prediction ) return
+		e.currentTarget.disabled = true
 
-			let teamName = team === 'orange' ? orangeName : purpleName
-			try {
-				await t.twitch.endPrediction.mutate( {
-					broadcasterId: prediction.data[0].broadcaster_id,
-					id: prediction.data[0].id,
-					winner: prediction.data[0].outcomes.find( i => i.title === team )!.id
-				} )
-			} finally {
-				prediction = null
-				e.currentTarget.disabled = false
-			}
+		const teamName = team === 'orange' ? orangeName : purpleName
+		try {
+			await t.twitch.endPrediction.mutate( {
+				broadcasterId: prediction.data[ 0 ].broadcaster_id,
+				id: prediction.data[ 0 ].id,
+				winner: prediction.data[ 0 ].outcomes.find( i => i.title === team )!.id
+			} )
+		} finally {
+			prediction = null
+			e.currentTarget.disabled = false
 		}
 	}
 </script>

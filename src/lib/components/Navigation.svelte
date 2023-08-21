@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { trpc } from "$lib/client/trpc";
-    import { _ } from "../client/stores/i18n";
-    import Button from "./Button.svelte";
+    import { page } from '$app/stores'
+    import { trpc } from '$lib/client/trpc'
+    import { _ } from '../client/stores/i18n'
+    import Button from './Button.svelte'
 
-	const t = trpc($page)
+	const t = trpc( $page )
 	export let user: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
 </script>
 

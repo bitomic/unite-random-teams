@@ -1,11 +1,11 @@
 <script lang="ts">
-    import { matchroom } from '$lib/client/stores/matchroom';
+    import { matchroom } from '$lib/client/stores/matchroom'
     import type { BaseStrategy } from '$lib/client/strategies/BaseStrategy'
-    import { onMount } from 'svelte';
+    import { onMount } from 'svelte'
 
 	export let center = false
 	export let strategy: BaseStrategy | null = null
-	let checkbox: HTMLInputElement
+	let checkbox: HTMLInputElement | null
 
 	export let change = ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
 		if ( !strategy ) return

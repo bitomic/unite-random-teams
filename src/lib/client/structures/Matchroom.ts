@@ -231,7 +231,7 @@ export class Matchroom {
 			for ( const name of teamPlayers ) {
 				this.remove( name )
 			}
-		} else if ( !this.removeOnRotate && newPlayers.length < playerCount ) {
+		} else if ( !this.removeOnRotate && newPlayers.length < playerCount ) { // eslint-disable-line @typescript-eslint/no-unnecessary-condition
 			newPlayers.push( ...teamPlayers.slice( 0, playerCount - newPlayers.length ) )
 		}
 

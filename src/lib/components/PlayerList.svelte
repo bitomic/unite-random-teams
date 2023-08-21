@@ -1,16 +1,16 @@
 <script lang="ts">
-    import { _ } from '$lib/client/stores/i18n';
+    import { _ } from '$lib/client/stores/i18n'
     import { matchroom } from '$lib/client/stores/matchroom'
-    import TextInput from './TextInput.svelte';
-    import Button from './Button.svelte';
-    import { trpc } from '$lib/client/trpc';
-    import { page } from '$app/stores';
-    import PlayerListItem from './PlayerListItem.svelte';
-    import ModuleHeader from './ModuleHeader.svelte';
+    import TextInput from './TextInput.svelte'
+    import Button from './Button.svelte'
+    import { trpc } from '$lib/client/trpc'
+    import { page } from '$app/stores'
+    import PlayerListItem from './PlayerListItem.svelte'
+    import ModuleHeader from './ModuleHeader.svelte'
 	import { Matchroom as MatchroomManager } from '$lib/client/structures/Matchroom'
-    import Checkbox from './Checkbox.svelte';
-	
-	const t = trpc($page)
+    import Checkbox from './Checkbox.svelte'
+
+	const t = trpc( $page )
 	export let user: Awaited<ReturnType<typeof t[ 'twitch' ][ 'me' ][ 'query' ]>>[ 'data' ][ 0 ] | null = null
 
 	const announce = async () => {
