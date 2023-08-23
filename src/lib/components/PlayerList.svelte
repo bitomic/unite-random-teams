@@ -58,13 +58,13 @@
 		<div class="playerlist__column playerlist__purple">
 			<ModuleHeader> { $_.get( 'playerlist.team-purple' ) } </ModuleHeader>
 			{ #each $matchroom.humans1 as player, idx }
-				<PlayerListItem username={ player.name } color="purple" />
+				<PlayerListItem ign={ player.ign } username={ player.name } color="purple" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__orange">
 			<ModuleHeader> { $_.get( 'playerlist.team-orange' ) } </ModuleHeader>
 			{ #each $matchroom.humans2 as player, idx }
-				<PlayerListItem username={ player.name } color="orange" />
+				<PlayerListItem ign={ player.ign } username={ player.name } color="orange" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__waiting">

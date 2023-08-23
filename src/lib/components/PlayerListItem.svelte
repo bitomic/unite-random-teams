@@ -2,6 +2,7 @@
     import { matchroom } from '$lib/client/stores/matchroom'
 
 	export let color: 'orange' | 'purple' | 'default' = 'default'
+	export let ign: string | null = null
 	export let username: string
 
 	const drop = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
@@ -57,7 +58,12 @@
 	on:dragend={ dragend }
 	on:drop={ drop }>
 	<div class="playerlist__user">
-		<div class="playerlist__name"> { username } </div>
+		<div class="playerlist__name">
+			{ username }
+			{ #if ign }
+				<div class="playerlist__ign"> { ign } </div>
+			{ /if }
+		</div>
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<div class="playerlist__remove" data-player={ username } on:click={ removePlayer }> &times; </div>
 	</div>
@@ -107,6 +113,11 @@
 }
 .playerlist__name {
 	flex-grow: 1;
+}
+.playerlist__ign {
+	color: #aaa;
+	font-size: 0.85em;
+	margin-left: 0.75em;
 }
 .playerlist__remove {
 	align-items: center;

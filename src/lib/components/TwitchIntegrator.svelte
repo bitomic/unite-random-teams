@@ -8,12 +8,13 @@
     import ModuleHeader from './ModuleHeader.svelte'
 	import TextInput from './TextInput.svelte'
 	import tmi from 'tmi.js'
+    import { Player } from '$lib/client/matchroom'
 
 	const cooldown = 5000
 	let lastCooldownCommand = 0
 	let status: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
 	let listCommand = $_.get( 'twitch.list-command' )
-	const posCommand = $_.get( 'twitch.pos-command' )
+	let ignCommand = $_.get( 'twitch.ign-command' )
 	let queueCommand = $_.get( 'twitch.default-command' )
 
 	const t = trpc( $page )
@@ -68,6 +69,20 @@
 				return
 			}
 
+			if ( command.startsWith( `!${ ignCommand }` ) ) {
+				const name = user[ 'display-name' ]
+				if ( !name ) return
+
+				const player = $matchroom.findPlayerByName( name )
+				if ( !player ) return
+
+				const [ , ign ] = command.split( / /g )[ 1 ]
+				if ( !ign ) return
+
+				player.ign = ign
+				matchroom.update( m => m )
+			}
+
 			if ( !streamerUser || Date.now() < lastCooldownCommand + cooldown ) return
 
 			if ( command.startsWith( `!${ listCommand }` ) ) {
@@ -100,6 +115,10 @@
 	<div class="twitch__command">
 		<div class="twitch__commandprefix"> ! </div>
 		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ queueCommand } />
+	</div>
+	<div class="twitch__command">
+		<div class="twitch__commandprefix"> ! </div>
+		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ ignCommand } />
 	</div>
 	{ #if streamerUser }
 		<div class="twitch__command">
