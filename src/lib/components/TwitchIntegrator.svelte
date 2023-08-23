@@ -71,8 +71,8 @@
 			if ( !streamerUser || Date.now() < lastCooldownCommand + cooldown ) return
 
 			if ( command.startsWith( `!${ listCommand }` ) ) {
-				if ( $matchroom.waitlist.length ) {
-					const message = `${ listPlayersHeader } ${ $matchroom.waitlist.slice( 0, 10 ).join( ' | ' ) }`
+				if ( $matchroom.waitlist.players.length ) {
+					const message = `${ listPlayersHeader } ${ $matchroom.waitlist.players.slice( 0, 10 ).join( ' | ' ) }`
 					void t.twitch.announce.mutate( { message } )
 				} else {
 					void t.twitch.announce.mutate( { message: listNoPlayers } )

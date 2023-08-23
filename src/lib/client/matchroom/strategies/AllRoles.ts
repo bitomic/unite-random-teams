@@ -1,14 +1,13 @@
+import { Pokemon } from '../Pokemon'
 import { BaseStrategy, type ExclusionOptions } from './BaseStrategy'
-import get from 'lodash-es/get'
-import pokemon from '../../../pokemon.json'
 
 export class AllRolesStrategy extends BaseStrategy {
 	public static readonly identifier = Symbol( 'unique-team' )
 	public readonly identifier = AllRolesStrategy.identifier
 
 	public exclude( options: ExclusionOptions ): boolean {
-		const teamPokemon = options.team.map( i => i.finalRole ) as string[]
-		const role = options.player.getPokemonRole( options.pokemon )
+		const teamPokemon = options.team.map( i => i.pokemon.role ) as string[]
+		const role = Pokemon.getPokemonRole( options.pokemon )
 		return teamPokemon.includes( role )
 	}
 }

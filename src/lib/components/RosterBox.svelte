@@ -1,21 +1,22 @@
 <script lang="ts">
-    import type { Player } from '$lib/client/structures'
+    import type { Player } from '$lib/client/matchroom'
+    import { matchroom } from '$lib/client/stores/matchroom'
 
 	export let player: Player
 	export let team: 'orange' | 'purple'
 
 	const click = () => {
-		player.changePokemon( undefined )
+		$matchroom.shuffleSinglePokemon( player.name )
 	}
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-<div class="roster roster--{ player.role.toLowerCase() } roster--{ team }" on:click={ click }>
+<div class="roster roster--{ player.pokemon.displayRole.toLowerCase() } roster--{ team }" on:click={ click }>
 	<div class="roster__image">
-		<img src="/roster/{ player.pokemon }.png" alt={ player.pokemon } width="200">
+		<img src="/roster/{ player.pokemon.displayName }.png" alt={ player.pokemon.displayName } width="200">
 	</div>
 	<div class="roster__data">
-		<div class="roster__pokemon"> { player.pokemon } </div>
+		<div class="roster__pokemon"> { player.pokemon.displayName } </div>
 		<div class="roster__trainer"> { player.name } </div>
 	</div>
 </div>

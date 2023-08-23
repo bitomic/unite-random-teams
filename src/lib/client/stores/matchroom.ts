@@ -1,9 +1,9 @@
-import { Matchroom } from '../structures'
+import { Matchroom } from '../matchroom'
 import { writable } from 'svelte/store'
 
 export const matchroom = writable( new Matchroom() )
 
 matchroom.update( room => {
-	room.store = matchroom
+	Matchroom.store = matchroom
 	return room
 } )

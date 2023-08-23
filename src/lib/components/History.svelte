@@ -1,12 +1,13 @@
 <script>
     import { _ } from '$lib/client/stores/i18n'
-    import { matchroom } from '$lib/client/stores/matchroom'
+    // import { matchroom } from '$lib/client/stores/matchroom'
     import ModuleHeader from './ModuleHeader.svelte'
 
 </script>
 
 <ModuleHeader> { $_.get( 'history.title' ) } </ModuleHeader>
 <div class="history">
+	<!--
 	{ #if $matchroom.history.history.size }
 		{ #each $matchroom.history.history.entries() as [ player, pokemon ] }
 			<div class="history__block">
@@ -21,6 +22,7 @@
 	{ :else }
 		<p> { $_.get( 'history.empty' ) } </p>
 	{ /if }
+	-->
 </div>
 
 <style>
@@ -30,6 +32,7 @@
 	justify-content: space-evenly;
 	row-gap: 1em;
 }
+/*
 .history__block {
 	flex-basis: 30%;
 }
@@ -47,4 +50,5 @@
 	border-radius: 100%;
 	margin: 0 0.3em;
 }
+*/
 </style>

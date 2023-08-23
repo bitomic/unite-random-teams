@@ -7,7 +7,6 @@
     import { page } from '$app/stores'
     import PlayerListItem from './PlayerListItem.svelte'
     import ModuleHeader from './ModuleHeader.svelte'
-	import { Matchroom as MatchroomManager } from '$lib/client/structures/Matchroom'
     import Checkbox from './Checkbox.svelte'
 
 	const t = trpc( $page )
@@ -15,8 +14,8 @@
 
 	const announce = async () => {
 		const message = [
-			$matchroom.team1.map( p => `🟣 ${ p.name } - ${ p.pokemon }` ).join( '\n' ),
-			$matchroom.team2.map( p => `🟠 ${ p.name } - ${ p.pokemon }` ).join( '\n' )
+			$matchroom.team1.players.map( p => `🟣 ${ p.name } - ${ p.pokemon.name }` ).join( '\n' ),
+			$matchroom.team2.players.map( p => `🟠 ${ p.name } - ${ p.pokemon.name }` ).join( '\n' )
 		].join( '\n' )
 		await t.twitch.announce.mutate( { message } )
 	}
@@ -24,9 +23,9 @@
 	const announcePlayers = async () => {
 		const message = [
 			'🟣',
-			$matchroom.team1.map( p => `${ p.name }` ).join( ' | ' ),
+			$matchroom.team1.players.map( p => `${ p.name }` ).join( ' | ' ),
 			'- 🟠',
-			$matchroom.team2.map( p => `${ p.name }` ).join( ' | ' )
+			$matchroom.team2.players.map( p => `${ p.name }` ).join( ' | ' )
 		].join( '\n' )
 		await t.twitch.announce.mutate( { message } )
 	}
@@ -43,12 +42,12 @@
 
 	const toggleStreamerMode = ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
 		const cb = e.currentTarget
-		$matchroom.streamer = cb.checked
+		$matchroom.options.streamerMode = cb.checked
 	}
 
 	const toggleRemoveOnRotate = ( e: Event & { currentTarget: EventTarget & HTMLInputElement } ) => {
 		const cb = e.currentTarget
-		$matchroom.removeOnRotate = cb.checked
+		$matchroom.options.removeAndRotate = cb.checked
 	}
 </script>
 
@@ -58,13 +57,13 @@
 	<div class="playerlist__usernames">
 		<div class="playerlist__column playerlist__purple">
 			<ModuleHeader> { $_.get( 'playerlist.team-purple' ) } </ModuleHeader>
-			{ #each $matchroom.team1Players as player, idx }
+			{ #each $matchroom.humans1 as player, idx }
 				<PlayerListItem username={ player.name } color="purple" />
 			{ /each }
 		</div>
 		<div class="playerlist__column playerlist__orange">
 			<ModuleHeader> { $_.get( 'playerlist.team-orange' ) } </ModuleHeader>
-			{ #each $matchroom.team2Players as player, idx }
+			{ #each $matchroom.humans2 as player, idx }
 				<PlayerListItem username={ player.name } color="orange" />
 			{ /each }
 		</div>

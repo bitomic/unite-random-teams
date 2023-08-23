@@ -2,13 +2,12 @@
 	import Checkbox from '$lib/components/Checkbox.svelte'
 	import Matchroom from '$lib/components/Matchroom.svelte'
 	import PreloadImages from '$lib/components/PreloadImages.svelte'
-	import History from '$lib/components/History.svelte'
 	import TwitchIntegrator from '$lib/components/TwitchIntegrator.svelte'
 	import { _ } from '$lib/client/stores/i18n'
 	import Button from '$lib/components/Button.svelte'
 	import { matchroom } from '$lib/client/stores/matchroom'
-	import { GlobalUniquePokemonStrategy } from '$lib/client/strategies/GlobalUniquePokemon'
-	import { AllRolesStrategy } from '$lib/client/strategies/AllRolesStrategy'
+	import { GlobalUniqueStrategy } from '$lib/client/matchroom/strategies/GlobalUnique'
+	import { AllRolesStrategy } from '$lib/client/matchroom/strategies/AllRoles'
 	import PlayerList from '$lib/components/PlayerList.svelte'
 	import type { PageData } from './$types'
 	import ModuleHeader from '$lib/components/ModuleHeader.svelte'
@@ -59,9 +58,6 @@
 			<ModuleHeader> { $_.get( 'draft.header' ) } </ModuleHeader>
 			<Banlist />
 		</div>
-		<div class="module">
-			<History />
-		</div>
 	</div>
 	<div class="column column--right">
 		<div class="module">
@@ -70,7 +66,7 @@
 		<div class="module">
 			<ModuleHeader> { $_.get( 'strategies.header' ) } </ModuleHeader>
 			<div class="checkboxes">
-				<Checkbox strategy={ new GlobalUniquePokemonStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>
+				<Checkbox strategy={ new GlobalUniqueStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>
 				<Checkbox strategy={ new AllRolesStrategy() }> { $_.get( 'strategies.all-roles' ) } </Checkbox>
 			</div>
 		</div>

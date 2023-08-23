@@ -1,6 +1,6 @@
 <script lang="ts">
     import { matchroom } from '$lib/client/stores/matchroom'
-    import type { BaseStrategy } from '$lib/client/strategies/BaseStrategy'
+    import type { BaseStrategy } from '$lib/client/matchroom/strategies/BaseStrategy'
     import { onMount } from 'svelte'
 
 	export let center = false
@@ -11,15 +11,15 @@
 		if ( !strategy ) return
 		const cb = e.currentTarget
 		if ( cb.checked ) {
-			$matchroom.pickStrategies.addStrategy( strategy )
+			$matchroom.strategies.add( strategy )
 		} else {
-			$matchroom.pickStrategies.removeStrategy( strategy )
+			$matchroom.strategies.delete( strategy )
 		}
 	}
 
 	onMount( () => {
 		if ( !checkbox || !strategy ) return
-		checkbox.checked = $matchroom.pickStrategies.hasStrategy( strategy.identifier )
+		checkbox.checked = $matchroom.strategies.has( strategy.identifier )
 	} )
 </script>
 

@@ -5,11 +5,11 @@ export class UniqueTeamStrategy extends BaseStrategy {
 	public readonly identifier = UniqueTeamStrategy.identifier
 
 	public exclude( options: ExclusionOptions ): boolean {
-		const teamPokemon = options.team.map( i => i.finalPokemon )
+		const teamPokemon = options.team.map( i => i.pokemon )
 		if ( options.pokemon.startsWith( 'Mewtwo' ) ) {
-			return teamPokemon.some( i => i.startsWith( 'Mewtwo' ) )
+			return teamPokemon.some( i => i.name.startsWith( 'Mewtwo' ) )
 		} else {
-			return teamPokemon.includes( options.pokemon )
+			return teamPokemon.find( i => i.name === options.pokemon ) !== undefined
 		}
 	}
 }

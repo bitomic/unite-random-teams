@@ -1,4 +1,5 @@
-import type { Player } from '../structures'
+import type { Player } from '../Player'
+import type { Pokemon } from '../Pokemon'
 
 export interface ExclusionOptions {
 	otherTeam?: Player[]
