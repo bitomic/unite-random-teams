@@ -80,7 +80,7 @@
 				const [ , ign ] = command.split( / /g )
 				if ( !ign ) return
 
-				player.ign = ign
+				player.ign = ign.slice( 0, 10 )
 				matchroom.update( m => m )
 			}
 
