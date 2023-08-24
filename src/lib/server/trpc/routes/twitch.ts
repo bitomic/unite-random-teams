@@ -4,7 +4,7 @@ import { TRPCError } from '@trpc/server'
 import { session } from '../middleware'
 import { t } from '../t'
 import { s } from '@sapphire/shapeshift'
-import { TRPCClientError } from '@trpc/client'
+import { TmiClient } from '$lib/server/tmi'
 
 const p = t.procedure.use( session )
 
@@ -102,10 +102,29 @@ const me = p.query( async opts => {
 	}
 } )
 
+const say = p
+	.input( s.object( {
+		message: s.string
+	} ) )
+	.mutation( async opts => {
+		const client = await TwitchClient.fetch( opts.ctx.userId )
+		const user = await client.get( 'users' ) as {
+			data: [ {
+				login: string
+			} ]
+		}
+		const username = user.data[ 0 ].login
+
+		const tmi = await TmiClient.getClient()
+		await tmi.say( username, opts.input.message )
+			.catch( () => null )
+	} )
+
 export const twitch = t.router( {
 	announce,
 	createPrediction,
 	endPrediction,
 	loggedIn,
-	me
+	me,
+	say
 } )

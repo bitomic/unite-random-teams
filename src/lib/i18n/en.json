@@ -52,6 +52,7 @@
 		"header": "Custom rules"
 	},
 	"twitch": {
+		"bot-details": "Some replies may be sent by <a href=\"https://twitch.tv/themimejr\">TheMimeJr</a>, a bot account. Depending on your channel's restrictions, it may not be able to send messages.",
 		"chat-title": "Twitch Chat Integration",
 		"command": "command",
 		"connect": "Connect to chat",
@@ -64,6 +65,9 @@
 		"list-command": "list",
 		"list-header": "First 10 players in the waitlist:",
 		"list-no-players": "There are no players in the waitlist.",
+		"message-pos": "$1, your position in the waitlist is: $2.",
+		"message-pos-none": "$1, you are not in the waitlist. Have you used the command to join?",
+		"message-pos-now": "$1, you're in the current match, you can enter the room now!",
 		"pos-command": "pos",
 		"pos-index": "$name, you are in the position $position.",
 		"pos-none": "$name, you aren't in the waitlist.",

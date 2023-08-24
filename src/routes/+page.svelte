@@ -74,7 +74,7 @@
 </div>
 
 <style>
-:global(.notice a) {
+:global(a) {
 	color: #f17f00;
 	font-weight: bold;
 }

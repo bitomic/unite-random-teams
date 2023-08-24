@@ -17,5 +17,6 @@ export const env = load( {
 	},
 	TWITCH_CLIENT_ID: String,
 	TWITCH_CLIENT_SECRET: String,
-	TWITCH_REDIRECT_URI: String
+	TWITCH_REDIRECT_URI: String,
+	TWITCH_USER: String
 } )

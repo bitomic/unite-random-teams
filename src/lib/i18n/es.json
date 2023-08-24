@@ -52,6 +52,7 @@
 		"header": "Reglas personalizadas"
 	},
 	"twitch": {
+		"bot-details": "Algunas respuestas serán enviadas por <a href=\"https://twitch.tv/themimejr\">TheMimeJr</a>, una cuenta de bot. Dependiendo de las restricciones de tu canal, es posible que no pueda enviar mensajes.",
 		"chat-title": "Integración con el chat de Twitch",
 		"command": "comando",
 		"connect": "Conectar al chat",
@@ -64,6 +65,9 @@
 		"list-command": "lista",
 		"list-header": "Primeros 10 jugadores en la lista de espera:",
 		"list-no-players": "No hay jugadores en la lista de espera.",
+		"message-pos": "$1, tu posición en la lista de espera es: $2.",
+		"message-pos-none": "$1, no estás en la lista de espera. ¿Ya usaste el comando para unirte?",
+		"message-pos-now": "$1, estás en la lista de jugadores actual. ¡Únete a la sala!",
 		"pos-command": "pos",
 		"pos-index": "$name, estás en la posición $position.",
 		"pos-none": "$name, no estás en la lista de espera.",

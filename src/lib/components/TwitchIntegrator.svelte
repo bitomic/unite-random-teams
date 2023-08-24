@@ -15,6 +15,7 @@
 	let status: 'connected' | 'connecting' | 'disconnected' = 'disconnected'
 	let listCommand = $_.get( 'twitch.list-command' )
 	let ignCommand = $_.get( 'twitch.ign-command' )
+	let posCommand = $_.get( 'twitch.pos-command' )
 	let queueCommand = $_.get( 'twitch.default-command' )
 
 	const t = trpc( $page )
@@ -24,6 +25,9 @@
 
 	const listPlayersHeader = $_.get( 'twitch.list-header' )
 	const listNoPlayers = $_.get( 'twitch.list-no-players' )
+	const posNoneTemplate = $_.get( 'twitch.message-pos-none' )
+	const posNowTemplate = $_.get( 'twitch.message-pos-now' )
+	const posTemplate = $_.get( 'twitch.message-pos' )
 
 	let client: tmi.Client | null = null
 
@@ -60,23 +64,20 @@
 
 		client.on( 'message', ( _, user, message ) => {
 			const command = message.toLowerCase()
+			const name = user[ 'display-name' ]
+			if ( !name ) return
 
 			if ( command.startsWith( `!${ queueCommand }` ) ) {
-				const name = user[ 'display-name' ]
-				if ( name ) {
-					$matchroom.queue( name )
-				}
+				$matchroom.queue( name )
 				return
 			}
 
 			if ( command.startsWith( `!${ ignCommand }` ) ) {
-				const name = user[ 'display-name' ]
-				if ( !name ) return
 
 				const player = $matchroom.findPlayerByName( name )
 				if ( !player ) return
 
-				const [ , ign ] = command.split( / /g )[ 1 ]
+				const [ , ign ] = command.split( / /g )
 				if ( !ign ) return
 
 				player.ign = ign
@@ -88,9 +89,21 @@
 			if ( command.startsWith( `!${ listCommand }` ) ) {
 				if ( $matchroom.waitlist.players.length ) {
 					const message = `${ listPlayersHeader } ${ $matchroom.waitlist.players.slice( 0, 10 ).join( ' | ' ) }`
-					void t.twitch.announce.mutate( { message } )
+					void t.twitch.say.mutate( { message } )
 				} else {
-					void t.twitch.announce.mutate( { message: listNoPlayers } )
+					void t.twitch.say.mutate( { message: listNoPlayers } )
+				}
+			} else if ( command.startsWith( `!${ posCommand }` ) ) {
+				if ( $matchroom.playernames.includes( name ) ) {
+					const message = posNowTemplate.replace( '$1', name )
+					void t.twitch.say.mutate( { message } )
+				} else if ( $matchroom.waitlist.has( name ) ) {
+					const index = $matchroom.waitlist.players.findIndex( i => i === name ) + 1
+					const message = posTemplate.replace( '$1', name ).replace( '$2', `${ index }` )
+					void t.twitch.say.mutate( { message } )
+				} else {
+					const message = posNoneTemplate.replace( '$1', name )
+					void t.twitch.say.mutate( { message } )
 				}
 			} else {
 				return
@@ -108,6 +121,7 @@
 
 <ModuleHeader> { $_.get( 'twitch.chat-title' ) } </ModuleHeader>
 <div class="twitch">
+	<p> { @html $_.get( 'twitch.bot-details' ) } </p>
 	<div class="twitch__status twitch__status--{ status }">
 		{ $_.get( `twitch.status-${ status }` ) }
 	</div>
@@ -126,12 +140,10 @@
 			<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ listCommand } />
 		</div>
 	{ /if }
-	<!--
 	<div class="twitch__command">
 		<div class="twitch__commandprefix"> ! </div>
 		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ posCommand } />
 	</div>
-	-->
 	{ #if status === 'disconnected' }
 		<Button style="purple" click={ connect }> { $_.get( 'twitch.connect' ) } </Button>
 	{ :else if status === 'connecting' }
