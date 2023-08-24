@@ -59,7 +59,7 @@
 		"default-command": "jugar",
 		"details": "Si conectas tu chat, tus seguidores podrán unirse usando tu comando, ej. !jugar. El comando de !lista tiene un tiempo de reutilización de 5 segundos.",
 		"disconnect": "Desconectar",
-		"ign-command": "ign",
+		"ign-command": "nick",
 		"input-placeholder": "Escribe tu usuario de Twitch",
 		"integrate": "Integrar con Twitch",
 		"list-command": "lista",

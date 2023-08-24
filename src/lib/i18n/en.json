@@ -59,7 +59,7 @@
 		"default-command": "queue",
 		"details": "If you connect to your chat, your viewers will be able to join using your command, e.g. !queue. !list command has a 5 seconds cooldown.",
 		"disconnect": "Disconnect",
-		"ign-command": "ign",
+		"ign-command": "nick",
 		"input-placeholder": "Enter your Twitch username",
 		"integrate": "Integrate with Twitch",
 		"list-command": "list",
