@@ -139,11 +139,11 @@
 			<div class="twitch__commandprefix"> ! </div>
 			<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ listCommand } />
 		</div>
+		<div class="twitch__command">
+			<div class="twitch__commandprefix"> ! </div>
+			<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ posCommand } />
+		</div>
 	{ /if }
-	<div class="twitch__command">
-		<div class="twitch__commandprefix"> ! </div>
-		<TextInput placeholder={ $_.get( 'twitch.command' ) } bind:value={ posCommand } />
-	</div>
 	{ #if status === 'disconnected' }
 		<Button style="purple" click={ connect }> { $_.get( 'twitch.connect' ) } </Button>
 	{ :else if status === 'connecting' }
