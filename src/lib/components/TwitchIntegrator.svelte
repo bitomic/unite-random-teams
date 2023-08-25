@@ -73,12 +73,14 @@
 			}
 
 			if ( command.startsWith( `!${ ignCommand }` ) ) {
-
-				const player = $matchroom.findPlayerByName( name )
-				if ( !player ) return
-
 				const [ , ign ] = command.split( / /g )
 				if ( !ign ) return
+
+				const player = $matchroom.findPlayerByName( name )
+				if ( !player ) {
+					Player.IGN[ name ] = ign
+					return
+				}
 
 				player.ign = ign.slice( 0, 10 )
 				matchroom.update( m => m )
