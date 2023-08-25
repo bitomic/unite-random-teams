@@ -17,7 +17,7 @@
 			$matchroom.team1.players.map( p => `🟣 ${ p.name } - ${ p.pokemon.name }` ).join( '\n' ),
 			$matchroom.team2.players.map( p => `🟠 ${ p.name } - ${ p.pokemon.name }` ).join( '\n' )
 		].join( '\n' )
-		await t.twitch.announce.mutate( { message } )
+		await t.twitch.say.mutate( { message } )
 	}
 
 	const announcePlayers = async () => {
@@ -27,7 +27,7 @@
 			'- 🟠',
 			$matchroom.team2.players.map( p => `${ p.name }` ).join( ' | ' )
 		].join( '\n' )
-		await t.twitch.announce.mutate( { message } )
+		await t.twitch.say.mutate( { message } )
 	}
 
 	const keypress = ( e: KeyboardEvent & { currentTarget: EventTarget & HTMLInputElement } ) => {
