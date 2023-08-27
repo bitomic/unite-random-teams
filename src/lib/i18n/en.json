@@ -6,6 +6,16 @@
 	"draft": {
 		"header": "Banlist"
 	},
+	"driver": {
+		"btn-done": "Done",
+		"btn-next": "Next",
+		"btn-prev": "Previous",
+		"progress": "{{current}} of {{total}}"
+	},
+	"get-started": {
+		"start-tutorial": "Start tutorial",
+		"title": "Get started"
+	},
 	"history": {
 		"empty": "There's no history information to display yet.",
 		"title": "History"
@@ -50,6 +60,36 @@
 		"all-roles": "Guarantee all roles in both teams.",
 		"global-unique-pokemon": "Don't repeat Pokémon between both teams.",
 		"header": "Custom rules"
+	},
+	"tour": {
+		"banlist": "Banlist",
+		"banlist-description": "You can disable Pokémon so they can't be randomly picked.<br /><br />Is Mewtwo too OP? You don't want Speedsters to show up? You have the control.",
+		"banlist-item": "How to ban a Pokémon",
+		"banlist-item-description": "You only need to click on the Pokémon to disable them, and they will be grayed out.<br /><br />You can re-enable them by clicking on their icon again.",
+		"custom-rules": "Custom rules",
+		"custom-rules-description": "You can enable additional restrictions or rules for the randomizing process.<br /><br />Make sure 10 different Pokémon are chosen across both teams, or guarantee that there will be a Pokémon from each role in both teams.",
+		"finish": "And you're done!",
+		"finish-description": "You can start using it now! I hope you will find it handy and fun to use with your viewers.<br /><br />Let the fun and chaos begin!",
+		"playerlist": "Player list",
+		"playerlist-description": "Your players are shown here. Press the X button to remove anyone from the list.<br /><br />You can also drag-and-drop them to swap their positions.",
+		"players-input": "Enter your players",
+		"players-input-description": "You can add players by typing their names here and pressing Enter.<br /><br />They will be automatically added to any incomplete team, or sent to the waitlist if both teams are already full.",
+		"playerlist-rotate": "Let the next players in",
+		"playerlist-rotate-description": "If your match has finished, you can quickly rotate the loser team and let the next players in the waitlist to join.<br /><br />By default, rotated players are appended to the waitlist in random order, but you can remove them by marking the checkbox so they will require to type !queue again in your chat to be added to the waitlist.",
+		"twitch": "Compatible with Twitch",
+		"twitch-description": "You can also let your viewers add themselves to the playerlist by typing !queue in your chat.",
+		"twitch-command": "Twitch commands",
+		"twitch-command-description": "When your chat is successfully connected with the application, your viewers will be able to use these commands.",
+		"twitch-input": "Connect with your chat",
+		"twitch-input-description": "To enable these commands, you need to type your channel's name and press the \"Connect to chat\" button.",
+		"twitch-integrate": "Improved integration",
+		"twitch-integrate-description": "If you identify yourself using your Twitch account (for free!), you will unlock exclusive commands, like letting your viewers know who are the next players in the waitlist and what's their own position in the list.",
+		"matchroom": "Matchroom",
+		"matchroom-description": "Your current players and their Pokémon are displayed here. Fancy, isn't it?",
+		"matchroom-buttons": "Randomize!",
+		"matchroom-buttons-description": "You can use these buttons to shuffle the players in both teams, and randomize the Pokémon they will use.<br /><br />Make sure to create your room in Tournament Mode and to enable the \"All Pokémon Available\" option.",
+		"matchroom-roster": "Change a single Pokémon",
+		"matchroom-roster-description": "You can re-randomize a single players' Pokémon by clicking on their box. Maybe they already played with that Pokémon in their previous game and you want to let them have a different pick."
 	},
 	"twitch": {
 		"bot-details": "Some replies may be sent by <a href=\"https://twitch.tv/themimejr\">TheMimeJr</a>, a bot account. Depending on your channel's restrictions, it may not be able to send messages.",

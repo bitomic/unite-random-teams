@@ -13,12 +13,82 @@
 	import ModuleHeader from '$lib/components/ModuleHeader.svelte'
 	import PredictionManager from '$lib/components/PredictionManager.svelte'
 	import Banlist from '$lib/components/Banlist.svelte'
+	import { driver } from 'driver.js'
+	import 'driver.js/dist/driver.css'
+    import { onMount } from 'svelte'
 
 	export let data: PageData
-
-	const closeNotice = ( e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
-		e.currentTarget.style.display = 'none'
-	}
+	const tour = driver( {
+		doneBtnText: $_.get( 'driver.btn-done' ),
+		nextBtnText: $_.get( 'driver.btn-next' ),
+		prevBtnText: $_.get( 'driver.btn-prev' ),
+		progressText: $_.get( 'driver.progress' ),
+		showProgress: true,
+		steps: [
+			{
+				element: '.playerlist input',
+				label: 'players-input'
+			},
+			{
+				element: '.playerlist__usernames',
+				label: 'playerlist'
+			},
+			{
+				element: '.twitch',
+				label: 'twitch'
+			},
+			{
+				element: '.twitch input',
+				label: 'twitch-input'
+			},
+			{
+				element: '.twitch__command',
+				label: 'twitch-command'
+			},
+			{
+				element: '.navigation .btn',
+				label: 'twitch-integrate',
+			},
+			{
+				element: '.playerlist__rotate',
+				label: 'playerlist-rotate'
+			},
+			{
+				element: '.matchroom',
+				label: 'matchroom'
+			},
+			{
+				element: '.module--buttons',
+				label: 'matchroom-buttons'
+			},
+			{
+				element: '.roster',
+				label: 'matchroom-roster'
+			},
+			{
+				element: '#module-custom-rules',
+				label: 'custom-rules'
+			},
+			{
+				element: '.banlist',
+				label: 'banlist'
+			},
+			{
+				element: '.banlist__item',
+				label: 'banlist-item'
+			},
+			{
+				element: 'body',
+				label: 'finish'
+			}
+		].map( item => ( {
+			element: item.element,
+			popover: {
+				description: $_.get( `tour.${ item.label }-description` ),
+				title: $_.get( `tour.${ item.label }` )
+			}
+		} ) )
+	} )
 </script>
 
 <svelte:head>
@@ -61,9 +131,14 @@
 	</div>
 	<div class="column column--right">
 		<div class="module">
-			<TwitchIntegrator streamerUser={ data.user } />
+			<ModuleHeader> { $_.get( 'get-started.title' ) } </ModuleHeader>
+			<br />
+			<Button click={ () => tour.drive() }> { $_.get( 'get-started.start-tutorial' ) } </Button>
 		</div>
 		<div class="module">
+			<TwitchIntegrator streamerUser={ data.user } />
+		</div>
+		<div class="module" id="module-custom-rules">
 			<ModuleHeader> { $_.get( 'strategies.header' ) } </ModuleHeader>
 			<div class="checkboxes">
 				<Checkbox strategy={ new GlobalUniqueStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>

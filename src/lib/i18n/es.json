@@ -6,6 +6,16 @@
 	"draft": {
 		"header": "Pokémon vetados"
 	},
+	"driver": {
+		"btn-done": "Finalizar",
+		"btn-next": "Siguiente",
+		"btn-prev": "Anterior",
+		"progress": "{{current}} de {{total}}"
+	},
+	"get-started": {
+		"start-tutorial": "Iniciar tutorial",
+		"title": "Cómo empezar"
+	},
 	"history": {
 		"empty": "No hay historial para mostrar.",
 		"title": "Historial"
@@ -50,6 +60,36 @@
 		"all-roles": "Asegurar todos los roles en ambos equipos",
 		"global-unique-pokemon": "No repetir Pokémon entre ambos equipos.",
 		"header": "Reglas personalizadas"
+	},
+	"tour": {
+		"banlist": "Modo veto",
+		"banlist-description": "Puedes deshabilitar Pokémon para que no puedan ser elegidos al aleatorizar.<br /><br />¿Mewtwo es demasiado injusto? ¿no quieres que haya ágiles? Tú tienes el control.",
+		"banlist-item": "Cómo vetar a un Pokémon",
+		"banlist-item-description": "Solo necesitas hacer clic en el Pokémon para deshabilitarlo, y aparecerá en escala de grises.<br /><br />Puedes re-habilitarlo si vuelves a hacer clic en él.",
+		"custom-rules": "Reglas personalizadas",
+		"custom-rules-description": "Puedse habilitar restricciones o reglas adicionales para la aleatorización.<br /><br />Asegura que haya 10 Pokémon diferentes entre ambos equipos, o garantiza que haya un Pokémon de cada rol en cada uno.",
+		"finish": "¡Eso es todo!",
+		"finish-description": "Ya estás listo para empezar a usarlo. Espero que te sea de utilidad y te diviertas usándolo para jugar con tus espectadores.<br /><br />¡Que comience la diversión y el caos!",
+		"playerlist": "Lista de jugadores",
+		"playerlist-description": "Tus jugadores se muestran aquí. Presiona el botón con la X para eliminarlos de la lista.<br /><br />También puedes arrastrar y soltar sus nombres para intercambiar sus posiciones.",
+		"players-input": "Ingresa a tus jugadores",
+		"players-input-description": "Puedes agregar jugadores escribiendo sus nombres en este cuadro de texto y presionando Enter.<br /><br />Serán añadidos automáticamente a cualquier equipo incompleto, o enviados a la lista de espera si ambos equipos están llenos.",
+		"playerlist-rotate": "Que pasen los siguientes jugadores",
+		"playerlist-rotate-description": "Si el encuentro ha terminado, puedes rotar rápidamente al equipo perdedor y dejar que los siguientes jugadores de la lista de espera se unan.<br /><br />De manera predeterminada, los jugadores rotados son enviados al final de la lista de espera en orden aleatorio, pero puedes hacer que se eliminen al marcar una de las casillas de arriba para que tengan que volver a usar !jugar en tu chat para ser incluidos de nuevo en la lista de espera.",
+		"twitch": "Compatible con Twitch",
+		"twitch-description": "También puedes dejar que tus espectadores se añadan a sí mismos a la lista de jugadores al escribir !jugar en tu chat.",
+		"twitch-command": "Comandos de Twitch",
+		"twitch-command-description": "Cuando tu chat se haya conectado exitosamente con la aplicación, tus espectadores podrán usar estos comandos.",
+		"twitch-input": "Conectar con tu chat",
+		"twitch-input-description": "Para habilitar estos comandos, necesitas escribir el nombre de tu canal y presionar el botón de \"Conectar al chat\".",
+		"twitch-integrate": "Integración mejorada",
+		"twitch-integrate-description": "Si te identificas usando tu cuenta de Twitch (¡completamente gratis!), desbloquearás comandos exclusivos, como permitir a tus espectadores saber quiénes son los siguientes jugadores en la lista de espera o consultar su propia posición en la lista.",
+		"matchroom": "Combatientes",
+		"matchroom-description": "Tus jugadores actuales se muestran aquí junto con sus Pokémon. Luce genial, ¿no crees?",
+		"matchroom-buttons": "¡Aleatoriza!",
+		"matchroom-buttons-description": "Puedes usar estos botones para aleatorizar los jugadores en ambos equipos, así como los Pokémon que usarán.<br /><br />Asegúrate de crear tu sala en Modo Torneo y activar la opción de \"Permitir todos los Pokémon\".",
+		"matchroom-roster": "Cambia un único Pokémon",
+		"matchroom-roster-description": "Puedes re-aleatorizar el Pokémon de un único jugador haciendo clic en su recuadro. Tal vez ya haya usado a ese Pokémon en una partida anterior y quieres dejar que puedan usar algo diferente."
 	},
 	"twitch": {
 		"bot-details": "Algunas respuestas serán enviadas por <a href=\"https://twitch.tv/themimejr\">TheMimeJr</a>, una cuenta de bot. Dependiendo de las restricciones de tu canal, es posible que no pueda enviar mensajes.",
