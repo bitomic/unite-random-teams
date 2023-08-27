@@ -1,4 +1,8 @@
-<h3> <slot /> </h3>
+<script lang="ts">
+	export let centered = false
+</script>
+
+<h3 class={ centered ? 'centered' : '' }> <slot /> </h3>
 
 <style>
 h3 {
@@ -14,5 +18,11 @@ h3::after {
 	position: absolute;
 	right: 0;
 	z-index: -1;
+}
+h3.centered {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	width: fit-content;
 }
 </style>

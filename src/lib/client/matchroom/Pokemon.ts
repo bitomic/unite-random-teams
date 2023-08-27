@@ -9,6 +9,14 @@ const ROLE = s.enum( ...[ 'Attacker', 'All-Rounder', 'Defender', 'Speedster', 'S
 
 export class Pokemon {
 	public static readonly ALL = Object.keys( pokemon )
+	public static readonly ROLES = [ 'Attacker', 'All-Rounder', 'Defender', 'Speedster', 'Supporter' ]
+	public static readonly PER_ROLE = Object.entries( pokemon ).reduce( ( list, item ) => {
+		const role = item[ 1 ].role as Role
+		const group = list[ role ] ?? [] // eslint-disable-next-line
+		list[ role ] ??= group // eslint-disable-next-line
+		group.push( item[ 0 ] )
+		return list
+	}, {} as Record<Role, string[]> )
 
 	public static getRandomPokemon(): string {
 		return sample( this.ALL ) ?? 'Pikachu'
