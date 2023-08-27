@@ -70,8 +70,10 @@
 
 <div class="teampick">
 	<div class="teampick__column">
-		<div style:text-align="center">
+		<div style:text-align="center" style:display="flex" style:flex-direction="column">
 			<TextInput bind:value={ teamNames[ 0 ] }></TextInput>
+			<TextInput bind:value={ $matchroom.team1.players[ 0 ].name }></TextInput>
+			<TextInput bind:value={ $matchroom.team1.players[ 1 ].name }></TextInput>
 		</div>
 		{ #each Pokemon.ROLES as role }
 			<br style="clear: both;" />
@@ -93,8 +95,10 @@
 		{ /each }
 	</div>
 	<div class="teampick__column">
-		<div style:text-align="center">
+		<div style:text-align="center" style:display="flex" style:flex-direction="column">
 			<TextInput bind:value={ teamNames[ 1 ] }></TextInput>
+			<TextInput bind:value={ $matchroom.team2.players[ 0 ].name }></TextInput>
+			<TextInput bind:value={ $matchroom.team2.players[ 1 ].name }></TextInput>
 		</div>
 		{ #each Pokemon.ROLES as role }
 			<br style="clear: both;" />
