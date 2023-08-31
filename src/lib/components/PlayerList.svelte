@@ -70,7 +70,7 @@
 		<div class="playerlist__column playerlist__waiting">
 			<ModuleHeader> { $_.get( 'playerlist.waitlist' ) } </ModuleHeader>
 			{ #each $matchroom.waitlist as player, idx }
-				<PlayerListItem username={ player } />
+				<PlayerListItem priorizable={ idx !== 0 } username={ player } />
 			{ /each }
 		</div>
 	</div>

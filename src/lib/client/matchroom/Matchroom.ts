@@ -102,6 +102,14 @@ export class Matchroom {
 
 	@refresh
 	@update
+	public priorize( player: string ) {
+		if ( !this.waitlist.has( player ) ) return
+		this.waitlist.remove( player )
+		this.waitlist.unshift( player )
+	}
+
+	@refresh
+	@update
 	public queue( name: string ): void {
 		if ( this.playernames.includes( name ) ) return
 

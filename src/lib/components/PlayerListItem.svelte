@@ -3,6 +3,7 @@
 
 	export let color: 'orange' | 'purple' | 'default' = 'default'
 	export let ign: string | null = null
+	export let priorizable = false
 	export let username: string
 
 	const drop = ( e: DragEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
@@ -45,6 +46,12 @@
 		if ( !player ) return
 		$matchroom.remove( player )
 	}
+
+	const priorizePlayer = ( e: MouseEvent & { currentTarget: EventTarget & HTMLDivElement } ) => {
+		const { player } = e.currentTarget.dataset
+		if ( !player ) return
+		$matchroom.priorize( player )
+	}
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -64,8 +71,12 @@
 				<div class="playerlist__ign"> { ign } </div>
 			{ /if }
 		</div>
+		{ #if priorizable }
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<div class="playerlist__action playerlist__action--priorize" data-player={ username } on:click={ priorizePlayer }> &uarr; </div>
+		{ /if }
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div class="playerlist__remove" data-player={ username } on:click={ removePlayer }> &times; </div>
+		<div class="playerlist__action playerlist__action--remove" data-player={ username } on:click={ removePlayer }> &times; </div>
 	</div>
 </div>
 
@@ -119,9 +130,8 @@
 	font-size: 0.85em;
 	margin-left: 0.75em;
 }
-.playerlist__remove {
+.playerlist__action {
 	align-items: center;
-	background-color: rgba(177, 0, 0, 0.5);
 	border-radius: 5px;
 	cursor: pointer;
 	display: flex;
@@ -131,5 +141,12 @@
 	position: absolute;
 	right: 0;
 	width: 14px;
+}
+.playerlist__action--remove {
+	background-color: rgba(177, 0, 0, 0.5);
+}
+.playerlist__action--priorize {
+	background-color: rgba(35, 177, 0, 0.5);
+	right: 32px;
 }
 </style>
