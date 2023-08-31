@@ -1,173 +1,230 @@
 {
 	"Absol": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "dark" ]
 	},
 	"Dodrio": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "normal", "flying" ]
 	},
 	"Gengar": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "ghost", "poison" ]
 	},
 	"Leafeon": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "grass" ]
 	},
 	"Talonflame": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "fire", "flying" ]
 	},
 	"Zeraora": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "electric" ]
 	},
 	"Zoroark": {
-		"role": "Speedster"
+		"role": "Speedster",
+		"types": [ "dark" ]
 	},
 	"Blissey": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "normal" ]
 	},
 	"Clefable": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "fairy" ]
 	},
 	"Comfey": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "fairy" ]
 	},
 	"Eldegoss": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "grass" ]
 	},
 	"Hoopa": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "psychic", "ghost" ]
 	},
 	"Mr. Mime": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "psychic", "fairy" ]
 	},
 	"Sableye": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "dark", "ghost" ]
 	},
 	"Wigglytuff": {
-		"role": "Supporter"
+		"role": "Supporter",
+		"types": [ "normal", "fairy" ]
 	},
 	"Blastoise": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "water" ]
 	},
 	"Crustle": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "rock", "bug" ]
 	},
 	"Goodra": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "dragon" ]
 	},
 	"Greedent": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "normal" ]
 	},
 	"Lapras": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "water", "ice" ]
 	},
 	"Mamoswine": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "ice", "ground" ]
 	},
 	"Slowbro": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "water", "psychic" ]
 	},
 	"Snorlax": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "normal" ]
 	},
 	"Trevenant": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "grass", "ghost" ]
 	},
 	"Umbreon": {
-		"role": "Defender"
+		"role": "Defender",
+		"types": [ "dark" ]
 	},
 	"Aegislash": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "ghost", "steel" ]
 	},
 	"Azumarill": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "water", "fairy" ]
 	},
 	"Buzzwole": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "bug", "fighting" ]
 	},
 	"Charizard": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "fire", "flying" ]
 	},
 	"Dragonite": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "dragon", "flying" ]
 	},
 	"Garchomp": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "dragon", "ground" ]
 	},
 	"Lucario": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "fighting", "steel" ]
 	},
 	"Machamp": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "fighting" ]
 	},
 	"Mewtwo X": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "psychic", "fighting" ]
 	},
 	"Scizor": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "steel", "bug" ]
 	},
 	"Tsareena": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "grass" ]
 	},
 	"Tyranitar": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "dark", "rock" ]
 	},
 	"Urshifu": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "fighting", "water", "dark" ]
 	},
 	"Zacian": {
-		"role": "All-Rounder"
+		"role": "All-Rounder",
+		"types": [ "steel", "fairy" ]
 	},
 	"Chandelure": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "fire", "ghost" ]
 	},
 	"Cinderace": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "fire" ]
 	},
 	"Cramorant": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "water", "flying" ]
 	},
 	"Decidueye": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "grass", "ghost" ]
 	},
 	"Delphox": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "fire", "psychic" ]
 	},
 	"Dragapult": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "dragon", "ghost" ]
 	},
 	"Duraludon": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "steel", "dragon" ]
 	},
 	"Espeon": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "psychic" ]
 	},
 	"Gardevoir": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "psychic", "fairy" ]
 	},
 	"Glaceon": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "ice" ]
 	},
 	"Greninja": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "water", "dark" ]
 	},
 	"Mew": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "psychic" ]
 	},
 	"Mewtwo Y": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "psychic" ]
 	},
 	"Ninetales": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "ice", "fairy" ]
 	},
 	"Pikachu": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "electric" ]
 	},
 	"Sylveon": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "fairy" ]
 	},
 	"Venusaur": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "grass" ]
 	},
 	"Inteleon": {
-		"role": "Attacker"
+		"role": "Attacker",
+		"types": [ "water" ]
 	}
 }

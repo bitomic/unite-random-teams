@@ -1,13 +1,41 @@
-<script>
+<script lang="ts">
+    import { Pokemon } from '$lib/client/matchroom';
+    import { _ } from '$lib/client/stores/i18n';
     import { matchroom } from '$lib/client/stores/matchroom'
+    import Button from './Button.svelte';
     import RosterBox from './RosterBox.svelte'
+	import random from 'lodash-es/random'
+	import sample from 'lodash-es/sample'
+	import sampleSize from 'lodash/sampleSize'
+	
+	const monotypes = Object.values( Pokemon.PER_TYPES ).filter( i => i.size >= 5 ).map( i => [ ...i ] )
+	const monoroles = Object.values( Pokemon.PER_ROLE )
 
+	const randomMono = ( teamId: 1 | 2, collection: string[][] ) => {
+		const team = $matchroom[ `team${ teamId }` ]
+		const options = [ ...sample( collection )! ]
+		const list = sampleSize( options, 5 )
+		for ( let i = 0; i < 5; i++ ) {
+			const player = team.players[ i ]
+			player?.pokemon.shuffle( list[ i ] ?? Pokemon.getRandomPokemon() )
+		}
+	}
+
+	const randomAnyMono = ( teamId: 1 | 2 ) => {
+		const collection = [ monotypes, monoroles ].at( random( 0, 1 ) ) ?? monotypes
+		randomMono( teamId, collection )
+	}
 </script>
 <div class="matchroom">
 	<div class="matchroom__team">
 		{ #each $matchroom.team1 as player }
 			<RosterBox player={ player } team="purple" />
 		{ /each }
+	</div>
+	<div class="matchroom__buttons">
+		<Button style="purple" click={ randomMono.bind( undefined, 1, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>
+		<Button style="purple" click={ randomMono.bind( undefined, 1, monoroles ) }> { $_.get( 'playerlist.random-monorole' ) } </Button>
+		<Button style="purple" click={ randomAnyMono.bind( undefined, 1 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
 	</div>
 	<div class="matchroom__vs">
 		<img src="vs.png" alt="vs">
@@ -16,6 +44,11 @@
 		{ #each $matchroom.team2 as player }
 			<RosterBox player={ player } team="orange" />
 		{ /each }
+	</div>
+	<div class="matchroom__buttons">
+		<Button click={ randomMono.bind( undefined, 2, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>
+		<Button click={ randomMono.bind( undefined, 2, monoroles ) }> { $_.get( 'playerlist.random-monorole' ) } </Button>
+		<Button click={ randomAnyMono.bind( undefined, 2 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
 	</div>
 </div>
 

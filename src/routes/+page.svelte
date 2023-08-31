@@ -15,7 +15,6 @@
 	import Banlist from '$lib/components/Banlist.svelte'
 	import { driver } from 'driver.js'
 	import 'driver.js/dist/driver.css'
-    import { onMount } from 'svelte'
 
 	export let data: PageData
 	const tour = driver( {
@@ -115,13 +114,8 @@
 
 			<Matchroom />
 
-			<div class="module--buttons">
-				<Button click={ () => $matchroom.shufflePlayers() }> { $_.get( 'buttons.shuffle-players' ) } </Button>
-				<Button click={ () => $matchroom.shufflePokemon() }> { $_.get( 'buttons.shuffle-pokemon' ) } </Button>
-			</div>
-
 			{ #if data.user }
-			<PredictionManager />
+				<PredictionManager />
 			{ /if }
 		</div>
 		<div class="module">
