@@ -107,6 +107,10 @@
 		"role": "All-Rounder",
 		"types": [ "water", "fairy" ]
 	},
+	"Blaziken": {
+		"role": "All-Rounder",
+		"types": [ "fire", "fighting" ]
+	},
 	"Buzzwole": {
 		"role": "All-Rounder",
 		"types": [ "bug", "fighting" ]
