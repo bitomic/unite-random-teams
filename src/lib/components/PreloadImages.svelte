@@ -3,8 +3,10 @@
 </script>
 
 <div class="preload">
-	{ #each Object.keys( pokemon ) as name }
-		<img src="/roster/{ name }.png" alt={ name }>
+	{ #each Object.entries( pokemon ) as [ name, { holowear } ] }
+		{ #each { length: holowear } as _, i }
+			<img src="/tachie/{ name } { i }.png" alt={ name }>
+		{/each}
 	{ /each }
 </div>
 

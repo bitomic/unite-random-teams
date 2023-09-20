@@ -1,233 +1,291 @@
 {
 	"Absol": {
+		"holowear": 8,
 		"role": "Speedster",
 		"types": [ "dark" ]
 	},
 	"Dodrio": {
+		"holowear": 5,
 		"role": "Speedster",
 		"types": [ "normal", "flying" ]
 	},
 	"Gengar": {
+		"holowear": 8,
 		"role": "Speedster",
 		"types": [ "ghost", "poison" ]
 	},
 	"Leafeon": {
+		"holowear": 2,
 		"role": "Speedster",
 		"types": [ "grass" ]
 	},
 	"Talonflame": {
+		"holowear": 7,
 		"role": "Speedster",
 		"types": [ "fire", "flying" ]
 	},
 	"Zeraora": {
+		"holowear": 6,
 		"role": "Speedster",
 		"types": [ "electric" ]
 	},
 	"Zoroark": {
+		"holowear": 3,
 		"role": "Speedster",
 		"types": [ "dark" ]
 	},
 	"Blissey": {
+		"holowear": 7,
 		"role": "Supporter",
 		"types": [ "normal" ]
 	},
 	"Clefable": {
+		"holowear": 4,
 		"role": "Supporter",
 		"types": [ "fairy" ]
 	},
 	"Comfey": {
+		"holowear": 4,
 		"role": "Supporter",
 		"types": [ "fairy" ]
 	},
 	"Eldegoss": {
+		"holowear": 8,
 		"role": "Supporter",
 		"types": [ "grass" ]
 	},
 	"Hoopa": {
+		"holowear": 5,
 		"role": "Supporter",
 		"types": [ "psychic", "ghost" ]
 	},
 	"Mr. Mime": {
+		"holowear": 5,
 		"role": "Supporter",
 		"types": [ "psychic", "fairy" ]
 	},
 	"Sableye": {
+		"holowear": 3,
 		"role": "Supporter",
 		"types": [ "dark", "ghost" ]
 	},
 	"Wigglytuff": {
+		"holowear": 7,
 		"role": "Supporter",
 		"types": [ "normal", "fairy" ]
 	},
 	"Blastoise": {
+		"holowear": 7,
 		"role": "Defender",
 		"types": [ "water" ]
 	},
 	"Crustle": {
+		"holowear": 5,
 		"role": "Defender",
 		"types": [ "rock", "bug" ]
 	},
 	"Goodra": {
+		"holowear": 4,
 		"role": "Defender",
 		"types": [ "dragon" ]
 	},
 	"Greedent": {
+		"holowear": 8,
 		"role": "Defender",
 		"types": [ "normal" ]
 	},
 	"Lapras": {
+		"holowear": 3,
 		"role": "Defender",
 		"types": [ "water", "ice" ]
 	},
 	"Mamoswine": {
+		"holowear": 6,
 		"role": "Defender",
 		"types": [ "ice", "ground" ]
 	},
 	"Slowbro": {
+		"holowear": 5,
 		"role": "Defender",
 		"types": [ "water", "psychic" ]
 	},
 	"Snorlax": {
+		"holowear": 13,
 		"role": "Defender",
 		"types": [ "normal" ]
 	},
 	"Trevenant": {
+		"holowear": 6,
 		"role": "Defender",
 		"types": [ "grass", "ghost" ]
 	},
 	"Umbreon": {
+		"holowear": 2,
 		"role": "Defender",
 		"types": [ "dark" ]
 	},
 	"Aegislash": {
+		"holowear": 8,
 		"role": "All-Rounder",
 		"types": [ "ghost", "steel" ]
 	},
 	"Azumarill": {
+		"holowear": 5,
 		"role": "All-Rounder",
 		"types": [ "water", "fairy" ]
 	},
 	"Blaziken": {
+		"holowear": 1,
 		"role": "All-Rounder",
 		"types": [ "fire", "fighting" ]
 	},
 	"Buzzwole": {
+		"holowear": 4,
 		"role": "All-Rounder",
 		"types": [ "bug", "fighting" ]
 	},
 	"Charizard": {
+		"holowear": 11,
 		"role": "All-Rounder",
 		"types": [ "fire", "flying" ]
 	},
 	"Dragonite": {
+		"holowear": 7,
 		"role": "All-Rounder",
 		"types": [ "dragon", "flying" ]
 	},
 	"Garchomp": {
+		"holowear": 7,
 		"role": "All-Rounder",
 		"types": [ "dragon", "ground" ]
 	},
 	"Lucario": {
+		"holowear": 8,
 		"role": "All-Rounder",
 		"types": [ "fighting", "steel" ]
 	},
 	"Machamp": {
+		"holowear": 6,
 		"role": "All-Rounder",
 		"types": [ "fighting" ]
 	},
 	"Mewtwo X": {
+		"holowear": 2,
 		"role": "All-Rounder",
 		"types": [ "psychic", "fighting" ]
 	},
 	"Scizor": {
+		"holowear": 4,
 		"role": "All-Rounder",
 		"types": [ "steel", "bug" ]
 	},
 	"Tsareena": {
+		"holowear": 6,
 		"role": "All-Rounder",
 		"types": [ "grass" ]
 	},
 	"Tyranitar": {
+		"holowear": 3,
 		"role": "All-Rounder",
 		"types": [ "dark", "rock" ]
 	},
 	"Urshifu": {
+		"holowear": 3,
 		"role": "All-Rounder",
 		"types": [ "fighting", "water", "dark" ]
 	},
 	"Zacian": {
+		"holowear": 3,
 		"role": "All-Rounder",
 		"types": [ "steel", "fairy" ]
 	},
 	"Chandelure": {
+		"holowear": 4,
 		"role": "Attacker",
 		"types": [ "fire", "ghost" ]
 	},
 	"Cinderace": {
+		"holowear": 7,
 		"role": "Attacker",
 		"types": [ "fire" ]
 	},
 	"Cramorant": {
+		"holowear": 4,
 		"role": "Attacker",
 		"types": [ "water", "flying" ]
 	},
 	"Decidueye": {
+		"holowear": 6,
 		"role": "Attacker",
 		"types": [ "grass", "ghost" ]
 	},
 	"Delphox": {
+		"holowear": 6,
 		"role": "Attacker",
 		"types": [ "fire", "psychic" ]
 	},
 	"Dragapult": {
+		"holowear": 5,
 		"role": "Attacker",
 		"types": [ "dragon", "ghost" ]
 	},
 	"Duraludon": {
+		"holowear": 7,
 		"role": "Attacker",
 		"types": [ "steel", "dragon" ]
 	},
 	"Espeon": {
+		"holowear": 9,
 		"role": "Attacker",
 		"types": [ "psychic" ]
 	},
 	"Gardevoir": {
+		"holowear": 9,
 		"role": "Attacker",
 		"types": [ "psychic", "fairy" ]
 	},
 	"Glaceon": {
+		"holowear": 8,
 		"role": "Attacker",
 		"types": [ "ice" ]
 	},
 	"Greninja": {
+		"holowear": 6,
 		"role": "Attacker",
 		"types": [ "water", "dark" ]
 	},
 	"Mew": {
+		"holowear": 5,
 		"role": "Attacker",
 		"types": [ "psychic" ]
 	},
 	"Mewtwo Y": {
+		"holowear": 2,
 		"role": "Attacker",
 		"types": [ "psychic" ]
 	},
 	"Ninetales": {
+		"holowear": 7,
 		"role": "Attacker",
 		"types": [ "ice", "fairy" ]
 	},
 	"Pikachu": {
+		"holowear": 12,
 		"role": "Attacker",
 		"types": [ "electric" ]
 	},
 	"Sylveon": {
+		"holowear": 6,
 		"role": "Attacker",
 		"types": [ "fairy" ]
 	},
 	"Venusaur": {
+		"holowear": 7,
 		"role": "Attacker",
 		"types": [ "grass" ]
 	},
 	"Inteleon": {
+		"holowear": 4,
 		"role": "Attacker",
 		"types": [ "water" ]
 	}

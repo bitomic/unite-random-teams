@@ -3,6 +3,7 @@ import pokemon from '../../../pokemon.json'
 import { s } from '@sapphire/shapeshift'
 import sample from 'lodash-es/sample'
 import { matchroom } from '../stores/matchroom'
+import random from 'lodash-es/random'
 
 type Role = 'Attacker' | 'All-Rounder' | 'Defender' | 'Speedster' | 'Supporter'
 const ROLE = s.enum( ...[ 'Attacker', 'All-Rounder', 'Defender', 'Speedster', 'Supporter' ] as const )
@@ -11,8 +12,8 @@ export class Pokemon {
 	public static readonly ALL = Object.keys( pokemon )
 	public static readonly PER_TYPES = Object.entries( pokemon ).reduce( ( list, [ pokemon, data ] ) => {
 		for ( const type of data.types ) {
-			const arr = list[ type ] ?? new Set()
-			list[ type ] ??= arr
+			const arr = list[ type ] ?? new Set() // eslint-disable-line
+			list[ type ] ??= arr // eslint-disable-line
 			arr.add( pokemon )
 		}
 		return list
@@ -30,21 +31,34 @@ export class Pokemon {
 		return sample( this.ALL ) ?? 'Pikachu'
 	}
 
+	public static getPokemonHolowearCount( name: string ): number {
+		if ( name === 'Mr. Mime' ) return pokemon[ 'Mr. Mime' ].holowear
+		return s.number.parse( get( pokemon, `${ name }.holowear` ) )
+	}
+
 	public static getPokemonRole( name: string ): Role {
 		if ( name === 'Mr. Mime' ) return 'Supporter'
 		return ROLE.parse( get( pokemon, `${ name }.role` ) )
+	}
+
+	public static getPokemonTachie( name: string ): string {
+		const holowearCount = Pokemon.getPokemonHolowearCount( name )
+		const index = random( 0, holowearCount - 1, false )
+		return `${ name } ${ index }.png`
 	}
 
 	#displayName: string
 	public displayRole: Role = 'Attacker'
 	#name: string
 	public role: Role = 'Attacker'
+	public tachie: string
 
 	public constructor( name?: string ) {
 		this.#name = name ?? Pokemon.getRandomPokemon()
 		this.name = this.name
 		this.#displayName = this.name
 		this.displayRole = this.role
+		this.tachie = Pokemon.getPokemonTachie( this.name )
 	}
 
 	public get displayName(): string {
@@ -54,6 +68,7 @@ export class Pokemon {
 	public set displayName( value: string ) {
 		this.#displayName = value
 		this.displayRole = Pokemon.getPokemonRole( value )
+		this.tachie = Pokemon.getPokemonTachie( value )
 	}
 
 	public get name(): string {

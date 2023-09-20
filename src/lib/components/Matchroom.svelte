@@ -1,14 +1,15 @@
 <script lang="ts">
-    import { Pokemon } from '$lib/client/matchroom';
-    import { _ } from '$lib/client/stores/i18n';
+    import { Pokemon } from '$lib/client/matchroom'
+    import { _ } from '$lib/client/stores/i18n'
     import { matchroom } from '$lib/client/stores/matchroom'
-    import Button from './Button.svelte';
+    import Button from './Button.svelte'
     import RosterBox from './RosterBox.svelte'
 	import random from 'lodash-es/random'
 	import sample from 'lodash-es/sample'
 	import sampleSize from 'lodash/sampleSize'
-	
-	const monotypes = Object.values( Pokemon.PER_TYPES ).filter( i => i.size >= 5 ).map( i => [ ...i ] )
+
+	const monotypes = Object.values( Pokemon.PER_TYPES ).filter( i => i.size >= 5 )
+		.map( i => [ ...i ] )
 	const monoroles = Object.values( Pokemon.PER_ROLE )
 
 	const randomMono = ( teamId: 1 | 2, collection: string[][] ) => {
@@ -17,7 +18,7 @@
 		const list = sampleSize( options, 5 )
 		for ( let i = 0; i < 5; i++ ) {
 			const player = team.players[ i ]
-			player?.pokemon.shuffle( list[ i ] ?? Pokemon.getRandomPokemon() )
+			player.pokemon.shuffle( list[ i ] ?? Pokemon.getRandomPokemon() )
 		}
 	}
 
