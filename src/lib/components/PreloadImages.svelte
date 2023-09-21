@@ -5,7 +5,7 @@
 <div class="preload">
 	{ #each Object.entries( pokemon ) as [ name, { holowear } ] }
 		{ #each { length: holowear } as _, i }
-			<img src="/tachie/{ name } { i }.png" alt={ name }>
+			<img src="/tachie/{ name } { i }.webp" alt={ name }>
 		{/each}
 	{ /each }
 </div>
