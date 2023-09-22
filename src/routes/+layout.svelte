@@ -12,4 +12,5 @@
 
 <style>
 @import 'normalize.css';
+@import '/static/spritesheet.css';
 </style>

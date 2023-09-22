@@ -94,8 +94,6 @@
 	<title> { $_.get( 'navigation.title' ) } </title>
 </svelte:head>
 
-<PreloadImages />
-
 <div class="columns">
 	<div class="column column--left">
 		<div class="module">

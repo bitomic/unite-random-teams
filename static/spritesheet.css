@@ -1,0 +1,2359 @@
+.Absol_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Absol_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Aegislash_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Azumarill_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Azumarill_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Azumarill_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Azumarill_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Azumarill_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Blastoise_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Blaziken_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Blissey_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Buzzwole_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Buzzwole_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Buzzwole_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Buzzwole_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Chandelure_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Chandelure_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Chandelure_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Chandelure_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_8 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_9 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Charizard_10 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Cinderace_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Clefable_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Clefable_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Clefable_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Clefable_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Comfey_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Comfey_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Comfey_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Comfey_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Cramorant_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Cramorant_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Cramorant_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Cramorant_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Crustle_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Crustle_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Crustle_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Crustle_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Crustle_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Decidueye_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Decidueye_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Decidueye_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Decidueye_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Decidueye_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Decidueye_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Delphox_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Delphox_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Delphox_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Delphox_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Delphox_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Delphox_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Dodrio_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Dodrio_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Dodrio_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Dodrio_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Dodrio_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Dragapult_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragapult_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragapult_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragapult_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragapult_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Dragonite_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Duraludon_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegoss_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Eldegossl_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Espeon_8 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Froakie_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Garchomp_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Gardevoir_8 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Gengar_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Glaceon_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Goodra_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Goodra_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Goodra_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Goodra_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greedent_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greninja_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greninja_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greninja_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greninja_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greninja_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Greninja_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Hoopa_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Hoopa_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Hoopa_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Hoopa_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Hoopa_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Inteleon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Inteleon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Inteleon_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Inteleon_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Lapras_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Lapras_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Lapras_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Leafeon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Leafeon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Lucario_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Machamp_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Machamp_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Machamp_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Machamp_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Machamp_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Machamp_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Mamoswine_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Mamoswine_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Mamoswine_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Mamoswine_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Mamoswine_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mamoswine_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mew_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mew_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mew_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mew_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mew_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mewtwo_X_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mewtwo_X_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mewtwo_Y_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mewtwo_Y_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mr_Mime_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mr_Mime_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mr_Mime_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mr_Mime_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Mr_Mime_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Ninetales_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_8 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_9 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_10 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Pikachu_11 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Sableye_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Sableye_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Sableye_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Scizor_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Scizor_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Scizor_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Scizor_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowbro_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowbro_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowbro_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowbro_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowbro_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowpoke_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Slowpoke_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_7 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_8 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_9 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_10 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_11 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Snorlax_12 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Sylveon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Sylveon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Sylveon_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Sylveon_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Sylveon_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Sylveon_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1680px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1920px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2160px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Talonflame_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2400px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Trevenant_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2640px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Trevenant_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -2880px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Trevenant_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3120px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Trevenant_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3360px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Trevenant_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3600px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Trevenant_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -3840px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Tsareena_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4080px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Tsareena_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4320px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Tsareena_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4560px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Tsareena_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Tsareena_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Tsareena_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Tyranitar_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Tyranitar_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Tyranitar_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Umbreon_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Umbreon_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Urshifu_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Urshifu_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Urshifu_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -4800px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -0px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -320px;
+	background-size: 5280px 5120px;
+}
+
+.Venusaur_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -640px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -960px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -1280px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -1600px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -1920px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -2240px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -2560px;
+	background-size: 5280px 5120px;
+}
+
+.Wigglytuff_6 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -2880px;
+	background-size: 5280px 5120px;
+}
+
+.Zacian_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -3200px;
+	background-size: 5280px 5120px;
+}
+
+.Zacian_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -3520px;
+	background-size: 5280px 5120px;
+}
+
+.Zacian_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -3840px;
+	background-size: 5280px 5120px;
+}
+
+.Zeraora_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -4160px;
+	background-size: 5280px 5120px;
+}
+
+.Zeraora_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -5040px -4480px;
+	background-size: 5280px 5120px;
+}
+
+.Zeraora_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -0px -4800px;
+	background-size: 5280px 5120px;
+}
+
+.Zeraora_3 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -240px -4800px;
+	background-size: 5280px 5120px;
+}
+
+.Zeraora_4 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -480px -4800px;
+	background-size: 5280px 5120px;
+}
+
+.Zeraora_5 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -720px -4800px;
+	background-size: 5280px 5120px;
+}
+
+.Zoroark_0 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -960px -4800px;
+	background-size: 5280px 5120px;
+}
+
+.Zoroark_1 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1200px -4800px;
+	background-size: 5280px 5120px;
+}
+
+.Zoroark_2 {
+    width: 240px;
+    height: 320px;
+    background: url("/spritesheet.webp") -1440px -4800px;
+	background-size: 5280px 5120px;
+}
+

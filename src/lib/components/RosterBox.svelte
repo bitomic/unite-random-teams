@@ -13,7 +13,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 <div class="roster roster--{ player.pokemon.displayRole.toLowerCase() } roster--{ team }" on:click={ click }>
 	<div class="roster__image">
-		<img src="/tachie/{ player.pokemon.tachie }" alt={ player.pokemon.displayName } width="200">
+		<div class="roster__tachie { player.pokemon.tachie }"> &nbsp; </div>
 	</div>
 	<div class="roster__data">
 		<div class="roster__pokemon"> { player.pokemon.displayName } </div>
@@ -70,19 +70,17 @@
 .roster:hover {
 	outline: 4px solid var(--outline);
 }
+.roster__tachie {
+	left: -40px;
+	position: absolute;
+	top: -45px;
+	scale: calc( 180 / 240 );
+}
 .roster__image {
 	--background: var( --color, #fff );
-	--dots-size: 250px;
-	background-blend-mode: overlay, hard-light;
-	background-color: var( --background );
-	background-image: url( '/dots.svg' ), url( '/checkers.svg' );
-	background-position: calc( 100% + 100px ) calc( 100% - 100px ), top left;
-	background-repeat: no-repeat, repeat;
-	background-size: var( --dots-size ), 140px;
 	border: 3px solid var(--border);
 	border-radius: 5px;
-	display: flex;
-	justify-content: center;
+	height: 230px;
 	overflow: hidden;
 	position: relative;
 	width: 160px;

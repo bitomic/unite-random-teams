@@ -44,7 +44,9 @@ export class Pokemon {
 	public static getPokemonTachie( name: string ): string {
 		const holowearCount = Pokemon.getPokemonHolowearCount( name )
 		const index = random( 0, holowearCount - 1, false )
-		return `${ name } ${ index }.webp`
+		if ( name === 'Mr. Mime' ) name = 'Mr_Mime'
+		return `${ name.replace( / /g, '_' ) }_${ index }`
+		//return `${ name } ${ index }.webp`
 	}
 
 	#displayName: string
