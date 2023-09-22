@@ -4738,6 +4738,9 @@ __metadata:
     typescript: ^5.1.6
     vite: ^4.4.4
     vitest: ^0.33.0
+  dependenciesMeta:
+    spritesheet-js:
+      optional: true
   languageName: unknown
   linkType: soft
 
