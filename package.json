@@ -52,8 +52,5 @@
 		"tmi.js": "^1.8.5",
 		"trpc-sveltekit": "^3.5.17",
 		"ts-dotenv": "^0.9.1"
-	},
-	"optionalDependencies": {
-		"spritesheet-js": "^1.2.8"
 	}
 }
