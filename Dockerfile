@@ -35,7 +35,7 @@ WORKDIR /home/node/app
 ENV NODE_ENV="development"
 
 COPY --chown=node:node tsconfig.json tsconfig.json
-RUN yarn install --immutable
+RUN yarn install --ignore-optional --immutable
 
 COPY --chown=node:node src/ src/
 RUN yarn svelte-kit sync
