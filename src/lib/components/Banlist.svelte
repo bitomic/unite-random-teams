@@ -3,6 +3,7 @@
     import { BanlistStrategy } from '$lib/client/matchroom/strategies/Banlist'
 	import pokemon from '../../pokemon.json'
     import { onMount } from 'svelte'
+    import Button from './Button.svelte';
 
 	let banlist = $matchroom.strategies.get( BanlistStrategy.identifier ) as BanlistStrategy
 
@@ -12,6 +13,11 @@
 		} else {
 			banlist.add( name )
 		}
+		banlist = banlist
+	}
+
+	const reset = () => {
+		banlist.reset()
 		banlist = banlist
 	}
 
@@ -43,6 +49,10 @@
 				width="80">
 		</div>
 	{ /each }
+</div>
+
+<div style:text-align="center">
+	<Button fullWidth click={ reset }> Restart </Button>
 </div>
 
 <style>
