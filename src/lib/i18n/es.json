@@ -62,7 +62,8 @@
 	"strategies": {
 		"all-roles": "Asegurar todos los roles en ambos equipos",
 		"global-unique-pokemon": "No repetir Pokémon entre ambos equipos.",
-		"header": "Reglas personalizadas"
+		"header": "Reglas personalizadas",
+		"monoteams": "Habilitar opciones para aleatorizar monoequipos"
 	},
 	"tour": {
 		"banlist": "Modo veto",

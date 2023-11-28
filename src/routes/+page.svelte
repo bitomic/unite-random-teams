@@ -15,6 +15,7 @@
 	import Banlist from '$lib/components/Banlist.svelte'
 	import { driver } from 'driver.js'
 	import 'driver.js/dist/driver.css'
+    import { monoteam } from '$lib/client/stores/monoteam';
 
 	export let data: PageData
 	const tour = driver( {
@@ -135,6 +136,7 @@
 			<div class="checkboxes">
 				<Checkbox strategy={ new GlobalUniqueStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>
 				<Checkbox strategy={ new AllRolesStrategy() }> { $_.get( 'strategies.all-roles' ) } </Checkbox>
+				<Checkbox change={ i => $monoteam = i.currentTarget.checked }> { $_.get( 'strategies.monoteams' ) } </Checkbox>
 			</div>
 		</div>
 	</div>

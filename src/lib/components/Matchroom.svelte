@@ -2,6 +2,7 @@
     import { Pokemon } from '$lib/client/matchroom'
     import { _ } from '$lib/client/stores/i18n'
     import { matchroom } from '$lib/client/stores/matchroom'
+    import { monoteam } from '$lib/client/stores/monoteam';
     import Button from './Button.svelte'
     import RosterBox from './RosterBox.svelte'
 	import random from 'lodash-es/random'
@@ -33,11 +34,13 @@
 			<RosterBox player={ player } team="purple" />
 		{ /each }
 	</div>
-	<div class="matchroom__buttons">
-		<Button style="purple" click={ randomMono.bind( undefined, 1, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>
-		<Button style="purple" click={ randomMono.bind( undefined, 1, monoroles ) }> { $_.get( 'playerlist.random-monorole' ) } </Button>
-		<Button style="purple" click={ randomAnyMono.bind( undefined, 1 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
-	</div>
+	{ #if $monoteam }
+		<div class="matchroom__buttons">
+			<Button style="purple" click={ randomMono.bind( undefined, 1, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>
+			<Button style="purple" click={ randomMono.bind( undefined, 1, monoroles ) }> { $_.get( 'playerlist.random-monorole' ) } </Button>
+			<Button style="purple" click={ randomAnyMono.bind( undefined, 1 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
+		</div>
+	{ /if }
 	<div class="matchroom__vs">
 		<img src="vs.png" alt="vs">
 	</div>
@@ -46,11 +49,13 @@
 			<RosterBox player={ player } team="orange" />
 		{ /each }
 	</div>
-	<div class="matchroom__buttons">
-		<Button click={ randomMono.bind( undefined, 2, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>
-		<Button click={ randomMono.bind( undefined, 2, monoroles ) }> { $_.get( 'playerlist.random-monorole' ) } </Button>
-		<Button click={ randomAnyMono.bind( undefined, 2 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
-	</div>
+	{ #if $monoteam }
+		<div class="matchroom__buttons">
+			<Button click={ randomMono.bind( undefined, 2, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>
+			<Button click={ randomMono.bind( undefined, 2, monoroles ) }> { $_.get( 'playerlist.random-monorole' ) } </Button>
+			<Button click={ randomAnyMono.bind( undefined, 2 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
+		</div>
+	{ /if }
 </div>
 
 <style>
