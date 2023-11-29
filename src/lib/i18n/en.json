@@ -3,6 +3,92 @@
 		"shuffle-players": "Shuffle players",
 		"shuffle-pokemon": "Shuffle Pokémon"
 	},
+	"conditions": {
+		"be-polite": {
+			"description": "If you kill a Supporter Pokémon, you must let the opposing team kill you once. Supporters are friends, not food.",
+			"name": "Be polite"
+		},
+		"best-items": {
+			"description": "Each Pokémon from your team must bring either Leftovers or Assault Vest. Or even both!",
+			"name": "Best items"
+		},
+		"black-friday": {
+			"description": "All five Pokémon, even the jungler, must go top at the beginning. You can only switch lanes after you are defeated once or you break their base.",
+			"name": "Black Friday"
+		},
+		"bot-mode": {
+			"description": "If an enemy is in tall grass, you can't attack them. You can't check bushes either with attacks.",
+			"name": "Bot Mode"
+		},
+		"eevee": {
+			"description": "You can only use an Eeveelution.",
+			"name": "Eevee Showtime!"
+		},
+		"eye-for-an-eye": {
+			"description": "You can't break an enemy base unless they have broken the equivalent base of yours.",
+			"name": "Eye for an eye"
+		},
+		"hide-and-seek": {
+			"description": "You can't hide in tall grass. Going through is fine. Staying in there is not.",
+			"name": "Hide and Seek"
+		},
+		"im-in-danger": {
+			"description": "You can reroll a Pokémon from the opposing team, and they can reroll one of yours.",
+			"name": "I'm in danger"
+		},
+		"invasion": {
+			"description": "At the beginning, 3 Pokémon from your team must invade the enemy jungle.",
+			"name": "Invasion"
+		},
+		"jungle-supporter": {
+			"description": "Your team's jungle must be a Supporter Pokémon (or Defender, if you don't have a Supporter) during the whole match.",
+			"name": "Jungle Supporter"
+		},
+		"no-jungle": {
+			"description": "Both teams can't do the jungle. Who said conditions couldn't affect both teams?",
+			"name": "No Jungle"
+		},
+		"no-stacking": {
+			"description": "You can't bring any stacking items to the match.",
+			"name": "No Stacking"
+		},
+		"no-supporter": {
+			"description": "You can't use any supporter. If you got a supporter from the random picking, you can choose anything else you want.",
+			"name": "No Supporter"
+		},
+		"no-tresspassing": {
+			"description": "You can't step into the enemy jungle, even after defeating Rayquaza.",
+			"name": "No Tresspassing"
+		},
+		"ornithology": {
+			"description": "You can only use Pokémon that resemble birds (Blaziken, Cramorant, Decidueye, Dodrio, Talonflame).",
+			"name": "Ornithology"
+		},
+		"perfectly-balanced": {
+			"description": "Before Rayquaza, there must always be at least 1 Pokémon close to each of your bases at all times.",
+			"name": "Perfectly balanced"
+		},
+		"regieleki-is-in-da-house": {
+			"description": "If the opposing team defeats Regieleki, you must let him in.",
+			"name": "Regieleki is in da house"
+		},
+		"some-order": {
+			"description": "You can't score any point in the bottom path until you break the top base.",
+			"name": "Some order"
+		},
+		"starters": {
+			"description": "You can only use starter Pokémon. Pikachu and Eevee don't count as starters.",
+			"name": "Starters"
+		},
+		"three-staged": {
+			"description": "You can only use Pokémon with three evolutive stages.",
+			"name": "Three Stages"
+		},
+		"veni-vidi-vici": {
+			"description": "After defeating an objective or breaking a base, your whole team must go back to their base. Even after defeating Rayquaza.",
+			"name": "Veni, vidi, vici"
+		}
+	},
 	"draft": {
 		"header": "Banlist"
 	},
@@ -61,9 +147,10 @@
 	},
 	"strategies": {
 		"all-roles": "Guarantee all roles in both teams.",
+		"conditions": "Use random conditions.",
 		"global-unique-pokemon": "Don't repeat Pokémon between both teams.",
 		"header": "Custom rules",
-		"monoteams": "Enable options to randomize into monoteams"
+		"monoteams": "Enable options to randomize into monoteams."
 	},
 	"tour": {
 		"banlist": "Banlist",

@@ -1,13 +1,15 @@
 <script lang="ts">
     import { Pokemon } from '$lib/client/matchroom'
+    import { conditions } from '$lib/client/stores/conditions'
     import { _ } from '$lib/client/stores/i18n'
     import { matchroom } from '$lib/client/stores/matchroom'
-    import { monoteam } from '$lib/client/stores/monoteam';
+    import { monoteam } from '$lib/client/stores/monoteam'
     import Button from './Button.svelte'
     import RosterBox from './RosterBox.svelte'
 	import random from 'lodash-es/random'
 	import sample from 'lodash-es/sample'
 	import sampleSize from 'lodash/sampleSize'
+    import Condition from './Condition.svelte'
 
 	const monotypes = Object.values( Pokemon.PER_TYPES ).filter( i => i.size >= 5 )
 		.map( i => [ ...i ] )
@@ -31,7 +33,7 @@
 <div class="matchroom">
 	<div class="matchroom__team">
 		{ #each $matchroom.team1 as player }
-			<RosterBox player={ player } team="purple" />
+			<RosterBox player={ player } team="purple" disabled={ $conditions?.[ 0 ] } />
 		{ /each }
 	</div>
 	{ #if $monoteam }
@@ -41,14 +43,20 @@
 			<Button style="purple" click={ randomAnyMono.bind( undefined, 1 ) }> { $_.get( 'playerlist.random-any' ) } </Button>
 		</div>
 	{ /if }
+	{ #if $conditions }
+		<Condition index={ 0 } />
+	{ /if }
 	<div class="matchroom__vs">
 		<img src="vs.png" alt="vs">
 	</div>
 	<div class="matchroom__team">
 		{ #each $matchroom.team2 as player }
-			<RosterBox player={ player } team="orange" />
+			<RosterBox player={ player } team="orange" disabled={ $conditions?.[ 1 ] } />
 		{ /each }
 	</div>
+	{ #if $conditions }
+		<Condition index= { 1 } />
+	{ /if }
 	{ #if $monoteam }
 		<div class="matchroom__buttons">
 			<Button click={ randomMono.bind( undefined, 2, monotypes ) }> { $_.get( 'playerlist.random-monotype' ) } </Button>

@@ -1,0 +1,35 @@
+[
+	{ "name": "be-polite" },
+	{ "name": "best-items" },
+	{ "name": "black-friday" },
+	{
+		"name": "eevee",
+		"overrules": true
+	},
+	{ "name": "bot-mode" },
+	{ "name": "eye-for-an-eye" },
+	{ "name": "hide-and-seek" },
+	{ "name": "im-in-danger" },
+	{ "name": "invasion" },
+	{ "name": "jungle-supporter" },
+	{ "name": "no-jungle" },
+	{ "name": "no-stacking" },
+	{ "name": "no-supporter" },
+	{ "name": "no-tresspassing" },
+	{
+		"name": "ornithology",
+		"overrules": true
+	},
+	{ "name": "perfectly-balanced" },
+	{ "name": "regieleki-is-in-da-house" },
+	{ "name": "some-order" },
+	{
+		"name": "starters",
+		"overrules": true
+	},
+	{
+		"name": "three-staged",
+		"overrules": true
+	},
+	{ "name": "veni-vidi-vici" }
+]

@@ -3,6 +3,92 @@
 		"shuffle-players": "Aleatorizar jugadores",
 		"shuffle-pokemon": "Aleatorizar Pokémon"
 	},
+	"conditions": {
+		"be-polite": {
+			"description": "Si derrotas a un Pokémon Auxiliar, debes dejar que el equipo contrario te derrote una vez. Los Pokémon Auxiliares son amigos, no comida.",
+			"name": "Sé amable"
+		},
+		"best-items": {
+			"description": "Cada Pokémon de tu equipo debe llevar al menos Restos o Chaleco asalto. ¡O incluso ambos!",
+			"name": "Mejores objetos"
+		},
+		"black-friday": {
+			"description": "Los cinco Pokémon, incluso el jungla, deben ir arriba al principio. Solo puedes cambiar de línea después de ser derrotado una vez o destruir su base.",
+			"name": "Black Friday"
+		},
+		"bot-mode": {
+			"description": "Si un enemigo está en la hierba alta, no puedes atacarlo. Tampoco puedes revisar arbustos con ataques.",
+			"name": "Modo Bot"
+		},
+		"eevee": {
+			"description": "Tu equipo solo puede usar evoluciones de Eevee.",
+			"name": "¡Espectáculo de Eevee!"
+		},
+		"eye-for-an-eye": {
+			"description": "No puedes destruir la base enemiga a menos que hayan destruido la base equivalente de tu lado.",
+			"name": "Ojo por ojo"
+		},
+		"hide-and-seek": {
+			"description": "No puedes esconderte en la hierba alta. Pasar está bien. Quedarse allí no lo está.",
+			"name": "Escondite"
+		},
+		"im-in-danger": {
+			"description": "Puedes cambiar a un Pokémon del equipo contrario, y ellos pueden cambiar uno de los tuyos.",
+			"name": "Estoy en peligro"
+		},
+		"invasion": {
+			"description": "Al principio, 3 Pokémon de tu equipo deben invadir la jungla enemiga.",
+			"name": "Invasión"
+		},
+		"jungle-supporter": {
+			"description": "La jungla de tu equipo debe ser un Pokémon Auxiliar (o Defensivo, si no tienes un Auxiliar) durante toda la partida.",
+			"name": "Soporte en la jungla"
+		},
+		"no-jungle": {
+			"description": "Ninguno de los equipos puede hacer la jungla. ¿Quién dijo que las condiciones no pueden afectar a ambos equipos?",
+			"name": "Sin jungla"
+		},
+		"no-stacking": {
+			"description": "No puedes llevar objetos de stacking en esta partida.",
+			"name": "Sin acumulación"
+		},
+		"no-supporter": {
+			"description": "No puedes usar ningún Auxiliar. Si obtienes un Auxiliar al azar, puedes elegir cualquier otra cosa que desees.",
+			"name": "Sin Auxiliar"
+		},
+		"no-tresspassing": {
+			"description": "No puedes entrar en la jungla enemiga, incluso después de derrotar a Rayquaza.",
+			"name": "Propiedad privada"
+		},
+		"ornithology": {
+			"description": "Solo puedes usar Pokémon que se parezcan a aves (Blaziken, Cramorant, Decidueye, Dodrio, Talonflame).",
+			"name": "Ornitología"
+		},
+		"perfectly-balanced": {
+			"description": "Antes de Rayquaza, siempre debe haber al menos 1 Pokémon cerca de cada una de tus bases en todo momento.",
+			"name": "Perfectamente equilibrado"
+		},
+		"regieleki-is-in-da-house": {
+			"description": "Si el equipo contrario derrota a Regieleki, debes dejarlo entrar.",
+			"name": "¡Regieleki está en la casa!"
+		},
+		"some-order": {
+			"description": "No puedes anotar puntos en la base de abajo hasta que destruyan la base de arriba.",
+			"name": "Algo de orden"
+		},
+		"starters": {
+			"description": "Solo puedes usar Pokémon iniciales. Pikachu y Eevee no cuentan como iniciales.",
+			"name": "Iniciales"
+		},
+		"three-staged": {
+			"description": "Solo puedes usar Pokémon con tres etapas evolutivas.",
+			"name": "Tres etapas"
+		},
+		"veni-vidi-vici": {
+			"description": "Si tu equipo derrota un objetivo o destruye una base, todo tu equipo debe regresar a su base. Incluso después de derrotar a Rayquaza.",
+			"name": "Vine, vi y vencí"
+		}
+	},
 	"draft": {
 		"header": "Pokémon vetados"
 	},
@@ -60,10 +146,11 @@
 		"lang": "es"
 	},
 	"strategies": {
-		"all-roles": "Asegurar todos los roles en ambos equipos",
+		"all-roles": "Asegurar todos los roles en ambos equipos.",
+		"conditions": "Usar condiciones aleatorias.",
 		"global-unique-pokemon": "No repetir Pokémon entre ambos equipos.",
 		"header": "Reglas personalizadas",
-		"monoteams": "Habilitar opciones para aleatorizar monoequipos"
+		"monoteams": "Habilitar opciones para aleatorizar monoequipos."
 	},
 	"tour": {
 		"banlist": "Modo veto",
