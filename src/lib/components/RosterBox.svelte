@@ -2,6 +2,7 @@
     import type { Player } from '$lib/client/matchroom'
     import { matchroom } from '$lib/client/stores/matchroom'
 
+	export let disabled = false
 	export let player: Player
 	export let team: 'orange' | 'purple'
 
@@ -11,7 +12,7 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
-<div class="roster roster--{ player.pokemon.displayRole.toLowerCase() } roster--{ team }" on:click={ click }>
+<div class="roster roster--{ player.pokemon.displayRole.toLowerCase() } roster--{ team } { disabled && 'roster--disabled' }" on:click={ click }>
 	<div class="roster__image">
 		<div class="roster__tachie { player.pokemon.tachie }"> &nbsp; </div>
 	</div>
@@ -115,6 +116,9 @@
 .roster__trainer {
 	color: #000;
 	font-size: 1.1em;
+}
+.roster--disabled .roster__image {
+	filter: grayscale(1);
 }
 
 @media (max-width: 1397px) {

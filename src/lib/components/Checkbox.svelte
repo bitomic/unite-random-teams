@@ -24,7 +24,7 @@
 </script>
 
 <div class="checkbox { center ? 'checkbox--center' : '' }">
-	<input type="checkbox" on:change={ change } bind:this={ checkbox }>
+	<input type="checkbox" on:change={ change } bind:this={ checkbox } autocomplete="off">
 	<label for=""> <slot /> </label>
 </div>
 

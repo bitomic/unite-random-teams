@@ -42,4 +42,9 @@ export class BanlistStrategy extends BaseStrategy {
 	public exclude( options: ExclusionOptions ): boolean {
 		return this.bannedPokemon.has( options.pokemon )
 	}
+
+	public reset() {
+		this.bannedPokemon.clear()
+		this.store()
+	}
 }

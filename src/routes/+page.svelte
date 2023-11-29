@@ -1,7 +1,7 @@
 <script lang="ts">
+	/* eslint-disable @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-assignment */
 	import Checkbox from '$lib/components/Checkbox.svelte'
 	import Matchroom from '$lib/components/Matchroom.svelte'
-	import PreloadImages from '$lib/components/PreloadImages.svelte'
 	import TwitchIntegrator from '$lib/components/TwitchIntegrator.svelte'
 	import { _ } from '$lib/client/stores/i18n'
 	import Button from '$lib/components/Button.svelte'
@@ -15,6 +15,8 @@
 	import Banlist from '$lib/components/Banlist.svelte'
 	import { driver } from 'driver.js'
 	import 'driver.js/dist/driver.css'
+    import { monoteam } from '$lib/client/stores/monoteam'
+    import { conditions } from '$lib/client/stores/conditions'
 
 	export let data: PageData
 	const tour = driver( {
@@ -135,6 +137,8 @@
 			<div class="checkboxes">
 				<Checkbox strategy={ new GlobalUniqueStrategy() }> { $_.get( 'strategies.global-unique-pokemon' ) } </Checkbox>
 				<Checkbox strategy={ new AllRolesStrategy() }> { $_.get( 'strategies.all-roles' ) } </Checkbox>
+				<Checkbox change={ i => $monoteam = i.currentTarget.checked }> { $_.get( 'strategies.monoteams' ) } </Checkbox>
+				<Checkbox change={ i => $conditions = i.currentTarget.checked ? [ false, false ] : null }> { $_.get( 'strategies.conditions' ) } </Checkbox>
 			</div>
 		</div>
 	</div>
