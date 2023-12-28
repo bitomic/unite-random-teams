@@ -19,6 +19,11 @@
 		"role": "Speedster",
 		"types": [ "grass" ]
 	},
+	"Meowscarada": {
+		"holowear": 1,
+		"role": "Speedster",
+		"types": [ "grass", "dark" ]
+	},
 	"Talonflame": {
 		"holowear": 7,
 		"role": "Speedster",
@@ -168,6 +173,11 @@
 		"holowear": 6,
 		"role": "All-Rounder",
 		"types": [ "fighting" ]
+	},
+	"Metagross": {
+		"holowear": 1,
+		"role": "All-Rounder",
+		"types": [ "psychic", "steel" ]
 	},
 	"Mewtwo X": {
 		"holowear": 2,
