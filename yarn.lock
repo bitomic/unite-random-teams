@@ -4635,7 +4635,7 @@ __metadata:
     svelte-check: ^3.4.6
     svelte-preprocess: ^5.0.4
     tmi.js: ^1.8.5
-    trpc-sveltekit: ^3.5.17
+    trpc-sveltekit: ^3.5.22
     ts-dotenv: ^0.9.1
     tslib: ^2.6.0
     typescript: ^5.1.6
@@ -4764,15 +4764,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"trpc-sveltekit@npm:^3.5.17":
-  version: 3.5.20
-  resolution: "trpc-sveltekit@npm:3.5.20"
+"trpc-sveltekit@npm:^3.5.22":
+  version: 3.5.22
+  resolution: "trpc-sveltekit@npm:3.5.22"
   peerDependencies:
     "@sveltejs/adapter-node": ">=1.2"
     "@trpc/client": ">=10"
     "@trpc/server": ">=10"
     ws: ">=8"
-  checksum: 242ade50c83aeec7a6980e94c102df4092c0f2d1b19645af1a2f3c678b03d2fb4f512ca29a3a17068a61b9b31a3ff8acdc5398af348497881aefb9a0330a072e
+  checksum: 308ae1474423006bbf4b25435e73a28874993d8e5da594284caeb59c4402b24b1c8b33fe71ab6db0055941025b9c064ee2f4308c996c41f16e4880b4893dc55f
   languageName: node
   linkType: hard
 
