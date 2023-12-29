@@ -56,7 +56,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@bitomic/eslint-config@npm:^1.2.0":
+"@bitomic/eslint-config@npm:^1.3.0":
   version: 1.3.0
   resolution: "@bitomic/eslint-config@npm:1.3.0"
   checksum: b58c526f654f3d822e9fad5baedfa82492cf53762dc975d0019b4d31202c2d8ed6ac837f7e93bc6beb331e34e3997d59a8dd9f835411b9cb65b7ec4a9028ab3a
@@ -4607,7 +4607,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "svelte-template@workspace:."
   dependencies:
-    "@bitomic/eslint-config": ^1.2.0
+    "@bitomic/eslint-config": ^1.3.0
     "@esbuild-plugins/node-modules-polyfill": ^0.2.2
     "@faker-js/faker": ^8.0.2
     "@playwright/test": ^1.36.1
