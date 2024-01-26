@@ -164,6 +164,11 @@
 		"role": "All-Rounder",
 		"types": [ "dragon", "ground" ]
 	},
+	"Gyarados": {
+		"holowear": 1,
+		"role": "All-Rounder",
+		"types": [ "water", "flying" ]
+	},
 	"Lucario": {
 		"holowear": 8,
 		"role": "All-Rounder",
