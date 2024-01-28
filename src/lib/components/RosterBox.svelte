@@ -1,13 +1,28 @@
 <script lang="ts">
     import type { Player } from '$lib/client/matchroom'
     import { matchroom } from '$lib/client/stores/matchroom'
+	import pokemon from '../../pokemon.json'
 
 	export let disabled = false
 	export let player: Player
 	export let team: 'orange' | 'purple'
 
+	let select: HTMLSelectElement
+
 	const click = () => {
 		$matchroom.shuffleSinglePokemon( player.name )
+	}
+
+	const toggleSelect = () => {
+		select.classList.toggle( 'roster__select--hidden' )
+	}
+
+	const changeSelect = ( event: Event & { currentTarget: EventTarget & HTMLSelectElement } ) => {
+		const name = event.currentTarget.value
+		if ( player.pokemon.name !== name ) {
+			player.pokemon.shuffle( name, true )
+		}
+		toggleSelect()
 	}
 </script>
 
@@ -21,7 +36,14 @@
 	<div class="roster__data">
 		<div class="roster__pokemon"> { player.pokemon.displayName } </div>
 		<div class="roster__trainer"> { player.name } </div>
+		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+		<img class="roster__switch" width="16" alt="ball" src="ball.png" on:click|stopPropagation={ toggleSelect }>
 	</div>
+	<select class="roster__select roster__select--hidden" on:click|stopPropagation bind:this={ select } on:change={ changeSelect }>
+		{ #each Object.keys( pokemon ).sort() as name }
+			<option value={ name }> { name } </option>
+		{/each}
+	</select>
 </div>
 
 <style>
@@ -131,8 +153,20 @@
 	color: #000;
 	font-size: 1.1em;
 }
+.roster__switch {
+	position: absolute;
+	right: 10px;
+}
 .roster--disabled .roster__image {
 	filter: grayscale(1);
+}
+.roster__select {
+	bottom: 30px;
+	position: absolute;
+	width: 100%;
+}
+.roster__select--hidden {
+	display: none;
 }
 
 @media (max-width: 1397px) {

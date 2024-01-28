@@ -82,8 +82,14 @@ export class Pokemon {
 		this.role = Pokemon.getPokemonRole( value )
 	}
 
-	public shuffle( finalPokemon: string ) {
+	public shuffle( finalPokemon: string, skipAnimation = false ) {
 		this.name = finalPokemon
+
+		if ( skipAnimation ) {
+			this.displayName = this.name
+			matchroom.update( m => m )
+			return
+		}
 
 		let counter = 0
 		const total = 3 + Math.random() * 3
