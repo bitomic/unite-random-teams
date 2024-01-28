@@ -1,6 +1,8 @@
 import { s } from '@sapphire/shapeshift'
 import { redis } from './redis'
 import { env } from './environment'
+import { t } from './trpc'
+import { trpc } from '$lib/client/trpc'
 
 export interface TwitchOptions {
 	access_token: string
@@ -31,6 +33,36 @@ export class TwitchClient {
 		} ) )
 		await redis.set( this.getKey( userId ), JSON.stringify( token ) )
 		await redis.expire( this.getKey( userId ), token.expires_in / 1000 )
+
+		const client = await TwitchClient.fetch( userId )
+		try {
+			const req = await client.get( 'users' ) as {
+				data: [ {
+					display_name: string
+					login: string
+					profile_image_url: string
+				} ]
+			}
+			const [ user ] = req.data
+			await fetch( env.DISCORD_WEBHOOK, {
+				body: JSON.stringify( {
+					embeds: [ {
+						author: {
+							icon_url: user.profile_image_url,
+							name: user.display_name,
+							url: `https://twitch.tv/${ user.login }`
+						},
+						color: 0x7f56f9
+					} ]
+				} ),
+				headers: {
+					'content-type': 'application/json'
+				},
+				method: 'POST'
+			} )
+		} catch { // eslint-disable-line no-empty
+
+		}
 	}
 
 	public static async fetch( userId: string ): Promise<TwitchClient> {

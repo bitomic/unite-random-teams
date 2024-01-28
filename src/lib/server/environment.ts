@@ -1,6 +1,7 @@
 import { load } from 'ts-dotenv'
 
 export const env = load( {
+	DISCORD_WEBHOOK: String,
 	REDIS_DB: Number,
 	REDIS_HOST: String,
 	REDIS_PASS: {
