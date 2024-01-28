@@ -11,6 +11,7 @@ import type { Writable } from 'svelte/store'
 import { UniqueTeamStrategy } from './strategies/UniqueTeam'
 import { BanlistStrategy } from './strategies/Banlist'
 import { GlobalUniqueStrategy } from './strategies/GlobalUnique'
+import { AllRolesStrategy } from './strategies/AllRoles'
 
 interface MatchroomOptions {
 	removeAndRotate?: boolean
@@ -43,7 +44,8 @@ export class Matchroom {
 	public readonly strategies = new StrategyManager(
 		new UniqueTeamStrategy(),
 		new BanlistStrategy(),
-		new GlobalUniqueStrategy()
+		new GlobalUniqueStrategy(),
+		new AllRolesStrategy()
 	)
 	public readonly team1 = new Team()
 	public readonly team2 = new Team()
