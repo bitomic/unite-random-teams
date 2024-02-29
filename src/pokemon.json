@@ -284,6 +284,11 @@
 		"role": "Attacker",
 		"types": [ "psychic" ]
 	},
+	"Miraidon": {
+		"holowear": 1,
+		"role": "Attacker",
+		"types": [ "dragon", "electric" ]
+	},
 	"Ninetales": {
 		"holowear": 7,
 		"role": "Attacker",
