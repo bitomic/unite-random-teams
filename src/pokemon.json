@@ -159,6 +159,11 @@
 		"role": "All-Rounder",
 		"types": [ "dragon", "flying" ]
 	},
+	"Falinks": {
+		"holowear": 1,
+		"role": "All-Rounder",
+		"types": [ "fighting" ]
+	},
 	"Garchomp": {
 		"holowear": 7,
 		"role": "All-Rounder",
