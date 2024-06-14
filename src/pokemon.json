@@ -149,6 +149,11 @@
 		"role": "All-Rounder",
 		"types": [ "bug", "fighting" ]
 	},
+	"Ceruledge": {
+		"holowear": 2,
+		"role": "All-Rounder",
+		"types": [ "ghost", "fire" ]
+	},
 	"Charizard": {
 		"holowear": 11,
 		"role": "All-Rounder",
