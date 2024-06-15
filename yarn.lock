@@ -975,10 +975,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/tmi.js@npm:^1.8.3":
-  version: 1.8.4
-  resolution: "@types/tmi.js@npm:1.8.4"
-  checksum: 53e50ad7009062811d341c687127986b083b9177022b6c2f805c8f0170722cd2ffbc52e4524c4ef259f9f45fd0ea9d9ec38dde612861b9c2a3108fdd5992ed56
+"@types/tmi.js@npm:^1.8.6":
+  version: 1.8.6
+  resolution: "@types/tmi.js@npm:1.8.6"
+  checksum: 5a8e559335c89de13cf65880ad4d9e03ec8577b1e6556e1522849e7ea8d263ed4f7005e5785d1e9931f6979fb4d88aae20e0cf324f96047f3edb675a6c2f2da3
   languageName: node
   linkType: hard
 
@@ -4618,7 +4618,7 @@ __metadata:
     "@trpc/server": ^10.34.0
     "@types/d3": ^7.4.0
     "@types/lodash-es": ^4.17.8
-    "@types/tmi.js": ^1.8.3
+    "@types/tmi.js": ^1.8.6
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
     d3: ^7.8.5
