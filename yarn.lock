@@ -271,10 +271,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@faker-js/faker@npm:^8.0.2":
-  version: 8.1.0
-  resolution: "@faker-js/faker@npm:8.1.0"
-  checksum: 76036cbad2f0735fe2a2834bb3e16233e7c1aa4998cf90dbd097631465f3fcd4e7022c901f80b6de1c25b47154880f06916609a81dacb039a25f9cb000a3ab4e
+"@faker-js/faker@npm:^10.6.0":
+  version: 10.6.0
+  resolution: "@faker-js/faker@npm:10.6.0"
+  checksum: 36ddfdbb34dbd262c7aeb3cb918b8ed3456b0d7a9dc4b0a61050bf731c37f17a236b316d40af29cc281019cd1870004008609ecb8161c4346f5d61836ed7c07b
   languageName: node
   linkType: hard
 
@@ -4609,7 +4609,7 @@ __metadata:
   dependencies:
     "@bitomic/eslint-config": ^1.2.0
     "@esbuild-plugins/node-modules-polyfill": ^0.2.2
-    "@faker-js/faker": ^8.0.2
+    "@faker-js/faker": ^10.6.0
     "@playwright/test": ^1.36.1
     "@sapphire/shapeshift": ^3.9.2
     "@sveltejs/adapter-node": ^1.3.1
