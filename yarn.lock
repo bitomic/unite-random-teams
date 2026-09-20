@@ -599,19 +599,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/client@npm:^10.34.0":
-  version: 10.38.4
-  resolution: "@trpc/client@npm:10.38.4"
+"@trpc/client@npm:^11.19.0":
+  version: 11.19.0
+  resolution: "@trpc/client@npm:11.19.0"
   peerDependencies:
-    "@trpc/server": 10.38.4
-  checksum: 017f61d8cea5362d565ba5c935fbf2dcf32e3478bafc52583053685a454a16da6cc8f577454ca3a2fe032eabc472848ba87c3be144c71f19c419a1a6b19a7114
+    "@trpc/server": 11.19.0
+    typescript: ">=5.7.2"
+  bin:
+    intent: bin/intent.js
+  checksum: 82fa9b5327f153e13d644e0a97443f68a63a9a3db08c211f7a6678b894527bcd04f6ffda188bb8550c63db81a994d46924ae141552ea48a771f5b1499474601d
   languageName: node
   linkType: hard
 
-"@trpc/server@npm:^10.34.0":
-  version: 10.38.4
-  resolution: "@trpc/server@npm:10.38.4"
-  checksum: 9cb1ad5395d5ab059a76209f61d6922d1dee3de5fe412417f3fe28c46e29914a20e0342ec3d9798f24a6b37ff7771263bb797be2962f09f1ee6a92f118417c82
+"@trpc/server@npm:^11.19.0":
+  version: 11.19.0
+  resolution: "@trpc/server@npm:11.19.0"
+  peerDependencies:
+    typescript: ">=5.7.2"
+  bin:
+    intent: bin/intent.js
+  checksum: 90f3eb70504e966965ed56066db053e676692a9bddfaa28393a7d3e1807f65bacca70b7b7b88d7d00f6bae4a2a8457301b5b97628314e7c6a82da6ed569e4d76
   languageName: node
   linkType: hard
 
@@ -4614,8 +4621,8 @@ __metadata:
     "@sapphire/shapeshift": ^3.9.2
     "@sveltejs/adapter-node": ^1.3.1
     "@sveltejs/kit": ^1.22.3
-    "@trpc/client": ^10.34.0
-    "@trpc/server": ^10.34.0
+    "@trpc/client": ^11.19.0
+    "@trpc/server": ^11.19.0
     "@types/d3": ^7.4.0
     "@types/lodash-es": ^4.17.8
     "@types/tmi.js": ^1.8.3
