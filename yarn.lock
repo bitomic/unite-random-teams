@@ -2096,10 +2096,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"driver.js@npm:^1.2.1":
-  version: 1.3.0
-  resolution: "driver.js@npm:1.3.0"
-  checksum: e89368c97dc860f19f1322e45149d8837e47710be631cc4ac44d9e8907e9adcf31cddd6b9e945a536c3b3428454de50be818f9f38e34148a5002b7c292474c38
+"driver.js@npm:^1.9.0":
+  version: 1.9.0
+  resolution: "driver.js@npm:1.9.0"
+  checksum: dfc37739784d04ef54722eaadf4a77023e0ec7004050257774bf1b3b3a13b3c16ad1f8e7a68fac1957525e075982d861e31a75355fe9e5f44d1d97073fe93de6
   languageName: node
   linkType: hard
 
@@ -4622,7 +4622,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
     d3: ^7.8.5
-    driver.js: ^1.2.1
+    driver.js: ^1.9.0
     eslint: ^8.45.0
     eslint-plugin-svelte: ^2.32.4
     ioredis: ^5.3.2
