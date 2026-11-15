@@ -418,14 +418,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playwright/test@npm:^1.36.1":
-  version: 1.38.1
-  resolution: "@playwright/test@npm:1.38.1"
+"@playwright/test@npm:^1.65.1":
+  version: 1.65.1
+  resolution: "@playwright/test@npm:1.65.1"
   dependencies:
-    playwright: 1.38.1
+    playwright: 1.65.1
   bin:
     playwright: cli.js
-  checksum: c5ec0b23261fe1ef163b6234f69263bc10e7e5a3fb676c7773ffc70b87459a7ab225f57c03b9de649475771638a04c2e00d9b2739304a4dcf5d3edf20a7a4a82
+  checksum: 2181a4e9e6738c0723e632215206de31c7a6e8dc0f1ba7b8829bf5cd43b0ebd1aa5f831a150abd966f19e2580dbce98ebe9573b400efd340a2f1e8a580b8a4c6
   languageName: node
   linkType: hard
 
@@ -2531,31 +2531,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@npm:2.3.2":
-  version: 2.3.2
-  resolution: "fsevents@npm:2.3.2"
-  dependencies:
-    node-gyp: latest
-  checksum: 97ade64e75091afee5265e6956cb72ba34db7819b4c3e94c431d4be2b19b8bb7a2d4116da417950c3425f17c8fe693d25e20212cac583ac1521ad066b77ae31f
-  conditions: os=darwin
-  languageName: node
-  linkType: hard
-
 "fsevents@npm:~2.3.2":
   version: 2.3.3
   resolution: "fsevents@npm:2.3.3"
   dependencies:
     node-gyp: latest
   checksum: 11e6ea6fea15e42461fc55b4b0e4a0a3c654faa567f1877dbd353f39156f69def97a69936d1746619d656c4b93de2238bf731f6085a03a50cabf287c9d024317
-  conditions: os=darwin
-  languageName: node
-  linkType: hard
-
-"fsevents@patch:fsevents@2.3.2#~builtin<compat/fsevents>":
-  version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
-  dependencies:
-    node-gyp: latest
   conditions: os=darwin
   languageName: node
   linkType: hard
@@ -3762,27 +3743,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright-core@npm:1.38.1":
-  version: 1.38.1
-  resolution: "playwright-core@npm:1.38.1"
+"playwright-core@npm:1.65.1":
+  version: 1.65.1
+  resolution: "playwright-core@npm:1.65.1"
   bin:
     playwright-core: cli.js
-  checksum: 66e83fe040f309b13ad94ba39dea40ac207bfcbbc22de13141af88dbdedd64e1c4e3ce1d0cb070d4efd8050d7e579953ec3681dd8a0acf2c1cc738d9c50e545e
+  checksum: efc868c56e146861b50e7c581eebb99e0530c5aa88645ff324e29ced183dfe085b86e58400a4a6f00c6c3bc30dbefd0a7a98497bf5bd38bfb09eaaae3db9a9d7
   languageName: node
   linkType: hard
 
-"playwright@npm:1.38.1":
-  version: 1.38.1
-  resolution: "playwright@npm:1.38.1"
+"playwright@npm:1.65.1":
+  version: 1.65.1
+  resolution: "playwright@npm:1.65.1"
   dependencies:
-    fsevents: 2.3.2
-    playwright-core: 1.38.1
-  dependenciesMeta:
-    fsevents:
-      optional: true
+    playwright-core: 1.65.1
   bin:
     playwright: cli.js
-  checksum: 4e01d4ee52d9ccf75a80d8492829106802590721d56bff7c5957ff1f21eb3c328ee5bc3c1784a59c4b515df1b98d08ef92e4a35a807f454cd00dc481d30fadc2
+  checksum: f633e048a73f5e09e3d1093484a184f90b405ea0eddc5e15541d43099f2d3ca0a8eff1f1523f868fa9bbd3417e2d153f0085e9f0f24fb3f4dd1a4c2baabd0e48
   languageName: node
   linkType: hard
 
@@ -4610,7 +4587,7 @@ __metadata:
     "@bitomic/eslint-config": ^1.2.0
     "@esbuild-plugins/node-modules-polyfill": ^0.2.2
     "@faker-js/faker": ^8.0.2
-    "@playwright/test": ^1.36.1
+    "@playwright/test": ^1.65.1
     "@sapphire/shapeshift": ^3.9.2
     "@sveltejs/adapter-node": ^1.3.1
     "@sveltejs/kit": ^1.22.3
