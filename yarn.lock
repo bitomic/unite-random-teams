@@ -599,19 +599,38 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/client@npm:^10.34.0":
-  version: 10.38.4
-  resolution: "@trpc/client@npm:10.38.4"
+"@trpc/client@npm:^11.31.6":
+  version: 11.31.6
+  resolution: "@trpc/client@npm:11.31.6"
   peerDependencies:
-    "@trpc/server": 10.38.4
-  checksum: 017f61d8cea5362d565ba5c935fbf2dcf32e3478bafc52583053685a454a16da6cc8f577454ca3a2fe032eabc472848ba87c3be144c71f19c419a1a6b19a7114
+    "@trpc/server": 11.31.6
+    typescript: ">=5.7.2"
+  checksum: cdf134f85be79c766794ffb46c46f1c5d9913aec4c4c2ed107bf150be74eb02e861c08a44d4c5dc3e1ee0058f0f0cc0be3636df3b05bcb6c6e704e96e3f8a277
   languageName: node
   linkType: hard
 
-"@trpc/server@npm:^10.34.0":
-  version: 10.38.4
-  resolution: "@trpc/server@npm:10.38.4"
-  checksum: 9cb1ad5395d5ab059a76209f61d6922d1dee3de5fe412417f3fe28c46e29914a20e0342ec3d9798f24a6b37ff7771263bb797be2962f09f1ee6a92f118417c82
+"@trpc/server@npm:^11.31.6":
+  version: 11.31.6
+  resolution: "@trpc/server@npm:11.31.6"
+  peerDependencies:
+    "@types/aws-lambda": "*"
+    "@types/express": "*"
+    "@types/ws": "*"
+    fastify: "*"
+    next: "*"
+    typescript: ">=5.7.2"
+  peerDependenciesMeta:
+    "@types/aws-lambda":
+      optional: true
+    "@types/express":
+      optional: true
+    "@types/ws":
+      optional: true
+    fastify:
+      optional: true
+    next:
+      optional: true
+  checksum: 9ff00ba6f9fb2a82afded38e3bb2b4c7f6417931b543245c74f539ed3f3e08646bf4c8c5781f9d0e74a47fe69d96b9c2069f1035dfd59d06240b37efbb58abb8
   languageName: node
   linkType: hard
 
@@ -4614,8 +4633,8 @@ __metadata:
     "@sapphire/shapeshift": ^3.9.2
     "@sveltejs/adapter-node": ^1.3.1
     "@sveltejs/kit": ^1.22.3
-    "@trpc/client": ^10.34.0
-    "@trpc/server": ^10.34.0
+    "@trpc/client": ^11.31.6
+    "@trpc/server": ^11.31.6
     "@types/d3": ^7.4.0
     "@types/lodash-es": ^4.17.8
     "@types/tmi.js": ^1.8.3
